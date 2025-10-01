@@ -1,20 +1,20 @@
-# Build a Banking App Part 3: Methods of Fetching and Using Data
+# 构建银行应用 第 3 部分：获取和使用数据的方法
 
-## Pre-Lecture Quiz
+## 课前测验
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/45)
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/45)
 
-### Introduction
+### 介绍
 
-At the core of every web application there's *data*. Data can take many forms, but its main purpose is always to display information to the user. With web apps becoming increasingly interactive and complex, how the user accesses and interacts with information is now a key part of web development.
+每个 Web 应用程序的核心都是*数据*。数据可以采用多种形式，但其主要目的始终是向用户显示信息。随着 Web 应用程序变得越来越具有交互性和复杂性，用户如何访问信息并与信息交互现在是 Web 开发的关键部分。
 
-In this lesson, we'll see how to fetch data from a server asynchronously, and use this data to display information on a web page without reloading the HTML.
+在本课中，我们将看到如何从服务器异步获取数据，并使用此数据在网页上显示信息而无需重新加载 HTML。
 
-### Prerequisite
+### 先决条件
 
-You need to have built the [Login and Registration Form](../2-forms/README.md) part of the web app for this lesson. You also need to install [Node.js](https://nodejs.org) and [run the server API](../api/README.md) locally so you get account data.
+您需要为本课程构建 Web 应用程序的[登录和注册表单](../2-forms/README.md)部分。您还需要安装 [Node.js](https://nodejs.org) 并[本地运行服务器 API](../api/README.md) 以获取帐户数据。
 
-You can test that the server is running properly by executing this command in a terminal:
+您可以通过在终端中执行此命令来测试服务器是否正常运行：
 
 ```sh
 curl http://localhost:5000/api

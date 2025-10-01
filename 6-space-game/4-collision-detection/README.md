@@ -1,23 +1,23 @@
-# Build a Space Game Part 4: Adding A Laser and Detect Collisions
+# 构建太空游戏 第 4 部分：添加激光并检测碰撞
 
-## Pre-Lecture Quiz
+## 课前测验
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/35)
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/35)
 
-In this lesson you will learn how to shoot lasers with JavaScript! We will add two things to our game:
+在本课中，您将学习如何用 JavaScript 射击激光！我们将向游戏添加两个功能：
 
-- **A laser**: this laser is shot from your heroes ship and vertically upwards
-- **Collision detection**, as part of implementing the ability to *shoot* we will also add some nice game rules:
-   - **Laser hits enemy**: Enemy dies if hit by a laser
-   - **Laser hits top screen**: A laser is destroyed if hitting the top part of the screen
-   - **Enemy and hero collision**: An enemy and the hero are destroyed if hitting each other
-   - **Enemy hits bottom of the screen**: An enemy and a hero are destroyed if the enemy hits the bottom of the screen
+- **激光**：这个激光从您的英雄飞船射出，垂直向上
+- **碰撞检测**，作为实现*射击*能力的一部分，我们还将添加一些不错的游戏规则：
+   - **激光击中敌人**：敌人被激光击中时死亡
+   - **激光击中屏幕顶部**：激光击中屏幕顶部时被摧毁
+   - **敌人和英雄碰撞**：敌人和英雄相互碰撞时都被摧毁
+   - **敌人击中屏幕底部**：敌人击中屏幕底部时，敌人和英雄都被摧毁
 
-In short, you -- *the hero* -- need to hit all enemies with a laser before they manage to move to the bottom of the screen.
+简而言之，您——*英雄*——需要在敌人移动到屏幕底部之前用激光击中所有敌人。
 
-✅ Do a little research on the very first computer game ever written. What was its functionality?
+✅ 对有史以来第一个计算机游戏做一些研究。它的功能是什么？
 
-Let's be heroic together!
+让我们一起成为英雄吧！
 
 ## Collision detection
 

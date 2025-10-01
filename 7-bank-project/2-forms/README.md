@@ -1,23 +1,23 @@
-# Build a Banking App Part 2: Build a Login and Registration Form
+# 构建银行应用 第 2 部分：构建登录和注册表单
 
-## Pre-Lecture Quiz
+## 课前测验
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/43)
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/43)
 
-### Introduction
+### 介绍
 
-In almost all modern web apps, you can create an account to have your own private space. As multiple users can access a web app at the same time, you need a mechanism to store each user personal data separately and select which information to display information. We won't cover how to manage [user identity securely](https://en.wikipedia.org/wiki/Authentication) as it's an extensive topic on its own, but we'll make sure each user is able to create one (or more) bank account on our app.
+在几乎所有现代 Web 应用程序中，您都可以创建一个帐户来拥有自己的私人空间。由于多个用户可以同时访问 Web 应用程序，您需要一种机制来单独存储每个用户的个人数据并选择要显示哪些信息。我们不会介绍如何[安全地管理用户身份](https://en.wikipedia.org/wiki/Authentication)，因为这本身就是一个广泛的主题，但我们将确保每个用户都能够在我们的应用程序上创建一个（或多个）银行帐户。
 
-In this part we'll use HTML forms to add login and registration to our web app. We'll see how to send the data to a server API programmatically, and ultimately how to define basic validation rules for user inputs.
+在这一部分中，我们将使用 HTML 表单向我们的 Web 应用程序添加登录和注册功能。我们将看到如何以编程方式将数据发送到服务器 API，以及最终如何为用户输入定义基本验证规则。
 
-### Prerequisite
+### 先决条件
 
-You need to have completed the [HTML templates and routing](../1-template-route/README.md) of the web app for this lesson. You also need to install [Node.js](https://nodejs.org) and [run the server API](../api/README.md) locally so you can send data to create accounts.
+您需要完成本课程的 Web 应用程序的 [HTML 模板和路由](../1-template-route/README.md)。您还需要安装 [Node.js](https://nodejs.org) 并[本地运行服务器 API](../api/README.md)，以便可以发送数据来创建帐户。
 
-**Take note**
-You will have two terminals running at the same time as listed below.
-1. For the main bank app we built in the [HTML templates and routing](../1-template-route/README.md) lesson
-2. For the [Bank APP server API](../api/README.md) we just setup above.
+**请注意**
+您将同时运行两个终端，如下所示。
+1. 用于我们在 [HTML 模板和路由](../1-template-route/README.md) 课程中构建的主银行应用程序
+2. 用于我们刚刚在上面设置的 [银行应用服务器 API](../api/README.md)。
 
 You need two of the servers up and running to follow through with the rest of the lesson. They are listening on different ports(port `3000` and port `5000`) so everything should work just fine.
 

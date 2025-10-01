@@ -1,20 +1,20 @@
-# Carbon Trigger Browser Extension: Completed Code
+# 碳触发浏览器扩展：完整代码
 
-Using tmrow's C02 Signal API to track electricity usage, build a browser extension so that you can have a reminder right in your browser about how heavy your region's electricity usage is. Using this extension ad hoc will help you to make judgement calls on your activities based on this information.
+使用 tmrow 的 C02 Signal API 跟踪电力使用情况，构建一个浏览器扩展，这样您就可以直接在浏览器中得到关于您所在地区的电力使用强度的提醒。使用这个扩展将帮助您根据这些信息对您的活动做出判断。
 
-![extension screenshot](../extension-screenshot.png)
+![扩展截图](../extension-screenshot.png)
 
-## Getting Started
+## 开始使用
 
-You will need to have [npm](https://npmjs.com) installed. Download a copy of this code to a folder on your computer.
+您需要安装 [npm](https://npmjs.com)。将此代码的副本下载到您计算机上的一个文件夹中。
 
-Install all the required packages:
+安装所有必需的包：
 
 ```
 npm install
 ```
 
-Build the extension from webpack
+从 webpack 构建扩展
 
 ```
 npm run build

@@ -1,23 +1,23 @@
-# Build a Space Game Part 3: Adding Motion
+# 构建太空游戏 第 3 部分：添加运动
 
-## Pre-Lecture Quiz
+## 课前测验
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/33)
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/33)
 
-Games aren't much fun until you have aliens running around on screen! In this game, we will make use of two types of movements:
+没有外星人在屏幕上跑来跑去的游戏并不有趣！在这个游戏中，我们将使用两种类型的运动：
 
-- **Keyboard/Mouse movement**: when the user interacts with the keyboard or mouse to move an object on the screen.
-- **Game induced movement**: when the game moves an object with a certain time interval.
+- **键盘/鼠标运动**：当用户与键盘或鼠标交互以在屏幕上移动对象时。
+- **游戏引发的运动**：当游戏以特定时间间隔移动对象时。
 
-So how do we move things on a screen? It's all about cartesian coordinates: we change the location (x,y) of the object and then redraw the screen.
+那么我们如何在屏幕上移动东西呢？这完全是关于笛卡尔坐标的：我们改变对象的位置（x,y），然后重新绘制屏幕。
 
-Typically you need the following steps to accomplish *movement* on a screen:
+通常您需要以下步骤来完成屏幕上的*运动*：
 
-1. **Set a new location** for an object; this is needed to perceive the object as having moved.
-2. **Clear the screen**, the screen needs to be cleared in between draws. We can clear it by drawing a rectangle that we fill with a background color.
-3. **Redraw object** at new location. By doing this we finally accomplish moving the object from one location to the other.
+1. **为对象设置新位置**；这是感知对象移动所必需的。
+2. **清除屏幕**，屏幕需要在绘制之间清除。我们可以通过绘制一个用背景色填充的矩形来清除它。
+3. **在新位置重新绘制对象**。通过这样做，我们最终完成了将对象从一个位置移动到另一个位置。
 
- Here's what it can look like in code:
+以下是在代码中的样子：
 
 ```javascript
 //set the hero's location
