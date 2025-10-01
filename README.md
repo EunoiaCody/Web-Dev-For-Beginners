@@ -108,113 +108,111 @@
 
     [!CodeSpace](./images/createcodespace.png)
 
-    Then, open [Terminal](https://code.visualstudio.com/docs/terminal/basics/?WT.mc_id=academic-77807-sagibbon) within [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=academic-77807-sagibbon) and run the following command, replacing `<your-repository-url>` with the URL you just copied:
+    然后，在 [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=academic-77807-sagibbon) 中打开[终端](https://code.visualstudio.com/docs/terminal/basics/?WT.mc_id=academic-77807-sagibbon)并运行以下命令，将 `<your-repository-url>` 替换为您刚才复制的 URL：
 
     ```bash 
     git clone <your-repository-url>
     ```
 
-2. Open the folder in Visual Studio Code. You can do this by clicking **File** > **Open Folder** and selecting the folder you just cloned.
+2. 在 Visual Studio Code 中打开文件夹。您可以通过点击 **文件** > **打开文件夹** 并选择您刚才克隆的文件夹来完成此操作。
 
-
->  Recommended Visual Studio Code extensions:
+>  推荐的 Visual Studio Code 扩展：
 >
-> * [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&WT.mc_id=academic-77807-sagibbon) - to preview HTML pages within Visual Studio Code
-> * [Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot&WT.mc_id=academic-77807-sagibbon) - to help you write code faster
+> * [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&WT.mc_id=academic-77807-sagibbon) - 在 Visual Studio Code 中预览 HTML 页面
+> * [Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot&WT.mc_id=academic-77807-sagibbon) - 帮助您更快地编写代码
 
-## 📂 Each lesson includes:
+## 📂 每节课包括：
 
-- optional sketchnote
-- optional supplemental video
-- pre-lesson warmup quiz
-- written lesson
-- for project-based lessons, step-by-step guides on how to build the project
-- knowledge checks
-- a challenge
-- supplemental reading
-- assignment
-- [post-lesson quiz](https://ff-quizzes.netlify.app/web/)
+- 可选的手绘笔记
+- 可选的补充视频
+- 课前预热测验
+- 书面课程
+- 对于基于项目的课程，提供如何构建项目的分步指南
+- 知识检查
+- 挑战
+- 补充阅读
+- 作业
+- [课后测验](https://ff-quizzes.netlify.app/web/)
 
-> **A note about quizzes**: All quizzes are contained in the Quiz-app folder, 48 total quizzes of three questions each. They are available [here](https://ff-quizzes.netlify.app/web/) the quiz app can be run locally or deployed to Azure; follow the instruction in the `quiz-app` folder.
+> **关于测验的说明**：所有测验都包含在 Quiz-app 文件夹中，总共 48 个测验，每个测验有三个问题。它们可在[这里](https://ff-quizzes.netlify.app/web/)获得，测验应用程序可以在本地运行或部署到 Azure；请按照 `quiz-app` 文件夹中的说明操作。
 
-## 🗃️ Lessons
+## 🗃️ 课程
 
-|     |                       Project Name                       |                            Concepts Taught                             | Learning Objectives                                                                                                                 |                                                         Linked Lesson                                                          |         Author          |
+|     |                       项目名称                       |                            教授概念                             | 学习目标                                                                                                                 |                                                         相关课程                                                          |         作者          |
 | :-: | :------------------------------------------------------: | :--------------------------------------------------------------------: | ----------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------: | :---------------------: |
-| 01  |                     Getting Started                      |           Introduction to Programming and Tools of the Trade           | Learn the basic underpinnings behind most programming languages and about software that helps professional developers do their jobs | [Intro to Programming Languages and Tools of the Trade](./1-getting-started-lessons/1-intro-to-programming-languages/README.md) |         Jasmine         |
-| 02  |                     Getting Started                      |             Basics of GitHub, includes working with a team             | How to use GitHub in your project, how to collaborate with others on a code base                                                    |                            [Intro to GitHub](./1-getting-started-lessons/2-github-basics/README.md)                             |          Floor          |
-| 03  |                     Getting Started                      |                             Accessibility                              | Learn the basics of web accessibility                                                                                               |                       [Accessibility Fundamentals](./1-getting-started-lessons/3-accessibility/README.md)                       |       Christopher       |
-| 04  |                        JS Basics                         |                         JavaScript Data Types                          | The basics of JavaScript data types                                                                                                 |                                       [Data Types](./2-js-basics/1-data-types/README.md)                                        |         Jasmine         |
-| 05  |                        JS Basics                         |                         Functions and Methods                          | Learn about functions and methods to manage an application's logic flow                                                             |                              [Functions and Methods](./2-js-basics/2-functions-methods/README.md)                               | Jasmine and Christopher |
-| 06  |                        JS Basics                         |                        Making Decisions with JS                        | Learn how to create conditions in your code using decision-making methods                                                           |                                 [Making Decisions](./2-js-basics/3-making-decisions/README.md)                                  |         Jasmine         |
-| 07  |                        JS Basics                         |                            Arrays and Loops                            | Work with data using arrays and loops in JavaScript                                                                                 |                                   [Arrays and Loops](./2-js-basics/4-arrays-loops/README.md)                                    |         Jasmine         |
-| 08  |       [Terrarium](./3-terrarium/solution/README.md)       |                            HTML in Practice                            | Build the HTML to create an online terrarium, focusing on building a layout                                                         |                                 [Introduction to HTML](./3-terrarium/1-intro-to-html/README.md)                                 |           Jen           |
-| 09  |       [Terrarium](./3-terrarium/solution/README.md)       |                            CSS in Practice                             | Build the CSS to style the online terrarium, focusing on the basics of CSS including making the page responsive                     |                                  [Introduction to CSS](./3-terrarium/2-intro-to-css/README.md)                                  |           Jen           |
-| 10  |            [Terrarium](./3-terrarium/solution/README.md)            |                 JavaScript Closures, DOM manipulation                  | Build the JavaScript to make the terrarium function as a drag/drop interface, focusing on closures and DOM manipulation             |                  [JavaScript Closures, DOM manipulation](./3-terrarium/3-intro-to-DOM-and-closures/README.md)                   |           Jen           |
-| 11  |          [Typing Game](./4-typing-game/solution/README.md)          |                          Build a Typing Game                           | Learn how to use keyboard events to drive the logic of your JavaScript app                                                          |                                [Event-Driven Programming](./4-typing-game/typing-game/README.md)                                |       Christopher       |
-| 12  | [Green Browser Extension](./5-browser-extension/solution/README.md) |                         Working with Browsers                          | Learn how browsers work, their history, and how to scaffold the first elements of a browser extension                               |                               [About Browsers](./5-browser-extension/1-about-browsers/README.md)                                |           Jen           |
-| 13  | [Green Browser Extension](./5-browser-extension/solution/README.md) | Building a form, calling an API and storing variables in local storage | Build the JavaScript elements of your browser extension to call an API using variables stored in local storage                      |                [APIs, Forms, and Local Storage](./5-browser-extension/2-forms-browsers-local-storage/README.md)                 |           Jen           |
-| 14  | [Green Browser Extension](./5-browser-extension/solution/README.md) |          Background processes in the browser, web performance          | Use the browser's background processes to manage the extension's icon; learn about web performance and some optimizations to make   |             [Background Tasks and Performance](./5-browser-extension/3-background-tasks-and-performance/README.md)              |           Jen           |
-| 15  |           [Space Game](./6-space-game/solution/README.md)           |             More Advanced Game Development with JavaScript             | Learn about Inheritance using both Classes and Composition and the Pub/Sub pattern, in preparation for building a game              |                      [Introduction to Advanced Game Development](./6-space-game/1-introduction/README.md)                       |          Chris          |
-| 16  |           [Space Game](./6-space-game/solution/README.md)           |                           Drawing to canvas                            | Learn about the Canvas API, used to draw elements to a screen                                                                       |                                [Drawing to Canvas](./6-space-game/2-drawing-to-canvas/README.md)                                |          Chris          |
-| 17  |           [Space Game](./6-space-game/solution/README.md)           |                   Moving elements around the screen                    | Discover how elements can gain motion using the cartesian coordinates and the Canvas API                                            |                           [Moving Elements Around](./6-space-game/3-moving-elements-around/README.md)                           |          Chris          |
-| 18  |           [Space Game](./6-space-game/solution/README.md)           |                          Collision detection                           | Make elements collide and react to each other using keypresses and provide a cooldown function to ensure performance of the game    |                              [Collision Detection](./6-space-game/4-collision-detection/README.md)                              |          Chris          |
-| 19  |           [Space Game](./6-space-game/solution/README.md)           |                             Keeping score                              | Perform math calculations based on the game's status and performance                                                                |                                    [Keeping Score](./6-space-game/5-keeping-score/README.md)                                    |          Chris          |
-| 20  |           [Space Game](./6-space-game/solution/README.md)           |                     Ending and restarting the game                     | Learn about ending and restarting the game, including cleaning up assets and resetting variable values                              |                                [The Ending Condition](./6-space-game/6-end-condition/README.md)                                 |          Chris          |
-| 21  |         [Banking App](./7-bank-project/solution/README.md)          |                 HTML Templates and Routes in a Web App                 | Learn how to create the scaffold of a multipage website's architecture using routing and HTML templates                             |                            [HTML Templates and Routes](./7-bank-project/1-template-route/README.md)                             |          Yohan          |
-| 22  |         [Banking App](./7-bank-project/solution/README.md)          |                  Build a Login and Registration Form                   | Learn about building forms and handling validation routines                                                                          |                                           [Forms](./7-bank-project/2-forms/README.md)                                           |          Yohan          |
-| 23  |         [Banking App](./7-bank-project/solution/README.md)          |                   Methods of Fetching and Using Data                   | How data flows in and out of your app, how to fetch it, store it, and dispose of it                                                 |                                            [Data](./7-bank-project/3-data/README.md)                                            |          Yohan          |
-| 24  |         [Banking App](./7-bank-project/solution/README.md)          |                      Concepts of State Management                      | Learn how your app retains state and how to manage it programmatically                                                              |                                [State Management](./7-bank-project/4-state-management/README.md)                                |          Yohan          |
-| 25 | [Browser/VScode Code](./8-code-editor/) | Working with VScode | Learn how to Using a code editor| [Use VScode Code Editor](./8-code-editor/1-using-a-code-editor/README.md) | Chris |
-| 26 | [AI Assistants](./9-chat-project/README.md) | Working with AI | Learn how to build your own AI assistant | [AI Assistant project](./9-chat-project/README.md) | Chris |
+| 01  |                     入门                      |           编程介绍和开发工具           | 学习大多数编程语言背后的基本原理以及帮助专业开发人员完成工作的软件 | [编程语言和开发工具介绍](./1-getting-started-lessons/1-intro-to-programming-languages/README.md) |         Jasmine         |
+| 02  |                     入门                      |             GitHub 基础，包括团队协作             | 如何在项目中使用 GitHub，如何与他人在代码库上协作                                                    |                            [GitHub 介绍](./1-getting-started-lessons/2-github-basics/README.md)                             |          Floor          |
+| 03  |                     入门                      |                             无障碍性                              | 学习 Web 无障碍性基础                                                                                               |                       [无障碍性基础](./1-getting-started-lessons/3-accessibility/README.md)                       |       Christopher       |
+| 04  |                        JS 基础                         |                         JavaScript 数据类型                          | JavaScript 数据类型基础                                                                                                 |                                       [数据类型](./2-js-basics/1-data-types/README.md)                                        |         Jasmine         |
+| 05  |                        JS 基础                         |                         函数和方法                          | 学习函数和方法来管理应用程序的逻辑流                                                             |                              [函数和方法](./2-js-basics/2-functions-methods/README.md)                               | Jasmine and Christopher |
+| 06  |                        JS 基础                         |                        用 JS 做决策                        | 学习如何使用决策方法在代码中创建条件                                                           |                                 [做决策](./2-js-basics/3-making-decisions/README.md)                                  |         Jasmine         |
+| 07  |                        JS 基础                         |                            数组和循环                            | 在 JavaScript 中使用数组和循环处理数据                                                                                 |                                   [数组和循环](./2-js-basics/4-arrays-loops/README.md)                                    |         Jasmine         |
+| 08  |       [生态瓶](./3-terrarium/solution/README.md)       |                            HTML 实践                            | 构建 HTML 创建在线生态瓶，专注于构建布局                                                         |                                 [HTML 介绍](./3-terrarium/1-intro-to-html/README.md)                                 |           Jen           |
+| 09  |       [生态瓶](./3-terrarium/solution/README.md)       |                            CSS 实践                             | 构建 CSS 来设计在线生态瓶的样式，专注于 CSS 基础，包括使页面响应式                     |                                  [CSS 介绍](./3-terrarium/2-intro-to-css/README.md)                                  |           Jen           |
+| 10  |            [生态瓶](./3-terrarium/solution/README.md)            |                 JavaScript 闭包，DOM 操作                  | 构建 JavaScript 使生态瓶作为拖放界面运行，专注于闭包和 DOM 操作             |                  [JavaScript 闭包，DOM 操作](./3-terrarium/3-intro-to-DOM-and-closures/README.md)                   |           Jen           |
+| 11  |          [打字游戏](./4-typing-game/solution/README.md)          |                          构建打字游戏                           | 学习如何使用键盘事件来驱动 JavaScript 应用程序的逻辑                                                          |                                [事件驱动编程](./4-typing-game/typing-game/README.md)                                |       Christopher       |
+| 12  | [绿色浏览器扩展](./5-browser-extension/solution/README.md) |                         使用浏览器                          | 了解浏览器的工作原理、历史以及如何搭建浏览器扩展的第一个元素               |                               [关于浏览器](./5-browser-extension/1-about-browsers/README.md)                                |           Jen           |
+| 13  | [绿色浏览器扩展](./5-browser-extension/solution/README.md) | 构建表单、调用 API 并在本地存储中存储变量 | 构建浏览器扩展的 JavaScript 元素，使用存储在本地存储中的变量调用 API                      |                [API、表单和本地存储](./5-browser-extension/2-forms-browsers-local-storage/README.md)                 |           Jen           |
+| 14  | [绿色浏览器扩展](./5-browser-extension/solution/README.md) |          浏览器中的后台进程，Web 性能          | 使用浏览器的后台进程来管理扩展图标；了解 Web 性能和一些优化措施   |             [后台任务和性能](./5-browser-extension/3-background-tasks-and-performance/README.md)              |           Jen           |
+| 15  |           [太空游戏](./6-space-game/solution/README.md)           |             使用 JavaScript 进行更高级的游戏开发             | 了解使用类和组合以及 Pub/Sub 模式的继承，为构建游戏做准备              |                      [高级游戏开发介绍](./6-space-game/1-introduction/README.md)                       |          Chris          |
+| 16  |           [太空游戏](./6-space-game/solution/README.md)           |                           绘制到画布                            | 了解 Canvas API，用于将元素绘制到屏幕上                                                                       |                                [绘制到画布](./6-space-game/2-drawing-to-canvas/README.md)                                |          Chris          |
+| 17  |           [太空游戏](./6-space-game/solution/README.md)           |                   在屏幕上移动元素                    | 了解元素如何使用笛卡尔坐标和 Canvas API 获得运动            |                           [移动元素](./6-space-game/3-moving-elements-around/README.md)                           |          Chris          |
+| 18  |           [太空游戏](./6-space-game/solution/README.md)           |                          碰撞检测                           | 使用按键让元素碰撞并相互反应，并提供冷却功能以确保游戏性能    |                              [碰撞检测](./6-space-game/4-collision-detection/README.md)                              |          Chris          |
+| 19  |           [太空游戏](./6-space-game/solution/README.md)           |                             保持得分                              | 根据游戏状态和性能进行数学计算                                                                |                                    [保持得分](./6-space-game/5-keeping-score/README.md)                                    |          Chris          |
+| 20  |           [太空游戏](./6-space-game/solution/README.md)           |                     结束并重启游戏                     | 了解结束和重启游戏，包括清理资产和重置变量值              |                                [结束条件](./6-space-game/6-end-condition/README.md)                                 |          Chris          |
+| 21  |         [银行应用](./7-bank-project/solution/README.md)          |                 Web 应用中的 HTML 模板和路由                 | 学习如何使用路由和 HTML 模板创建多页网站架构的脚手架             |                            [HTML 模板和路由](./7-bank-project/1-template-route/README.md)                             |          Yohan          |
+| 22  |         [银行应用](./7-bank-project/solution/README.md)          |                  构建登录和注册表单                   | 了解构建表单和处理验证例程                                                                          |                                           [表单](./7-bank-project/2-forms/README.md)                                           |          Yohan          |
+| 23  |         [银行应用](./7-bank-project/solution/README.md)          |                   获取和使用数据的方法                   | 数据如何流入和流出您的应用程序，如何获取、存储和处置数据                                                 |                                            [数据](./7-bank-project/3-data/README.md)                                            |          Yohan          |
+| 24  |         [银行应用](./7-bank-project/solution/README.md)          |                      状态管理概念                      | 了解您的应用程序如何保持状态以及如何以编程方式管理它                                                              |                                [状态管理](./7-bank-project/4-state-management/README.md)                                |          Yohan          |
+| 25 | [浏览器/VScode 代码](./8-code-editor/) | 使用 VScode | 学习如何使用代码编辑器| [使用 VScode 代码编辑器](./8-code-editor/1-using-a-code-editor/README.md) | Chris |
+| 26 | [AI 助手](./9-chat-project/README.md) | 使用 AI | 学习如何构建自己的 AI 助手 | [AI 助手项目](./9-chat-project/README.md) | Chris |
 
-## 🏫 Pedagogy
+## 🏫 教学法
 
-Our curriculum is designed with two key pedagogical principles in mind:
-* project-based learning
-* frequent quizzes
+我们的课程设计考虑了两个关键的教学原则：
+* 基于项目的学习
+* 频繁的测验
 
-The program teaches the fundamentals of JavaScript, HTML, and CSS, as well as the latest tools and techniques used by today's web developers. Students will have the opportunity to develop hands-on experience by building a typing game, virtual terrarium, eco-friendly browser extension, space-invader-style game, and a banking app for businesses. By the end of the series, students will have gained a solid understanding of web development.
+该程序教授 JavaScript、HTML 和 CSS 的基础知识，以及当今 Web 开发人员使用的最新工具和技术。学生将有机会通过构建打字游戏、虚拟生态瓶、环保浏览器扩展、太空入侵者风格游戏和企业银行应用程序来获得实践经验。到系列结束时，学生将对 Web 开发有扎实的理解。
 
-> 🎓 You can take the first few lessons in this curriculum as a [Learn Path](https://docs.microsoft.com/learn/paths/web-development-101/?WT.mc_id=academic-77807-sagibbon) on Microsoft Learn!
+> 🎓 您可以在 Microsoft Learn 上学习本课程的前几课，作为[学习路径](https://docs.microsoft.com/learn/paths/web-development-101/?WT.mc_id=academic-77807-sagibbon)！
 
-By ensuring that the content aligns with projects, the process is made more engaging for students and retention of concepts will be augmented. We also wrote several starter lessons in JavaScript basics to introduce concepts, paired with a video from the "[Beginners Series to: JavaScript](https://channel9.msdn.com/Series/Beginners-Series-to-JavaScript/?WT.mc_id=academic-77807-sagibbon)" collection of video tutorials, some of whose authors contributed to this curriculum.
+通过确保内容与项目保持一致，这个过程对学生来说更具吸引力，概念的保留将得到增强。我们还编写了几个 JavaScript 基础入门课程来介绍概念，搭配来自"[JavaScript 初学者系列](https://channel9.msdn.com/Series/Beginners-Series-to-JavaScript/?WT.mc_id=academic-77807-sagibbon)"视频教程集合的视频，其中一些作者为本课程做出了贡献。
 
-In addition, a low-stakes quiz before a class sets the intention of the student towards learning a topic, while a second quiz after class ensures further retention. This curriculum was designed to be flexible and fun and can be taken in whole or in part. The projects start small and become increasingly complex by the end of the 12-week cycle.
+此外，课前的低风险测验设定了学生学习主题的意图，而课后的第二次测验确保进一步保留。本课程设计灵活有趣，可以全部或部分学习。项目从小开始，在 12 周周期结束时变得越来越复杂。
 
-While we have purposefully avoided introducing JavaScript frameworks to concentrate on the basic skills needed as a web developer before adopting a framework, a good next step to completing this curriculum would be learning about Node.js via another collection of videos: "[Beginner Series to: Node.js](https://channel9.msdn.com/Series/Beginners-Series-to-Nodejs/?WT.mc_id=academic-77807-sagibbon)".
+虽然我们有意避免引入 JavaScript 框架，专注于在采用框架之前作为 Web 开发人员所需的基本技能，但完成本课程的一个很好的下一步是通过另一个视频集合学习 Node.js："[Node.js 初学者系列](https://channel9.msdn.com/Series/Beginners-Series-to-Nodejs/?WT.mc_id=academic-77807-sagibbon)"。
 
-> Visit our [Code of Conduct](CODE_OF_CONDUCT.md) and [Contributing](CONTRIBUTING.md) guidelines. We welcome your constructive feedback!
+> 访问我们的[行为准则](CODE_OF_CONDUCT.md)和[贡献](CONTRIBUTING.md)指南。我们欢迎您的建设性反馈！
 
 
-## 🧭 Offline access
+## 🧭 离线访问
 
-You can run this documentation offline by using [Docsify](https://docsify.js.org/#/). Fork this repo, [install Docsify](https://docsify.js.org/#/quickstart) on your local machine, and then in the root folder of this repo, type `docsify serve`. The website will be served on port 3000 on your localhost: `localhost:3000`.
+您可以使用 [Docsify](https://docsify.js.org/#/) 离线运行此文档。Fork 此仓库，在本地机器上[安装 Docsify](https://docsify.js.org/#/quickstart)，然后在此仓库的根文件夹中输入 `docsify serve`。网站将在您的 localhost 的端口 3000 上提供服务：`localhost:3000`。
 
 ## 📘 PDF
 
-A PDF of all of the lessons can be found [here](https://microsoft.github.io/Web-Dev-For-Beginners/pdf/readme.pdf).
+所有课程的 PDF 可以在[这里](https://microsoft.github.io/Web-Dev-For-Beginners/pdf/readme.pdf)找到。
 
+## 🎒 其他课程
 
-## 🎒 Other Courses
+我们的团队还制作了其他课程！查看：
 
-Our team produces other courses! Check out:
+- [生成式 AI 初学者教程](https://aka.ms/genai-beginners)
+- [.NET 生成式 AI 初学者教程](https://github.com/microsoft/Generative-AI-for-beginners-dotnet)
+- [JavaScript 生成式 AI 教程](https://github.com/microsoft/generative-ai-with-javascript)
+- [Java 生成式 AI 教程](https://github.com/microsoft/Generative-AI-for-beginners-java)
+- [AI 初学者教程](https://aka.ms/ai-beginners)
+- [数据科学初学者教程](https://aka.ms/datascience-beginners)
+- [机器学习初学者教程](https://aka.ms/ml-beginners)
+- [网络安全初学者教程](https://github.com/microsoft/Security-101)
+- [Web 开发初学者教程](https://aka.ms/webdev-beginners)
+- [物联网初学者教程](https://aka.ms/iot-beginners)
+- [XR 开发初学者教程](https://github.com/microsoft/xr-development-for-beginners)
+- [掌握 GitHub Copilot 用于代理使用](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming)
+- [掌握面向 C#/.NET 开发人员的 GitHub Copilot](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers)
+- [选择您自己的 Copilot 冒险](https://github.com/microsoft/CopilotAdventures)
 
-- [Generative AI for Beginners](https://aka.ms/genai-beginners)
-- [Generative AI for Beginners .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet)
-- [Generative AI with JavaScript](https://github.com/microsoft/generative-ai-with-javascript)
-- [Generative AI with Java](https://github.com/microsoft/Generative-AI-for-beginners-java)
-- [AI for Beginners](https://aka.ms/ai-beginners)
-- [Data Science for Beginners](https://aka.ms/datascience-beginners)
-- [ML for Beginners](https://aka.ms/ml-beginners)
-- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101)
-- [Web Dev for Beginners](https://aka.ms/webdev-beginners)
-- [IoT for Beginners](https://aka.ms/iot-beginners)
-- [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners)
-- [Mastering GitHub Copilot for Agentic use](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming)
-- [Mastering GitHub Copilot for C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers)
-- [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures)
+## 许可证
 
-## License
-
-This repository is licensed under the MIT license. See the [LICENSE](LICENSE) file for more information.
+此仓库使用 MIT 许可证。有关更多信息，请参阅 [LICENSE](LICENSE) 文件。
