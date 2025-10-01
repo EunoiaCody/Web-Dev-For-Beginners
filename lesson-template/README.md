@@ -1,51 +1,51 @@
-# [Lesson Topic]
+# [课程主题]
 
-![Embed a video here](video-url)
+![在此嵌入视频](video-url)
 
-## [Pre-lecture quiz](quiz-url)
+## [课前测验](quiz-url)
 
-[Describe what we will learn]
+[描述我们将学习什么]
 
-### Introduction
+### 介绍
 
-Describe what will be covered
+描述将要涵盖的内容
 
-> Notes
+> 笔记
 
-### Prerequisite
+### 先决条件
 
-What steps should have been covered before this lesson?
+在本课程之前应该涵盖哪些步骤？
 
-### Preparation
+### 准备
 
-Preparatory steps to start this lesson
+开始本课程的准备步骤
 
 ---
 
-[Step through content in blocks]
+[逐步浏览内容块]
 
-## [Topic 1]
+## [主题 1]
 
-### Task:
+### 任务：
 
-Work together to progressively enhance your codebase to build the project with shared code:
+共同努力逐步增强您的代码库，使用共享代码构建项目：
 
 ```html
-code blocks
+代码块
 ```
 
-✅ Knowledge Check - use this moment to stretch students' knowledge with open questions
+✅ 知识检查 - 使用这个时刻通过开放性问题扩展学生的知识
 
-## [Topic 2]
+## [主题 2]
 
-## [Topic 3]
+## [主题 3]
 
-🚀 Challenge: Add a challenge for students to work on collaboratively in class to enhance the project
+🚀 挑战：为学生添加一个挑战，让他们在课堂上协作完成以增强项目
 
-Optional: add a screenshot of the completed lesson's UI if appropriate
+可选：如果合适，添加已完成课程 UI 的截图
 
-## [Post-lecture quiz](quiz-url)
+## [课后测验](quiz-url)
 
-## Review & Self Study
+## 复习与自学
 
-**Assignment Due [MM/YY]**: [Assignment Name](assignment.md)
+**作业截止 [MM/YY]**：[作业名称](assignment.md)

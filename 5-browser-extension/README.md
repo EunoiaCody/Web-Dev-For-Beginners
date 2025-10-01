@@ -1,28 +1,27 @@
-# Building a browser extension
+# 构建浏览器扩展
 
-Building browser extensions is a fun and interesting way to think about the performance of your apps while building a different type of web asset. This module includes lessons on how browsers work and how to deploy a browser extension, how to build a form, call an API, and use local storage, and how to gauge the performance of your website and improve it.
+在构建另一类 Web 资源的同时，开发浏览器扩展也是审视应用性能的一种有趣方式。本模块包含以下课程：浏览器的工作原理与扩展的部署、如何构建表单、调用 API 并使用本地存储，以及如何评估并提升你的网站性能。
 
-You'll build a  browser extension that works on Edge, Chrome, and Firefox. This extension, which is like a mini web site that is tailored to a very specific task, checks the [C02 Signal API](https://www.co2signal.com) for a given region's electricity usage and carbon intensity, and returns a reading on the region's carbon footprint.
+你将构建一个可在 Edge、Chrome 和 Firefox 上运行的浏览器扩展。这个扩展类似一个为特定任务定制的迷你网站：它会通过 [C02 Signal API](https://www.co2signal.com) 查询指定地区的用电情况与碳强度，并返回该地区的碳足迹读数。
 
-This extension can be called ad hoc by a user once an API key and region code is input into a form to determine local electricity usage and thereby offer data that can influence a user's electricity decisions. For example, it may be preferable to delay running a clothes dryer (a carbon-intense activity) during a period of high electricity usage in your region.
+当用户在表单中输入 API 密钥与区域代码后，便可随时调用该扩展以查询当地用电情况，从而为用户的用电决策提供参考。例如，在你所在地区用电高峰期（高碳强度时段），最好延后使用烘干机等高碳排活动。
 
-### Topics
+## 主题
 
-1. [About the browser](1-about-browsers/README.md)
-2. [Forms and local storage](2-forms-browsers-local-storage/README.md)
-3. [Background tasks and performance](3-background-tasks-and-performance/README.md)
+1. [关于浏览器](1-about-browsers/README.md)
+2. [表单与本地存储](2-forms-browsers-local-storage/README.md)
+3. [后台任务与性能](3-background-tasks-and-performance/README.md)
 
-### Credits
+### 图片说明
 
 ![a green browser extension](extension-screenshot.png)
 
-## Credits
+## 致谢
 
-The idea for this web carbon trigger was offered by Asim Hussain, lead at Microsoft of the Green Cloud Advocacy team and author of the [Green Principles](https://principles.green/). It was originally a [web site project](https://github.com/jlooper/green).
+这个“网页碳触发器”的想法来自 Asim Hussain，他是微软 Green Cloud Advocacy 团队的负责人，也是 [Green Principles](https://principles.green/) 的作者。它最初是一个[网站项目](https://github.com/jlooper/green)。
 
-The structure of the browser extension was influenced by [Adebola Adeniran's COVID extension](https://github.com/onedebos/covtension).
+该浏览器扩展的结构受到 [Adebola Adeniran 的 COVID 扩展](https://github.com/onedebos/covtension) 的启发。
 
-The concept behind the 'dot' icon system was suggested by the icon structure of the [Energy Lollipop](https://energylollipop.com/) browser extension for California emissions.
+“圆点”图标系统的灵感来自加州排放浏览器扩展 [Energy Lollipop](https://energylollipop.com/) 的图标结构。
 
-These lessons were written with ♥️ by [Jen Looper](https://www.twitter.com/jenlooper)
-
+这些课程由 [Jen Looper](https://www.twitter.com/jenlooper) 倾心撰写 ♥️

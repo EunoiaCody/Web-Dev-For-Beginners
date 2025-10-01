@@ -1,161 +1,160 @@
-# Using a code editor
+# 使用代码编辑器
 
-This lesson covers the basics of using [VSCode.dev](https://vscode.dev) a web-based code editor so that you can make changes to your code and contribute to a project without installing anything on your computer.
+本课程介绍如何使用 [VSCode.dev](https://vscode.dev)，这是一个基于Web的代码编辑器，让你无需在计算机上安装任何软件就能修改代码并为项目做贡献。
 
 <!----
 TODO: add an optional image
-![Using a code editor](../../sketchnotes/webdev101-vscode-dev.png)
-> Sketchnote by [Author name](https://example.com)
+![使用代码编辑器](../../sketchnotes/webdev101-vscode-dev.png)
+> 手绘笔记作者 [Author name](https://example.com)
 ---->
 
 <!---
-## Pre-Lecture Quiz
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/3)
+## 课前测验
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/3)
 ---->
 
-## Learning objectives
+## 学习目标
 
-In this lesson, you'll learn how to:
+在本课程中，你将学习如何：
 
-- Use a code editor in a code project
-- Keep track of changes with version control
-- Customize the editor for development
+- 在代码项目中使用代码编辑器
+- 通过版本控制跟踪更改
+- 自定义编辑器以进行开发
 
-### Prerequisites
+### 先决条件
 
-Before you begin, you'll need to create an account with [GitHub](https://github.com). Navigate to [GitHub](https://github.com/) and create an account if you haven't already.
+在开始之前，你需要创建一个 [GitHub](https://github.com) 账户。导航到 [GitHub](https://github.com/) 并创建账户（如果你还没有的话）。
 
-### Introduction
+### 介绍
 
-A code editor is an essential tool for writing programs and collaborating with existing coding projects. Once you understand the basics of an editor and how to make use of its features, you'll be able to apply them when writing code.
+代码编辑器是编写程序和协作处理现有编程项目的重要工具。一旦你了解了编辑器的基础知识以及如何利用其功能，你就能在编写代码时应用它们。
 
-## Getting started with VSCode.dev
+## VSCode.dev 入门
 
-[VSCode.dev](https://vscode.dev) is a code editor on the web. You don't need to install anything in order to use it, just like opening any other website. To get started with the editor, open the following link: [https://vscode.dev](https://vscode.dev). If you aren't signed in into [GitHub](https://github.com/), follow the prompts to sign in or create a new account and then sign in.
+[VSCode.dev](https://vscode.dev) 是一个基于Web的代码编辑器。你不需要安装任何东西就能使用它，就像打开任何其他网站一样。要开始使用编辑器，请打开以下链接：[https://vscode.dev](https://vscode.dev)。如果你还没有登录 [GitHub](https://github.com/)，请按照提示登录或创建新账户然后登录。
 
-Once it loads, it should look similar to this image:
+加载完成后，它应该看起来类似于这个图像：
 
-![Default VSCode.dev](../images/default-vscode-dev.png)
+![默认 VSCode.dev](../images/default-vscode-dev.png)
 
-There are three main sections, starting from the far left and moving to the right:
+从最左边开始向右有三个主要区域：
 
-1. The _activity bar_ which includes some icons, like the magnifying glass 🔎, the gear ⚙️, and a few others
-1. The expanded activity bar which defaults to the _Explorer_, called the _side bar_.
-1. And finally, the code area to the right.
+1. _活动栏_，包含一些图标，如放大镜 🔎、齿轮 ⚙️ 和其他一些图标
+1. 扩展的活动栏默认为_资源管理器_，称为_侧栏_。
+1. 最后是右边的代码区域。
 
-Click on each of the icons to display a different menu. Once done, click on the _Explorer_ so you are back where you started.
+点击每个图标以显示不同的菜单。完成后，点击_资源管理器_回到起始位置。
 
-When you start creating code or modifying existing code, it will happen in the biggest area to the right. You'll use this area to visualize existing code as well, which you'll do next.
+当你开始创建代码或修改现有代码时，这将在右边的最大区域进行。你还将使用这个区域来可视化现有代码，接下来你将执行此操作。
 
+## 打开 GitHub 仓库
 
-## Open a GitHub repository
+首先你需要打开一个 GitHub 仓库。有多种打开仓库的方法。在本节中，你将看到两种不同的方法来打开仓库，以便开始进行更改。
 
-The first thing you'll need is to open a GitHub repository. There are multiple ways of opening a repository. In this section you'll see two different ways you can open a repository so that you can start working on changes.
+### 1. 使用编辑器
 
-### 1. With the editor
+使用编辑器本身来打开远程仓库。如果你访问 [VSCode.dev](https://vscode.dev)，你会看到一个_"打开远程仓库"_按钮：
 
-Use the editor itself to open a remote repository. If you go to [VSCode.dev](https://vscode.dev) you will see an _"Open Remote Repository"_ button:
+![打开远程仓库](../images/open-remote-repository.png)
 
-![Open remote repository](../images/open-remote-repository.png)
+你也可以使用命令面板。命令面板是一个输入框，你可以在其中输入作为命令或操作一部分的任何单词来找到要执行的正确命令。使用左上角的菜单，然后选择_视图_，再选择_命令面板_，或使用以下键盘快捷键：Ctrl-Shift-P（在 MacOS 上是 Command-Shift-P）。
 
-You can also use the command palette. The command palette is an input box where you can type any word that is part of a command or an action to find the right command to execute. Use the menu to the top-left, then select _View_, and then pick _Command Palette_, or using the following keyboard shortcut: Ctrl-Shift-P (on MacOS it would be Command-Shift-P).
+![面板菜单](../images/palette-menu.png)
 
-![Palette Menu](../images/palette-menu.png)
+菜单打开后，输入_open remote repository_，然后选择第一个选项。将显示你所属的或最近打开过的多个仓库。你还可以使用完整的 GitHub URL 来选择一个。使用以下 URL 并粘贴到框中：
 
-Once the menu opens, type _open remote repository_, and then select the first option. Multiple repositories that you are part of or that you've opened recently will show up. You can also use a full GitHub URL to select one. Use the following URL and paste into the box:
-
-```
+```url
 https://github.com/microsoft/Web-Dev-For-Beginners
 ```
 
-✅ If successful, you'll see all files for this repository loaded in the text editor.
+✅ 如果成功，你将看到此仓库的所有文件加载到文本编辑器中。
 
+### 2. 使用 URL
 
-### 2. Using the URL
+你也可以直接使用 URL 来加载仓库。例如，当前仓库的完整 URL 是 [https://github.com/microsoft/Web-Dev-For-Beginners](https://github.com/microsoft/Web-Dev-For-Beginners)，但你可以将 GitHub 域名替换为 `VSCode.dev/github` 并直接加载仓库。结果 URL 将是 [https://vscode.dev/github/microsoft/Web-Dev-For-Beginners](https://vscode.dev/github/microsoft/Web-Dev-For-Beginners)。
 
-You can also use a url directly to load a repository. For example, the full URL for the current repo is [https://github.com/microsoft/Web-Dev-For-Beginners](https://github.com/microsoft/Web-Dev-For-Beginners), but you can swap the GitHub domain with `VSCode.dev/github` and load the repository directly. The resulting URL would be [https://vscode.dev/github/microsoft/Web-Dev-For-Beginners](https://vscode.dev/github/microsoft/Web-Dev-For-Beginners).
+## 编辑文件
 
+在浏览器/vscode.dev 上打开仓库后，下一步是对项目进行更新或更改。
 
-## Edit files
-Once you have opened the repository on the browser/ vscode.dev, the next step would be to make updates or changes to the project.
+### 1. 创建新文件
 
-### 1. Create a new file
+你可以在现有文件夹内创建文件，也可以在根目录/文件夹中创建。要创建新文件，请打开要保存文件的位置/目录，并在活动栏（左侧）选择_'新建文件...'_图标，为其命名并按 Enter。
 
-You can either create a file inside an existing folder, or create it in the root directory/folder. To create a new file, open a location/directory to which you want the file to be saved and select the _'New file ...'_ icon on the activity bar _(left)_, give it a name and hit enter.
+![创建新文件](../images/create-new-file.png)
 
-![Create a new file](../images/create-new-file.png)
+### 2. 编辑并保存仓库中的文件
 
-### 2. Edit and save a file on the repository
+当你想要对项目进行快速更新而无需在本地加载任何软件时，使用 vscode.dev 很有帮助。
+要更新代码，请点击位于活动栏上的'资源管理器'图标以查看仓库中的文件和文件夹。
+选择一个文件在代码区域中打开它，进行更改并保存。
 
-Using vscode.dev is helpful whenever you want to make quick updates to your project without having to load any software locally.
-To update your code, click the 'Explorer' icon, also located on the activity bar to view files & folders in the repository.
-Select a file to open it on the code area, make your changes and save.
+![编辑文件](../images/edit-a-file.png)
 
-![Edit a file](../images/edit-a-file.png)
+完成更新项目后，选择_`源代码管理`_图标，其中包含你对仓库所做的所有新更改。
 
-Once you are done updating your project, select the _`source control`_ icon which contains all the new changes you have made to your repository.
+要查看你对项目所做的更改，请在扩展活动栏的 `Changes` 文件夹中选择文件。这将为你打开一个'工作树'，以便你可以直观地看到对文件所做的更改。红色表示对项目的删除，而绿色表示添加。
 
-To view the changes you made to your project, select the file(s) in the `Changes` folder in the expanded activity bar. This will open a 'Working Tree' for you to visually see the changes you made to the file. Red shows an omission to the project, while green signifies an addition.
+![查看更改](../images/working-tree.png)
 
-![View changes](../images/working-tree.png)
+如果你对所做的更改感到满意，请将鼠标悬停在 `Changes` 文件夹上并点击 `+` 按钮来暂存更改。暂存简单来说就是准备将你的更改提交到 GitHub。
 
-If you are satisfied with the changes you made, hover on the `Changes` folder and click the `+` button to stage the changes. Staging simply means preparing your changes to commit them to GitHub.
+但是，如果你对某些更改不满意并想要丢弃它们，请将鼠标悬停在 `Changes` 文件夹上并选择 `撤销` 图标。
 
-If however you are not comfortable with some changes and you want to discard them, hover on the `Changes` folder and select the `undo` icon.
+然后，输入一个 `提交消息`（_对你对项目所做更改的描述_），点击 `检查图标` 来提交并推送你的更改。
 
-Then, type in a `commit message` _(A description of the change you have made to the project)_, click the `check icon` to commit and push your changes.
+完成项目工作后，选择左上角的 `汉堡菜单图标` 返回 github.com 上的仓库。
 
-Once done working on your project, select the `hamburger menu icon` at the top left to return to the repository on github.com.
+![暂存和提交更改](../images/edit-vscode.dev.gif)
 
-![Stage & commit changes](../images/edit-vscode.dev.gif)
+## 使用扩展
 
-## Using extensions
-Installing extensions on VSCode allows you to add new features and customized development environment options on your editor to improve your development workflow. These extensions also help you add support for multiple programming languages and are often either generic extensions or language-based extensions.
+在 VSCode 上安装扩展允许你添加新功能和自定义开发环境选项到编辑器中，以改善你的开发工作流程。这些扩展还帮助你添加对多种编程语言的支持，通常要么是通用扩展，要么是基于语言的扩展。
 
-To browse through the list of all available extensions, click the _`Extensions icon`_ on the activity bar and start typing the name of the extension on the text field labelled _'Search Extensions in Marketplace'_.
-You will see a list of extensions, each one containing **the extension name, publisher's name, a 1 sentence description, number of downloads** and **a star rating**.
+要浏览所有可用扩展的列表，请点击活动栏上的_`扩展图标`_并开始在标有_'在市场中搜索扩展'_的文本字段中输入扩展名称。
+你将看到扩展列表，每个都包含**扩展名称、发布者名称、一句话描述、下载次数**和**星级评分**。
 
-![Extension details](../images/extension-details.png)
+![扩展详情](../images/extension-details.png)
 
-You can also view all previously installed extensions by expanding the _`Installed folder`_ , popular extensions used by most developers in the _`Popular folder`_ and recommended extensions for you either by users in the same workspace or based on your recently opened files in the _`recommended folder`_ .
+你还可以通过展开_`已安装文件夹`_查看所有先前安装的扩展，在_`热门文件夹`_中查看大多数开发者使用的热门扩展，以及在_`推荐文件夹`_中查看为你推荐的扩展（基于同一工作区的用户或你最近打开的文件）。
 
-![View extensions](../images/extensions.png)
+![查看扩展](../images/extensions.png)
 
+### 1. 安装扩展
 
-### 1. Install Extensions
-To install an extension, type the extension's name in the search field and click on it to view additional information about the extension on the code area once it appears on the expanded activity bar.
+要安装扩展，在搜索字段中输入扩展名称，并点击它以在扩展出现在扩展活动栏中时在代码区域查看有关扩展的其他信息。
 
-You can either click the _blue install button_ on the expanded activity bar to install or use the install button that appears on the code area once you select the extension to load additional information.
+你可以点击扩展活动栏上的_蓝色安装按钮_来安装，或使用在你选择扩展以加载其他信息时代码区域出现的安装按钮。
 
-![Install extensions](../images/install-extension.gif)
+![安装扩展](../images/install-extension.gif)
 
-### 2. Customize Extensions
-After installing the extension, you may need to modify its behaviour and customize it based on your preferences. To do this, select the Extensions icon, and this time, your extension will appear in the _Installed folder_, click on the _**Gear icon**_ and navigate to _Extensions Setting_
+### 2. 自定义扩展
 
-![Modify extension settings](../images/extension-settings.png)
+安装扩展后，你可能需要修改其行为并根据你的偏好自定义它。要做到这一点，选择扩展图标，这次你的扩展将出现在_已安装文件夹_中，点击_**齿轮图标**_并导航到_扩展设置_
 
-### 3. Manage Extensions
-After installing and using your extension, vscode.dev offers options to manage your extension based on different needs. For example, you may choose to:
-- **Disable:**  _(You temporarily disable an extension when you no longer need it but don't want to uninstall it completely)_
+![修改扩展设置](../images/extension-settings.png)
 
-    Select the installed extension on the expanded activity bar > click the Gear icon > select 'Disable' or 'Disable (Workspace)' **OR** Open the extension on the code area and click the blue Disable button.
+### 3. 管理扩展
 
-   
-- **Uninstall:** Select installed extension on the expanded activity bar > click the Gear icon > select 'Uninstall' **OR** Open the extension on the code area and click the blue Uninstall button.
+安装和使用扩展后，vscode.dev 提供了基于不同需求管理扩展的选项。例如，你可以选择：
 
+- **禁用：**（_当你不再需要扩展但不想完全卸载它时，你可以暂时禁用扩展_）
 
+    在扩展活动栏上选择已安装的扩展 > 点击齿轮图标 > 选择'禁用'或'禁用（工作区）'**或者**在代码区域打开扩展并点击蓝色禁用按钮。
+
+- **卸载：** 在扩展活动栏上选择已安装的扩展 > 点击齿轮图标 > 选择'卸载'**或者**在代码区域打开扩展并点击蓝色卸载按钮。
 
 ---
 
-## Assignment
-[Create a resume website using vscode.dev](https://github.com/microsoft/Web-Dev-For-Beginners/blob/main/8-code-editor/1-using-a-code-editor/assignment.md)
+## 作业
 
+[使用 vscode.dev 创建简历网站](https://github.com/microsoft/Web-Dev-For-Beginners/blob/main/8-code-editor/1-using-a-code-editor/assignment.md)
 
 <!----
-## Post-Lecture Quiz
-[Post-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/4)
+## 课后测验
+[课后测验](https://ff-quizzes.netlify.app/web/quiz/4)
 ---->
 
-## Review & Self Study
+## 复习与自学
 
-Read more about [VSCode.dev](https://code.visualstudio.com/docs/editor/vscode-web?WT.mc_id=academic-0000-alfredodeza) and some of its other features.
+阅读更多关于 [VSCode.dev](https://code.visualstudio.com/docs/editor/vscode-web?WT.mc_id=academic-0000-alfredodeza) 及其其他功能的信息。

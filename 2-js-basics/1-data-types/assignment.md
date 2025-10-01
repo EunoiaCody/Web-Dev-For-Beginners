@@ -1,11 +1,11 @@
-# Data Types Practice
+# 数据类型练习
 
-## Instructions
+## 说明
 
-Imagine you are building a shopping cart. Write some documentation on the data types that you would need to complete your shopping experience. How did you arrive at your choices?
+设想你正在构建一个购物车。请编写一段文档，说明为了完成购物体验，你需要哪些数据类型，并解释你做出这些选择的理由。
 
-## Rubric
+## 评分标准（Rubric）
 
-Criteria | Exemplary | Adequate | Needs Improvement
---- | --- | --- | -- |
-||The six data types are listed and explored in detail, documenting their use|Four datatypes are explored|Two data types are explored|
+| 标准 | 优秀 | 合格 | 需改进 |
+| --- | --- | --- | --- |
+|  | 列出并详细探讨六种数据类型，说明其用途 | 探讨四种数据类型 | 探讨两种数据类型 |

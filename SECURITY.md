@@ -1,41 +1,41 @@
 <!-- BEGIN MICROSOFT SECURITY.MD V0.0.5 BLOCK -->
 
-## Security
+## 安全性
 
-Microsoft takes the security of our software products and services seriously, which includes all source code repositories managed through our GitHub organizations, which include [Microsoft](https://github.com/Microsoft), [Azure](https://github.com/Azure), [DotNet](https://github.com/dotnet), [AspNet](https://github.com/aspnet), [Xamarin](https://github.com/xamarin), and [our GitHub organizations](https://opensource.microsoft.com/?WT.mc_id=academic-77807-sagibbon).
+Microsoft 非常重视我们软件产品和服务的安全性，包括通过我们的 GitHub 组织管理的所有源代码仓库，包括 [Microsoft](https://github.com/Microsoft)、[Azure](https://github.com/Azure)、[DotNet](https://github.com/dotnet)、[AspNet](https://github.com/aspnet)、[Xamarin](https://github.com/xamarin) 和[我们的 GitHub 组织](https://opensource.microsoft.com/?WT.mc_id=academic-77807-sagibbon)。
 
-If you believe you have found a security vulnerability in any Microsoft-owned repository that meets [Microsoft's definition of a security vulnerability](https://docs.microsoft.com/previous-versions/tn-archive/cc751383(v=technet.10)/?WT.mc_id=academic-77807-sagibbon), please report it to us as described below.
+如果您认为在任何 Microsoft 拥有的仓库中发现了符合 [Microsoft 安全漏洞定义](<https://docs.microsoft.com/previous-versions/tn-archive/cc751383(v=technet.10)/?WT.mc_id=academic-77807-sagibbon>)的安全漏洞，请按照以下描述向我们报告。
 
-## Reporting Security Issues
+## 报告安全问题
 
-**Please do not report security vulnerabilities through public GitHub issues.**
+**请不要通过公开的 GitHub issues 报告安全漏洞。**
 
-Instead, please report them to the Microsoft Security Response Center (MSRC) at [https://msrc.microsoft.com/create-report](https://msrc.microsoft.com/create-report/?WT.mc_id=academic-77807-sagibbon).
+相反，请通过 [https://msrc.microsoft.com/create-report](https://msrc.microsoft.com/create-report/?WT.mc_id=academic-77807-sagibbon) 向 Microsoft 安全响应中心 (MSRC) 报告。
 
-If you prefer to submit without logging in, send an email to [secure@microsoft.com](mailto:secure@microsoft.com).  If possible, encrypt your message with our PGP key; please download it from the [Microsoft Security Response Center PGP Key page](https://www.microsoft.com/msrc/pgp-key-msrc/?WT.mc_id=academic-77807-sagibbon).
+如果您不想登录提交，请发送电子邮件至 [secure@microsoft.com](mailto:secure@microsoft.com)。如果可能，请使用我们的 PGP 密钥加密您的消息；请从 [Microsoft 安全响应中心 PGP 密钥页面](https://www.microsoft.com/msrc/pgp-key-msrc/?WT.mc_id=academic-77807-sagibbon)下载。
 
-You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message. Additional information can be found at [microsoft.com/msrc](https://www.microsoft.com/msrc/?WT.mc_id=academic-77807-sagibbon). 
+您应该在 24 小时内收到回复。如果由于某种原因您没有收到回复，请通过电子邮件跟进以确保我们收到了您的原始消息。更多信息可以在 [microsoft.com/msrc](https://www.microsoft.com/msrc/?WT.mc_id=academic-77807-sagibbon) 找到。
 
-Please include the requested information listed below (as much as you can provide) to help us better understand the nature and scope of the possible issue:
+请包括下面列出的请求信息（尽可能多地提供），以帮助我们更好地了解可能问题的性质和范围：
 
-  * Type of issue (e.g. buffer overflow, SQL injection, cross-site scripting, etc.)
-  * Full paths of the source file(s) related to the manifestation of the issue
-  * The location of the affected source code (tag/branch/commit or direct URL)
-  * Any special configuration required to reproduce the issue
-  * Step-by-step instructions to reproduce the issue
-  * Proof-of-concept or exploit code (if possible)
-  * Impact of the issue, including how an attacker might exploit the issue
+- 问题类型（例如缓冲区溢出、SQL 注入、跨站脚本等）
+- 与问题表现相关的源文件的完整路径
+- 受影响源代码的位置（tag/branch/commit 或直接 URL）
+- 复现问题所需的任何特殊配置
+- 复现问题的分步说明
+- 概念验证或漏洞利用代码（如果可能）
+- 问题的影响，包括攻击者如何利用该问题
 
-This information will help us triage your report more quickly.
+此信息将帮助我们更快地分类您的报告。
 
-If you are reporting for a bug bounty, more complete reports can contribute to a higher bounty award. Please visit our [Microsoft Bug Bounty Program](https://microsoft.com/msrc/bounty/?WT.mc_id=academic-77807-sagibbon) page for more details about our active programs.
+如果您是为漏洞赏金报告，更完整的报告可以获得更高的赏金奖励。请访问我们的 [Microsoft 漏洞赏金计划](https://microsoft.com/msrc/bounty/?WT.mc_id=academic-77807-sagibbon)页面了解有关我们活跃计划的更多详细信息。
 
-## Preferred Languages
+## 首选语言
 
-We prefer all communications to be in English.
+我们更希望所有沟通都使用英语。
 
-## Policy
+## 政策
 
-Microsoft follows the principle of [Coordinated Vulnerability Disclosure](https://www.microsoft.com/msrc/cvd/?WT.mc_id=academic-77807-sagibbon).
+Microsoft 遵循[协调漏洞披露](https://www.microsoft.com/msrc/cvd/?WT.mc_id=academic-77807-sagibbon)原则。
 
 <!-- END MICROSOFT SECURITY.MD BLOCK -->

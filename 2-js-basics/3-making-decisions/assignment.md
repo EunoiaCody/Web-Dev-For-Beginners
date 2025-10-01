@@ -1,24 +1,24 @@
-# Operators
+# 运算符（Operators）
 
-## Instructions
+## 说明
 
-Play around with operators. Here's a suggestion for a program you can implement:
+练习使用各类运算符。下面是一个可实现的示例小程序：
 
-You have a set of students from two different grading systems.
+你有一组来自两个不同评分体系的学生。
 
-### First grading system
+### 评分体系一
 
-One grading system is defined as grades being from 1-5 where 3 and above means you pass the course.
+评分为 1–5 分，3 分及以上为通过。
 
-### Second grading system
+### 评分体系二
 
-The other grade system has the following grades `A, A-, B, B-, C, C-` where `A` is the top grade and `C` is the lowest passing grade.
+评分为 `A, A-, B, B-, C, C-`，其中 `A` 为最高分，`C` 为最低及格分。
 
-### The task
+### 任务
 
-Given the following array `allStudents` representing all students and their grades, construct a new array `studentsWhoPass` containing all students who pass.
+给定如下数组 `allStudents`（表示所有学生及其成绩），构造新数组 `studentsWhoPass`，包含所有及格的学生。
 
-> TIP, use a for-loop and if...else and comparison operators:
+> 提示：使用 for 循环、if...else 与比较运算符：
 
 ```javascript
 let allStudents = [
@@ -33,8 +33,8 @@ let allStudents = [
 let studentsWhoPass = [];
 ```
 
-## Rubric
+## 评分标准（Rubric）
 
-| Criteria | Exemplary                      | Adequate                      | Needs Improvement               |
-| -------- | ------------------------------ | ----------------------------- | ------------------------------- |
-|          | Complete solution is presented | Partial solution is presented | Solution with bugs is presented |
+| 标准 | 优秀 | 合格 | 需改进 |
+| --- | --- | --- | --- |
+|  | 提供完整可运行方案 | 提供部分可运行方案 | 方案存在缺陷 |

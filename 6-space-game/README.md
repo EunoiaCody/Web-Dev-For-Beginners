@@ -1,31 +1,31 @@
-# Build a Space Game
+# 构建太空游戏
 
-A space game to teach more advanced JavaScript fundamentals
+一个太空游戏来教授更高级的 JavaScript 基础知识
 
-In this lesson you will learn how to build your own space game. If you've ever played the game "Space Invaders", this game has the same idea: to steer a spaceship and fire on monsters that come down from above. Here's what the finished game will look like:
+在这节课中，您将学习如何构建自己的太空游戏。如果您玩过"太空侵略者"游戏，这个游戏的想法是相同的：驾驶宇宙飞船并向从上方下来的怪物开火。完成的游戏看起来是这样的：
 
-![Finished game](images/pewpew.gif)
+![完成的游戏](images/pewpew.gif)
 
-In these six lessons you will learn the following:
+在这六节课中，您将学习以下内容：
 
-- **Interact** with the Canvas element to draw things on a screen
-- **Understand** the cartesian coordinate system
-- **Learn** the Pub-Sub pattern to create sound game architecture that's easier to maintain and extend
-- **Leverage** Async/Await to load game resources
-- **Handle** keyboard events
+- **与** Canvas 元素交互以在屏幕上绘制内容
+- **理解**笛卡尔坐标系
+- **学习** Pub-Sub 模式来创建更容易维护和扩展的健全游戏架构
+- **利用** Async/Await 来加载游戏资源
+- **处理**键盘事件
 
-## Overview
+## 概览
 
-- Theory
-   - [Introduction to building games with JavaScript](1-introduction/README.md)
-- Practice
-   - [Drawing to canvas](2-drawing-to-canvas/README.md)
-   - [Moving elements around the screen](3-moving-elements-around/README.md)
-   - [Collision detection](4-collision-detection/README.md)
-   - [Keeping score](5-keeping-score/README.md)
-   - [Ending and restarting the game](6-end-condition/README.md)
+- 理论
+   - [JavaScript 游戏开发介绍](1-introduction/README.md)
+- 实践
+   - [绘制到画布](2-drawing-to-canvas/README.md)
+   - [在屏幕上移动元素](3-moving-elements-around/README.md)
+   - [碰撞检测](4-collision-detection/README.md)
+   - [保持得分](5-keeping-score/README.md)
+   - [结束并重启游戏](6-end-condition/README.md)
 
-## Credits
+## 致谢
 
-The assets used for this came from https://www.kenney.nl/. 
+本游戏使用的素材来自 https://www.kenney.nl/。 
 If you are into building games, these are some seriously good assets, a lot is free and some are paid. 

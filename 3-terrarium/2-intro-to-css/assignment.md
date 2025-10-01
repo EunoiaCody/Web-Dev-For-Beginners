@@ -1,11 +1,11 @@
-# CSS Refactoring
+# CSS 重构
 
-## Instructions
+## 说明
 
-Restyle the terrarium using either Flexbox or CSS Grid, and take screenshots to show that you have tested it on several browsers. You might need to change the markup so create a new version of the app with the art in place for your refactor. Don't worry about making the elements draggable; only refactor the HTML and CSS for now.
+使用 Flexbox 或 CSS Grid 为生态瓶重新布局与美化，并截图展示你已在多个浏览器上进行测试。你可能需要调整部分标记（markup），因此建议基于现有美术资源创建一个用于重构的新版本。暂时不必实现元素的可拖拽；本次仅重构 HTML 与 CSS。
 
-## Rubric
+## 评分量表（Rubric）
 
-| Criteria | Exemplary                                                         | Adequate                      | Needs Improvement                    |
-| -------- | ----------------------------------------------------------------- | ----------------------------- | ------------------------------------ |
-|          | Present a completely restyled terrarium using Flexbox or CSS Grid | Restyle a few of the elements | Fail to restyle the terrarium at all |
+| 评价维度 | 优秀（Exemplary）                                           | 合格（Adequate）            | 需改进（Needs Improvement）          |
+| -------- | ------------------------------------------------------------ | --------------------------- | ------------------------------------ |
+|          | 使用 Flexbox 或 CSS Grid 完成了完整的生态瓶重设与美化       | 仅对部分元素进行了重设与美化 | 未能对生态瓶进行有效的重设或未完成   |

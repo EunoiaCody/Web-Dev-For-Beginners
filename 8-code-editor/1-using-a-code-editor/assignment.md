@@ -1,142 +1,139 @@
-# Create a resume-website using vscode.dev
+# 使用 vscode.dev 创建简历网站
 
-_How cool would it be to have a recruiter ask for your resume and you send them a url?_ 😎
+_如果招聘人员向你索要简历，而你发给他们一个 URL，那该有多酷啊？_ 😎
 
 <!----
 TODO: add an optional image
-![Using a code editor](../../sketchnotes/webdev101-vscode-dev.png)
-> Sketchnote by [Author name](https://example.com)
+![使用代码编辑器](../../sketchnotes/webdev101-vscode-dev.png)
+> 手绘笔记作者 [Author name](https://example.com)
 ---->
 
 <!---
-## Pre-Lecture Quiz
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/3)
+## 课前测验
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/3)
 ---->
 
-## Objectives
+## 目标
 
-After this assignment, you'll learn how to:
+完成这个作业后，你将学会如何：
 
-- Create a website to showcase your resume
+- 创建一个网站来展示你的简历
 
-### Prerequisites
+### 先决条件
 
-1. A GitHub account. Navigate to [GitHub](https://github.com/) and create an account if you haven't already.
+1. 一个 GitHub 账户。导航到 [GitHub](https://github.com/) 并创建账户（如果你还没有的话）。
 
-## Steps
+## 步骤
 
-**Step 1:** Create a new GitHub Repository and give it a name `my-resume`
+**步骤 1：** 创建一个新的 GitHub 仓库并给它命名为 `my-resume`
 
+**步骤 2** 在你的仓库中创建一个 `index.html` 文件。我们将在 github.com 上至少添加一个文件，因为你无法在 vscode.dev 上打开空仓库
 
-**Step 2** Create an `index.html` file in your repository. We will add at least one file while still on github.com because you cannot open an empty repository on vscode.dev
+点击 `creating a new file` 链接，输入名称 `index.html` 并选择 `Commit new file` 按钮
 
-Click the `creating a new file` link, type in the name `index.html` and select the `Commit new file` button
+![在 github.com 上创建新文件](../images/new-file-github.com.png)
 
-![Create a new file on github.com](../images/new-file-github.com.png)
+**步骤 3：** 打开 [VSCode.dev](https://vscode.dev) 并选择 `Open Remote Repository` 按钮
 
+复制你刚为简历网站创建的仓库的 URL 并粘贴到输入框中：
 
-**Step 3:** Open [VSCode.dev](https://vscode.dev) and select the `Open Remote Repository` button
-
-Copy the url to the repository you just created for your resume site and paste it in the input box:
-
-_Replace `your-username` with your github username_
+_将 `your-username` 替换为你的 github 用户名_
 
 ```
 https://github.com/your-username/my-resume
 ```
 
-✅ If successful, you'll see your project and the index.html file open up on the text editor on the browser.
+✅ 如果成功，你将看到你的项目和 index.html 文件在浏览器的文本编辑器中打开。
 
-![Create a new file](../images/project-on-vscode.dev.png)
+![创建新文件](../images/project-on-vscode.dev.png)
 
-
-**Step 4:** Open the `index.html` file, paste in the code below on your code area and save
+**步骤 4：** 打开 `index.html` 文件，将下面的代码粘贴到你的代码区域并保存
 
 <details>
-    <summary><b>HTML code responsible for the content on your resume website.</b></summary>
+    <summary><b>负责简历网站内容的 HTML 代码。</b></summary>
     
         <html>
 
             <head>
                 <link href="style.css" rel="stylesheet">
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-                <title>Your Name Goes Here!</title>
+                <title>你的名字写在这里！</title>
             </head>
             <body>
                 <header id="header">
-                    <!-- resume header with your name and title -->
-                    <h1>Your Name Goes Here!</h1>
+                    <!-- 带有你的姓名和职位的简历标题 -->
+                    <h1>你的名字写在这里！</h1>
                     <hr>
-                    Your Role!
+                    你的职位！
                     <hr>
                 </header>
                 <main>
                     <article id="mainLeft">
                         <section>
-                            <h2>CONTACT</h2>
-                            <!-- contact info including social media -->
+                            <h2>联系方式</h2>
+                            <!-- 包括社交媒体的联系信息 -->
                             <p>
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                                <a href="mailto:username@domain.top-level domain">Write your email here</a>
+                                <a href="mailto:username@domain.top-level domain">在这里写你的邮箱</a>
                             </p>
                             <p>
                                 <i class="fab fa-github" aria-hidden="true"></i>
-                                <a href="github.com/yourGitHubUsername">Write your username here!</a>
+                                <a href="github.com/yourGitHubUsername">在这里写你的用户名！</a>
                             </p>
                             <p>
                                 <i class="fab fa-linkedin" aria-hidden="true"></i>
-                                <a href="linkedin.com/yourLinkedInUsername">Write your username here!</a>
+                                <a href="linkedin.com/yourLinkedInUsername">在这里写你的用户名！</a>
                             </p>
                         </section>
                         <section>
-                            <h2>SKILLS</h2>
-                            <!-- your skills -->
+                            <h2>技能</h2>
+                            <!-- 你的技能 -->
                             <ul>
-                                <li>Skill 1!</li>
-                                <li>Skill 2!</li>
-                                <li>Skill 3!</li>
-                                <li>Skill 4!</li>
+                                <li>技能 1！</li>
+                                <li>技能 2！</li>
+                                <li>技能 3！</li>
+                                <li>技能 4！</li>
                             </ul>
                         </section>
                         <section>
-                            <h2>EDUCATION</h2>
-                            <!-- your education -->
-                            <h3>Write your course here!</h3>
+                            <h2>教育背景</h2>
+                            <!-- 你的教育经历 -->
+                            <h3>在这里写你的课程！</h3>
                             <p>
-                                Write your institution here!
+                                在这里写你的学校！
                             </p>
                             <p>
-                                Start - End Date
+                                开始 - 结束日期
                             </p>
                         </section>            
                     </article>
                     <article id="mainRight">
                         <section>
-                            <h2>ABOUT</h2>
-                            <!-- about you -->
-                            <p>Write a blurb about yourself!</p>
+                            <h2>关于</h2>
+                            <!-- 关于你 -->
+                            <p>写一段关于自己的简介！</p>
                         </section>
                         <section>
-                            <h2>WORK EXPERIENCE</h2>
-                            <!-- your work experience -->
-                            <h3>Job Title</h3>
+                            <h2>工作经验</h2>
+                            <!-- 你的工作经验 -->
+                            <h3>职位名称</h3>
                             <p>
-                                Organization Name Goes Here | Start Month – End Month
+                                组织名称 | 开始月份 – 结束月份
                             </p>
                             <ul>
-                                    <li>Task 1 - Write what you did!</li>
-                                    <li>Task 2 - Write what you did!</li>
-                                    <li>Write the outcomes/impact of your contribution</li>
+                                    <li>任务 1 - 写你做了什么！</li>
+                                    <li>任务 2 - 写你做了什么！</li>
+                                    <li>写你贡献的结果/影响</li>
                                     
                             </ul>
-                            <h3>Job Title 2</h3>
+                            <h3>职位名称 2</h3>
                             <p>
-                                Organization Name Goes Here | Start Month – End Month
+                                组织名称 | 开始月份 – 结束月份
                             </p>
                             <ul>
-                                    <li>Task 1 - Write what you did!</li>
-                                    <li>Task 2 - Write what you did!</li>
-                                    <li>Write the outcomes/impact of your contribution</li>
+                                    <li>任务 1 - 写你做了什么！</li>
+                                    <li>任务 2 - 写你做了什么！</li>
+                                    <li>写你贡献的结果/影响</li>
                                     
                             </ul>
                         </section>
@@ -146,14 +143,14 @@ https://github.com/your-username/my-resume
         </html>
 </details>
 
-Add your resume details to replace the _placeholder text_ on the html code
+添加你的简历详情来替换 HTML 代码中的_占位符文本_
 
-**Step 5:** Hover on the My-Resume folder, click the `New File ...` icon and create 2 new files in your project: `style.css` and `codeswing.json` files 
+**步骤 5：** 将鼠标悬停在 My-Resume 文件夹上，点击 `New File ...` 图标并在你的项目中创建 2 个新文件：`style.css` 和 `codeswing.json` 文件
 
-**Step 6:** Open the `style.css` file, paste in the code below and save
+**步骤 6：** 打开 `style.css` 文件，粘贴下面的代码并保存
 
  <details>
-        <summary><b>CSS code to format the layout of the site.</b></summary>
+        <summary><b>用于格式化网站布局的 CSS 代码。</b></summary>
             
             body {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -215,38 +212,38 @@ Add your resume details to replace the _placeholder text_ on the html code
             
 </details>
 
-**Step 6:** Open the `codeswing.json` file, paste in the code below and save
+**步骤 6：** 打开 `codeswing.json` 文件，粘贴下面的代码并保存
 
     {
     "scripts": [],
     "styles": []
     }
 
+**步骤 7：** 安装 `Codeswing extension` 来在代码区域可视化简历网站。
 
-**Step 7:** Install the `Codeswing extension` to visualize the resume website on the code area. 
+点击活动栏上的_`扩展`_图标并输入 Codeswing。要么点击扩展活动栏上的_蓝色安装按钮_来安装，要么使用在你选择扩展以加载其他信息时代码区域出现的安装按钮。安装扩展后立即观察你的代码区域，看看对项目的更改 😃
 
-Click the _`Extensions`_ icon on the activity bar and type in Codeswing. Either click the _blue install button_ on the expanded activity bar to install or use the install button that appears on the code area once you select the extension to load additional information. Immediately after installing the extension, observe your code area to see the changes to your project 😃
+![安装扩展](../images/install-extension.gif)
 
-![Install extensions](../images/install-extension.gif)
+安装扩展后你的屏幕上将看到这个。
 
-This is what you will see on your on your screen after you install the extension.
+![Codeswing 扩展的实际效果](../images/after-codeswing-extension-pb.png)
 
-![Codeswing extension in action](../images/after-codeswing-extension-pb.png)
+如果你对所做的更改满意，将鼠标悬停在 `Changes` 文件夹上并点击 `+` 按钮来暂存更改。
 
-If you are satisfied with the changes you made, hover on the `Changes` folder and click the `+` button to stage the changes.
+输入一个提交消息（_对你对项目所做更改的描述_）并通过点击 `检查` 来提交你的更改。完成项目工作后，选择左上角的汉堡菜单图标返回 GitHub 上的仓库。
 
-Type in a commit message _(A description of the change you have made to the project)_ and commit your changes by clicking the `check`.Once done working on your project, select the hamburger menu icon at the top left to return to the repository on GitHub.
+恭喜 🎉 你刚刚使用 vscode.dev 通过几个步骤创建了你的简历网站。
 
-Congratulations 🎉 You have just created your resume website using vscode.dev in few steps.
-## 🚀 Challenge
+## 🚀 挑战
 
-Open a remote repository you have permissions to make changes and update some files. Next, try creating a new branch with your changes and make a Pull Request.
+打开一个你有权限进行更改的远程仓库并更新一些文件。接下来，尝试使用你的更改创建一个新分支并进行 Pull Request。
 
 <!----
-## Post-Lecture Quiz
-[Post-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/4)
+## 课后测验
+[课后测验](https://ff-quizzes.netlify.app/web/quiz/4)
 ---->
 
-## Review & Self Study
+## 复习与自学
 
-Read more about [VSCode.dev](https://code.visualstudio.com/docs/editor/vscode-web?WT.mc_id=academic-0000-alfredodeza) and some of its other features.
+阅读更多关于 [VSCode.dev](https://code.visualstudio.com/docs/editor/vscode-web?WT.mc_id=academic-0000-alfredodeza) 及其其他功能的信息。

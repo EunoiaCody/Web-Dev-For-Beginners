@@ -1,47 +1,47 @@
-# Creating a game using events
+# 使用事件创建一个游戏
 
-## Pre-Lecture Quiz
+## 课前测验
 
 [Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/21)
 
-## Event driven programming
+## 事件驱动编程
 
-When creating a browser based application, we provide a graphical user interface (GUI) for the user to use when interacting with what we've built. The most common way to interact with the browser is through clicking and typing in various elements. The challenge we face as a developer is we don't know when they're going to perform these operations!
+在创建基于浏览器的应用时，我们会提供图形用户界面（GUI），以便用户与我们构建的功能交互。与浏览器交互最常见的方式是点击和在各类元素中输入。作为开发者的挑战在于：我们并不知道用户何时会执行这些操作！
 
-[Event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming) is the name for the type of programming we need to do to create our GUI. If we break this phrase down a little bit, we see the core word here is **event**. [Event](https://www.merriam-webster.com/dictionary/event), according to Merriam-Webster, is defined as "something which happens". This describes our situation perfectly. We know something is going to happen for which we want to execute some code in response, but we don't know when it will take place.
+[事件驱动编程](https://en.wikipedia.org/wiki/Event-driven_programming) 是我们用来构建 GUI 的编程方式。拆开这个短语，核心词是 **event（事件）**。[Event](https://www.merriam-webster.com/dictionary/event)（韦氏词典）的定义是“发生的事情”。这正好描述了我们的处境：我们知道会发生某些事情，需要在发生时执行相应代码，但我们不知道它具体何时发生。
 
-The way we mark a section of code we want to execute is by creating a function. When we think about [procedural programming](https://en.wikipedia.org/wiki/Procedural_programming), functions are called in a specific order. This same thing is going to be true with event driven programming. The difference is **how** the functions will be called.
+我们通过创建函数来标记希望执行的那段代码。在[过程式编程](https://en.wikipedia.org/wiki/Procedural_programming)中，函数会按特定顺序被调用。在事件驱动编程中也是如此，不同之处在于函数将“如何”被调用。
 
-To handle events (button clicking, typing, etc.), we register **event listeners**. An event listener is a function which listens for an event to occur and executes in response. Event listeners can update the UI, make calls to the server, or whatever else needs to be done in response to the user's action. We add an event listener by using [addEventListener](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener), and providing a function to execute.
+为处理事件（按钮点击、输入等），我们会注册**事件监听器**。事件监听器是一个函数，用于监听事件发生并作出响应。它可以更新 UI、调用服务器，或执行任何需要对用户操作作出回应的逻辑。我们可以使用 [addEventListener](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener) 并提供要执行的函数来添加事件监听器。
 
-> **NOTE:** It's worth highlighting there are numerous ways to create event listeners. You can use anonymous functions, or create named ones. You can use various shortcuts, like setting the `click` property, or using `addEventListener`. In our exercise we are going to focus on `addEventListener` and anonymous functions, as it's probably the most common technique web developers use. It's also the most flexible, as `addEventListener` works for all events, and the event name can be provided as a parameter.
+> 注意：创建事件监听器有很多方式。你可以使用匿名函数，也可以创建具名函数。你可以使用各种捷径，例如设置 `click` 属性，或使用 `addEventListener`。在本练习中，我们将聚焦于 `addEventListener` 与匿名函数——这是 Web 开发者最常用的技巧之一；同时它也最灵活，`addEventListener` 适用于所有事件，事件名可以作为参数传入。
 
-### Common events
+### 常见事件
 
-There are [dozens of events](https://developer.mozilla.org/docs/Web/Events) available for you to listen to when creating an application. Basically anything a user does on a page raises an event, which gives you a lot of power to ensure they get the experience you desire. Fortunately, you'll normally only need a small handful of events. Here's a few common ones (including the two we'll use when creating our game):
+在创建应用时，你可以监听[数十种事件](https://developer.mozilla.org/docs/Web/Events)。基本上，用户在页面上的任何操作都会触发事件，这让你可以更好地掌控体验。幸运的是，通常只需少量常见事件即可。以下是几个常见事件（包含我们在游戏中会用到的两种）：
 
-- [click](https://developer.mozilla.org/docs/Web/API/Element/click_event): The user clicked on something, typically a button or hyperlink
-- [contextmenu](https://developer.mozilla.org/docs/Web/API/Element/contextmenu_event): The user clicked the right mouse button
-- [select](https://developer.mozilla.org/docs/Web/API/Element/select_event): The user highlighted some text
-- [input](https://developer.mozilla.org/docs/Web/API/Element/input_event): The user input some text
+- [click](https://developer.mozilla.org/docs/Web/API/Element/click_event)：用户点击了某个元素（通常是按钮或超链接）
+- [contextmenu](https://developer.mozilla.org/docs/Web/API/Element/contextmenu_event)：用户点击了鼠标右键
+- [select](https://developer.mozilla.org/docs/Web/API/Element/select_event)：用户选中了一些文本
+- [input](https://developer.mozilla.org/docs/Web/API/Element/input_event)：用户输入了文本
 
-## Creating the game
+## 创建游戏
 
-We are going to create a game to explore how events work in JavaScript. Our game is going to test a player's typing skill, which is one of the most underrated skills all developers should have. We should all be practicing our typing! The general flow of the game will look like this:
+我们将通过创建一个游戏来探索 JavaScript 中事件的工作方式。游戏用于测试玩家的打字能力——这是所有开发者都应具备却常被低估的技能。大家都应该多练打字！游戏的大致流程如下：
 
-- Player clicks on start button and is presented with a quote to type
-- Player types the quote as quickly as they can in a textbox
-  - As each word is completed, the next one is highlighted
-  - If the player has a typo, the textbox is updated to red
-  - When the player completes the quote, a success message is displayed with the elapsed time
+- 玩家点击开始按钮，出现需要输入的一句名言
+- 玩家在文本框中尽快输入这句名言
+  - 每完成一个单词，下一个单词会被高亮
+  - 如果玩家打错字，文本框会变红
+  - 当玩家完成整句输入，会显示成功提示与用时
 
-Let's build our game, and learn about events!
+让我们开始构建游戏，一边学习事件！
 
-### File structure
+### 文件结构
 
-We're going to need three total files: **index.html**, **script.js** and **style.css**. Let's start by setting those up to make life a little easier for us.
+我们需要 3 个文件：**index.html**、**script.js** 和 **style.css**。先把它们准备好，后续会更顺手。
 
-- Create a new folder for your work by opening a console or terminal window and issuing the following command:
+- 打开控制台或终端，新建工作文件夹并进入：
 
 ```bash
 # Linux or macOS
@@ -51,29 +51,29 @@ mkdir typing-game && cd typing-game
 md typing-game && cd typing-game
 ```
 
-- Open Visual Studio Code
+- 打开 Visual Studio Code
 
 ```bash
 code .
 ```
 
-- Add three files to the folder in Visual Studio Code with the following names:
+- 在 VS Code 中创建下列三个文件：
   - index.html
   - script.js
   - style.css
 
-## Create the user interface
+## 创建用户界面
 
-If we explore the requirements, we know we're going to need a handful of elements on our HTML page. This is sort of like a recipe, where we need some ingredients:
+根据需求，我们的 HTML 页面需要一些元素。就像一份菜谱，我们需要准备这些“食材”：
 
-- Somewhere to display the quote for the user to type
-- Somewhere to display any messages, like a success message
-- A textbox for typing
-- A start button
+- 用于显示要输入的名言的区域
+- 用于显示消息（例如成功提示）的区域
+- 用于输入的文本框
+- 开始按钮
 
-Each of those will need IDs so we can work with them in our JavaScript. We will also add references to the CSS and JavaScript files we're going to create.
+这些元素都需要设置 ID，以便在 JavaScript 中获取与控制。我们还将引入稍后创建的 CSS 与 JavaScript 文件。
 
-Create a new file named **index.html**. Add the following HTML:
+创建 **index.html** 文件，添加如下 HTML：
 
 ```html
 <!-- inside index.html -->
@@ -96,26 +96,26 @@ Create a new file named **index.html**. Add the following HTML:
 </html>
 ```
 
-### Launch the application
+### 启动应用
 
-It's always best to develop iteratively to see how things look. Let's launch our application. There's a wonderful extension for Visual Studio Code called [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&WT.mc_id=academic-77807-sagibbon) which will both host your application locally and refresh the browser each time you save.
+迭代式开发有助于随时观察效果。启动我们的应用吧。VS Code 有个很好用的扩展 [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&WT.mc_id=academic-77807-sagibbon)，它可以在本地托管应用，并在你每次保存时自动刷新浏览器。
 
-- Install [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&WT.mc_id=academic-77807-sagibbon) by following the link and clicking **Install**
-  - You will be prompted by the browser to open Visual Studio Code, and then by Visual Studio Code to perform the installation
-  - Restart Visual Studio Code if prompted
-- Once installed, in Visual Studio Code, click Ctrl-Shift-P (or Cmd-Shift-P) to open the command palette
-- Type **Live Server: Open with Live Server**
-  - Live Server will start hosting your application
-- Open a browser and navigate to **https://localhost:5500**
-- You should now see the page you created!
+- 打开上面的链接安装 [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&WT.mc_id=academic-77807-sagibbon)，点击 **Install**
+  - 浏览器会提示打开 VS Code，随后 VS Code 会提示执行安装
+  - 如被提示，请重启 VS Code
+- 安装完成后，在 VS Code 中按 Ctrl-Shift-P（或 Cmd-Shift-P）打开命令面板
+- 输入 **Live Server: Open with Live Server**
+  - Live Server 将开始托管你的应用
+- 打开浏览器访问 <https://localhost:5500>
+- 现在你应该能看到刚刚创建的页面！
 
-Let's add some functionality.
+接下来添加一些功能。
 
-## Add the CSS
+## 添加 CSS
 
-With our HTML created, let's add the CSS for core styling. We need to highlight the word the player should be typing, and colorize the textbox if what they've typed is incorrect. We'll do this with two classes.
+完成 HTML 后，添加基础样式。我们需要高亮玩家当前应输入的单词，并在输入错误时让文本框显得不同（着色）。我们将用两个类来实现。
 
-Create a new file named **style.css** and add the following syntax.
+创建 **style.css** 文件，添加如下样式：
 
 ```css
 /* inside style.css */
@@ -129,36 +129,36 @@ Create a new file named **style.css** and add the following syntax.
 }
 ```
 
-✅ When it comes to CSS you can layout your page however you might like. Take a little time and make the page look more appealing:
+✅ 在 CSS 层面，你可以随意美化页面。花点时间让页面更好看：
 
-- Choose a different font
-- Colorize the headers
-- Resize items
+- 选择更合适的字体
+- 给标题上色
+- 调整元素尺寸
 
 ## JavaScript
 
-With our UI created, it's time to focus our attention on the JavaScript which will provide the logic. We're going to break this down into a handful of steps:
+界面已经准备好，下面专注于提供逻辑的 JavaScript。我们将拆成几个步骤：
 
-- [Create the constants](#add-the-constants)
-- [Event listener to start the game](#add-start-logic)
-- [Event listener to typing](#add-typing-logic)
+- [创建常量](#添加常量)
+- [添加开始事件监听](#添加开始逻辑)
+- [添加输入事件监听](#添加输入逻辑)
 
-But first, create a new file named **script.js**.
+首先，创建 **script.js** 文件。
 
-### Add the constants
+### 添加常量
 
-We're going to need a few items to make our lives a little easier for programming. Again, similar to a recipe, here's what we'll need:
+为了让编程更顺手，我们需要准备一些东西，像做菜一样列个清单：
 
-- Array with the list of all quotes
-- Empty array to store all the words for the current quote
-- Space to store the index of the word the player is currently typing
-- The time the player clicked start
+- 所有名言的数组
+- 存放当前名言所有单词的数组（初始为空）
+- 记录玩家正在输入的单词索引
+- 玩家点击开始时的时间
 
-We're also going to want references to the UI elements:
+同时，我们需要一些 UI 元素的引用：
 
-- The textbox (**typed-value**)
-- The quote display (**quote**)
-- The message (**message**)
+- 文本框（**typed-value**）
+- 名言显示区域（**quote**）
+- 消息显示区域（**message**）
 
 ```javascript
 // inside script.js
@@ -183,21 +183,21 @@ const messageElement = document.getElementById('message');
 const typedValueElement = document.getElementById('typed-value');
 ```
 
-✅ Go ahead and add more quotes to your game
+✅ 试着给游戏再添加几句名言吧
 
-> **NOTE:** We can retrieve the elements whenever we want in code by using `document.getElementById`. Because of the fact we're going to refer to these elements on a regular basis we're going to avoid typos with string literals by using constants. Frameworks such as [Vue.js](https://vuejs.org/) or [React](https://reactjs.org/) can help you better manage centralizing your code.
+> 注意：我们可以通过 `document.getElementById` 在代码中随时获取元素。由于会频繁引用这些元素，使用常量可以避免字符串拼写错误。像 [Vue.js](https://vuejs.org/) 或 [React](https://reactjs.org/) 这样的框架，也能帮助你更好地集中管理代码。
 
-Take a minute to watch a video on using `const`, `let` and `var`
+花一分钟看看关于 `const`、`let` 和 `var` 的视频：
 
 [![Types of variables](https://img.youtube.com/vi/JNIXfGiDWM8/0.jpg)](https://youtube.com/watch?v=JNIXfGiDWM8 "Types of variables")
 
-> 🎥 Click the image above for a video about variables.
+> 🎥 点击上方图片观看变量类型相关视频。
 
-### Add start logic
+### 添加开始逻辑
 
-To begin the game, the player will click on start. Of course, we don't know when they're going to click start. This is where an [event listener](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener) comes into play. An event listener will allow us to listen for something to occur (an event) and execute code in response. In our case, we want to execute code when the user clicks on start.
+开始游戏时，玩家会点击“开始”。当然，我们不知道他们何时点击，这正是[事件监听器](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener)发挥作用的地方。事件监听器允许我们监听事件发生并执行相应代码。在这里，我们要在用户点击开始时运行代码。
 
-When the user clicks **start**, we need to select a quote, setup the user interface, and setup tracking for the current word and timing. Below is the JavaScript you'll need to add; we discuss it just after the script block.
+当用户点击 **Start** 时，我们需要：选择一条名言、设置界面、并初始化当前单词与计时的状态。下面是需要添加的 JavaScript，后文会逐步解释：
 
 ```javascript
 // at the end of script.js
@@ -232,27 +232,27 @@ document.getElementById('start').addEventListener('click', () => {
 });
 ```
 
-Let's break down the code!
+来分解一下这段代码：
 
-- Setup the word tracking
-  - Using [Math.floor](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Math/floor) and [Math.random](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Math/random) allows us to randomly select a quote from the `quotes` array
-  - We convert the `quote` into an array of `words` so we can track the word the player is currently typing
-  - `wordIndex` is set to 0, since the player will start on the first word
-- Setup the UI
-  - Create an array of `spanWords`, which contains each word inside a `span` element
-    - This will allow us to highlight the word on the display
-  - `join` the array to create a string which we can use to update the `innerHTML` on `quoteElement`
-    - This will display the quote to the player
-  - Set the `className` of the first `span` element to `highlight` to highlight it as yellow
-  - Clean the `messageElement` by setting `innerText` to `''`
-- Setup the textbox
-  - Clear the current `value` on `typedValueElement`
-  - Set the `focus` to `typedValueElement`
-- Start the timer by calling `getTime`
+- 设置单词追踪
+  - 使用 [Math.floor](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Math/floor) 与 [Math.random](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Math/random) 随机从 `quotes` 数组中选择一条名言
+  - 将 `quote` 拆分为 `words` 数组，以便追踪玩家当前输入到哪个单词
+  - 将 `wordIndex` 设为 0，表示从第一个单词开始
+- 设置界面
+  - 创建 `spanWords` 数组，把每个单词包在 `span` 元素中
+    - 这样可以在界面上高亮当前单词
+  - 使用 `join` 拼成字符串，设置到 `quoteElement.innerHTML`
+    - 将名言显示给玩家
+  - 将第一个 `span` 的 `className` 设为 `highlight`，使其高亮
+  - 通过将 `messageElement.innerText` 设为空字符串来清空消息
+- 设置文本框
+  - 清空 `typedValueElement.value`
+  - 调用 `typedValueElement.focus()` 获取焦点
+- 调用 `getTime` 开始计时
 
-### Add typing logic
+### 添加输入逻辑
 
-As the player types, an `input` event will be raised. This event listener will check to ensure the player is typing the word correctly, and handle the current status of the game. Returning to **script.js**, add the following code to the end. We will break it down afterwards.
+当玩家输入时，会触发 `input` 事件。该监听器会检查玩家是否输入正确，并处理游戏当前状态。回到 **script.js**，在末尾添加下面的代码，随后我们再做解释：
 
 ```javascript
 // at the end of script.js
@@ -291,49 +291,49 @@ typedValueElement.addEventListener('input', () => {
 });
 ```
 
-Let's break down the code! We start by grabbing the current word and the value the player has typed thus far. Then we have waterfall logic, where we check if the quote is complete, the word is complete, the word is correct, or (finally), if there is an error.
+来分解一下这段代码！我们首先获取当前单词与玩家已输入的内容。接着用层叠式判断：先判断是否整句完成、是否一个单词完成、是否当前仍然正确、最后才是错误状态。
 
-- Quote is complete, indicated by `typedValue` being equal to `currentWord`, and `wordIndex` being equal to one less than the `length` of `words`
-  - Calculate `elapsedTime` by subtracting `startTime` from the current time
-  - Divide `elapsedTime` by 1,000 to convert from milliseconds to seconds
-  - Display a success message
-- Word is complete, indicated by `typedValue` ending with a space (the end of a word) and `typedValue` being equal to `currentWord`
-  - Set `value` on `typedElement` to be `''` to allow for the next word to be typed
-  - Increment `wordIndex` to move to the next word
-  - Loop through all `childNodes` of `quoteElement` to set `className` to `''` to revert to default display
-  - Set `className` of the current word to `highlight` to flag it as the next word to type
-- Word is currently typed correctly (but not complete), indicated by `currentWord` started with `typedValue`
-  - Ensure `typedValueElement` is displayed as default by clearing `className`
-- If we made it this far, we have an error
-  - Set `className` on `typedValueElement` to `error`
+- 整句完成：当 `typedValue` 等于 `currentWord` 且 `wordIndex` 等于 `words.length - 1`
+  - 用当前时间减去 `startTime` 得到 `elapsedTime`
+  - 除以 1000 将毫秒转为秒
+  - 显示成功消息
+- 单词完成：当 `typedValue` 以空格结尾（表示一个单词的结束）且 `typedValue.trim()` 等于 `currentWord`
+  - 将 `typedValueElement.value` 置空，为下一个单词做准备
+  - `wordIndex++` 进入下一个单词
+  - 遍历 `quoteElement.childNodes`，将其 `className` 清空
+  - 将当前单词的 `className` 设为 `highlight` 以高亮
+- 单词仍然正确（但未完成）：`currentWord` 以 `typedValue` 开头
+  - 清空 `typedValueElement.className` 保持默认
+- 否则即为错误
+  - 将 `typedValueElement.className` 设为 `error`
 
-## Test your application
+## 测试你的应用
 
-You've made it to the end! The last step is to ensure our application works. Give it a shot! Don't worry if there are errors; **all developers** have errors. Examine the messages and debug as needed.
+恭喜来到最后一步！现在验证应用是否正常工作。试一试吧！即便出现错误也不必担心，**所有开发者**都会遇到错误。观察提示信息并按需调试即可。
 
-Click on **start**, and start typing away! It should look a little like the animation we saw before.
+点击 **Start**，开始输入！它应该看起来类似之前看到的动画效果。
 
 ![Animation of the game in action](../images/demo.gif)
 
 ---
 
-## 🚀 Challenge
+## 🚀 挑战
 
-Add more functionality
+尝试添加更多功能：
 
-- Disable the `input` event listener on completion, and re-enable it when the button is clicked
-- Disable the textbox when the player completes the quote
-- Display a modal dialog box with the success message
-- Store high scores using [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage)
+- 在完成后禁用 `input` 事件监听，并在点击按钮时重新启用
+- 当玩家完成整句输入后禁用文本框
+- 使用模态对话框显示成功消息
+- 使用 [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) 存储最高分
 
-## Post-Lecture Quiz
+## 课后测验
 
 [Post-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/22)
 
-## Review & Self Study
+## 复习与自学
 
-Read up on [all the events available](https://developer.mozilla.org/docs/Web/Events) to the developer via the web browser, and consider the scenarios in which you would use each one.
+阅读浏览器提供给开发者的[所有可用事件](https://developer.mozilla.org/docs/Web/Events)，并思考你会在什么场景使用它们。
 
-## Assignment
+## 作业
 
 [Create a new keyboard game](assignment.md)

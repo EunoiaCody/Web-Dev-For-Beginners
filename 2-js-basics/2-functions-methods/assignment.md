@@ -1,13 +1,13 @@
-# Fun with Functions
+# 玩转函数（Fun with Functions）
 
-## Instructions
+## 说明
 
-Create different functions, both functions that return something and functions that don't return anything.
+创建几种不同的函数，既包含“有返回值”的函数，也包含“无返回值”的函数。
 
-See if you can create a function that has a mix of parameters and parameters with default values.
+尝试编写一个同时包含普通参数与带默认值参数的函数。
 
-## Rubric
+## 评分标准（Rubric）
 
-| Criteria | Exemplary                                                                              | Adequate                                                         | Needs Improvement |
-| -------- | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------- |
-|          | Solution is offered with two or more well-performing functions with diverse parameters | Working solution is offered with one function and few parameters | Solution has bugs |
+| 标准 | 优秀 | 合格 | 需改进 |
+| --- | --- | --- | --- |
+|  | 提供两个或以上表现良好的函数，且参数多样 | 提供一个可运行的函数，参数较少 | 方案存在缺陷 |

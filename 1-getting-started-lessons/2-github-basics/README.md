@@ -1,82 +1,83 @@
-# Introduction to GitHub
+# GitHub 入门
 
-This lesson covers the basics of GitHub, a platform to host and manage changes to your code.
+本课介绍 GitHub 的基础知识，这是一款用于托管代码并管理变更的平台。
 
 ![Intro to GitHub](../../sketchnotes/webdev101-github.png)
-> Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
+> 手绘笔记作者：[Tomomi Imura](https://twitter.com/girlie_mac)
 
-## Pre-Lecture Quiz
-[Pre-lecture quiz](https://ff-quizzes.netlify.app)
+## 课前测验
 
-## Introduction
+[课前测验](https://ff-quizzes.netlify.app)
 
-In this lesson, we'll cover:
+## 介绍
 
-- tracking the work you do on your machine
-- working on projects with others
-- how to contribute to open source software
+在本课中，我们将学习：
 
-### Prerequisites
+- 在本地机器上跟踪你的工作
+- 与他人协作完成项目
+- 如何为开源软件做贡献
 
-Before you begin, you'll need to check if Git is installed. In the terminal type: 
+### 先决条件
+
+开始之前，先检查是否已安装 Git。在终端中输入：
 `git --version`
 
-If Git is not installed, [download Git](https://git-scm.com/downloads). Then, setup your local Git profile in the terminal:
-* `git config --global user.name "your-name"`
-* `git config --global user.email "your-email"`
+如果未安装，请先[下载 Git](https://git-scm.com/downloads)。然后在终端中设置本地 Git 个人信息：
 
-To check if Git is already configured you can type:
+- `git config --global user.name "your-name"`
+- `git config --global user.email "your-email"`
+
+要检查 Git 是否已配置，可输入：
 `git config --list`
 
-You'll also need a GitHub account, a code editor (like Visual Studio Code), and you'll need to open your terminal (or: command prompt).
+你还需要一个 GitHub 账号、一个代码编辑器（例如 Visual Studio Code），并打开你的终端（或命令提示符）。
 
-Navigate to [github.com](https://github.com/) and create an account if you haven't already, or log in and fill out your profile. 
+访问 [github.com](https://github.com/)，如果还没有账号就创建一个；如果已有账号，请登录并完善你的个人资料。
 
-✅ GitHub isn't the only code repository in the world; there are others, but GitHub is the best known
+✅ GitHub 并不是唯一的代码托管平台；还有其他选择，但 GitHub 最为知名。
 
-### Preparation
+### 准备工作
 
-You'll need both a folder with a code project on your local machine (laptop or PC), and a public repository on GitHub, which will serve as an example for how to contribute to the projects of others.  
+你需要在本地机器（笔记本或台式机）上准备一个包含代码项目的文件夹，并在 GitHub 上准备一个公共仓库，后者将作为示例用于演示如何向他人的项目贡献代码。
 
 ---
 
-## Code management
+## 代码管理
 
-Let's say you have a folder locally with some code project and you want to start tracking your progress using git - the version control system. Some people compare using git to writing a love letter to your future self. Reading your commit messages days or weeks or months later you'll be able to recall why you made a decision, or "rollback" a change - that is, when you write good "commit messages".
+假设你在本地有一个项目文件夹，想用 Git（版本控制系统）来跟踪你的进度。有人把使用 Git 比作“写给未来自己的情书”。若干天、数周或数月后再读提交信息（commit message），你就能回忆起当时做决定的原因，或者“回滚”一次修改——前提是你写了好的“提交信息”。
 
-### Task: Make a repository and commit code  
+### 任务：创建仓库并提交代码
 
-> Check out video
-> 
+> 查看视频
+>
 > [![Git and GitHub basics video](https://img.youtube.com/vi/9R31OUPpxU4/0.jpg)](https://www.youtube.com/watch?v=9R31OUPpxU4)
 
+1. **在 GitHub 上创建仓库**。在 GitHub.com 的仓库标签页或右上角导航栏，找到并点击 **New**（新建仓库）。
 
-1. **Create repository on GitHub**. On GitHub.com, in the repositories tab, or from the navigation bar top-right, find the **new repo** button.
+   1. 给你的仓库（文件夹）起个名字。
+   1. 点击 **Create repository**（创建仓库）。
 
-   1. Give your repository (folder) a name
-   1. Select **create repository**.
-
-1. **Navigate to your working folder**. In your terminal, switch to the folder (also known as the directory) you want to start tracking. Type:
+1. **进入你的工作文件夹**。在终端中切换到你想开始跟踪的文件夹（目录）。输入：
 
    ```bash
    cd [name of your folder]
    ```
 
-1. **Initialize a git repository**. In your project type:
+1. **初始化 Git 仓库**。在项目根目录输入：
 
    ```bash
    git init
    ```
 
-1. **Check status**. To check the status of your repository type:
+1. **查看状态**。检查仓库状态，输入：
 
    ```bash
    git status
    ```
 
-   the output can look something like this:
+   输出可能类似如下：
 
-   ```output
+   ```text
    Changes not staged for commit:
    (use "git add <file>..." to update what will be committed)
    (use "git checkout -- <file>..." to discard changes in working directory)
@@ -85,70 +86,69 @@ Let's say you have a folder locally with some code project and you want to start
         modified:   file2.txt
    ```
 
-   Typically a `git status` command tells you things like what files are ready to be _saved_ to the repo or has changes on it that you might want to persist.
+   通常，`git status` 会告诉你有哪些文件已准备好被保存到仓库，或有哪些文件存在你也许想持久化的更改。
 
-1. **Add all files for tracking**
-   This also called as staging files/ adding files to the staging area.
+1. **将所有文件加入跟踪**。这也被称为“暂存（stage）文件/添加到暂存区”。
 
    ```bash
    git add .
    ```
 
-   The `git add` plus `.` argument indicates that all your files & changes for tracking. 
+   这里 `git add` 加上 `.` 参数表示将所有文件及其更改加入跟踪。
 
-1. **Add selected files for tracking**
+1. **仅添加指定文件进行跟踪**
 
    ```bash
    git add [file or folder name]
    ```
 
-   This helps us to add only selected files to the staging area when we don't want to commit all files at once.
+   当你不想一次性提交所有文件时，只把选定文件加入暂存区会很有用。
 
-1. **Unstage all files**
+1. **取消暂存所有文件**
 
    ```bash
    git reset
    ```
 
-   This command helps us to unstage all files at once.
+   该命令会一次性取消暂存所有文件。
 
-1. **Unstage a particular file**
+1. **取消暂存某个特定文件**
 
    ```bash
    git reset [file or folder name]
    ```
 
-   This command helps us to unstage only a particular file at once that we don't want to include for the next commit.
+   当你不想把某个文件包含进下次提交时，可用此命令仅取消该文件的暂存。
 
-1. **Persisting your work**. At this point you've added the files to a so called _staging area_. A place where Git is tracking your files. To make the change permanent you need to _commit_ the files. To do so you create a _commit_ with the `git commit` command. A _commit_ represents a saving point in the history of your repo. Type the following to create a _commit_:
+1. **持久化你的工作**。此时你已把文件添加到所谓的“暂存区”，Git 会在这里跟踪你的文件。要让更改永久保存，需要“提交（commit）”这些文件。使用 `git commit` 创建一次“提交”；一次提交代表仓库历史中的一个保存点。输入以下命令创建提交：
 
    ```bash
    git commit -m "first commit"
    ```
 
-   This commits all of your files, adding the message "first commit". For future commit messages you will want to be more descriptive in your description to convey what type of change you've made.
+   这会提交你所有的文件，并添加消息“first commit”。之后的提交信息应尽量更具描述性，以清晰表达你做了什么样的改动。
 
-1. **Connect your local Git repo with GitHub**. A Git repo is good on your machine but at some point you want to have backup of your files somewhere and also invite other people to work with you on your repo. One such great place to do so is GitHub. Remember we've already created a repo on GitHub so the only thing we need to do is to connect our local Git repo with GitHub. The command `git remote add` will do just that. Type the following command:
+1. **将本地 Git 仓库连接到 GitHub**。本地有个 Git 仓库当然很好，但你可能希望把文件备份到远端，并邀请他人与您协作。GitHub 是一个很好的选择。我们之前已在 GitHub 创建了仓库，接下来只需把本地仓库与 GitHub 关联起来。使用 `git remote add` 命令即可：
 
-   > Note, before you type the command go to your GitHub repo page to find the repository URL. You will use it in the below command. Replace ```https://github.com/username/repository_name.git``` with your GitHub URL.
+   > 注意：运行命令前，请先打开 GitHub 仓库页面，找到仓库的 URL。在下方命令中用你的地址替换 ```https://github.com/username/repository_name.git```。
 
    ```bash
    git remote add origin https://github.com/username/repository_name.git
    ```
 
-   This creates a _remote_, or connection, named "origin" pointing at the GitHub repository you created earlier.
+   这会创建一个名为 "origin" 的远程连接，指向你在 GitHub 上创建的仓库。
 
-1. **Send local files to GitHub**. So far you've created a _connection_ between the local repo and the GitHub repo. Let's send these files to GitHub with the following command `git push`, like so: 
-   
-   > Note, your branch name may be different by default from ```main```.
+1. **把本地文件推送到 GitHub**。现在你已在本地与 GitHub 仓库之间建立了连接。用 `git push` 将提交推送到远端：
+
+   > 注意：你的默认分支名可能不是 ```main```。
 
    ```bash
    git push -u origin main
    ```
 
-   This sends your commits in your "main" branch to GitHub.
+   这会把你在 "main" 分支上的提交推送到 GitHub。
 
-2. **To add more changes**. If you want to continue making changes and pushing them to GitHub you’ll just need to use the following three commands:
+1. **继续提交更多更改**。之后若要继续修改并推送到 GitHub，通常使用以下三条命令：
 
    ```bash
    git add .
@@ -156,174 +156,174 @@ Let's say you have a folder locally with some code project and you want to start
    git push
    ```
 
-   > Tip, You might also want to adopt a `.gitignore` file to prevent files you don't want to track from showing up on GitHub - like that notes file you store in the same folder but has no place on a public repository. You can find templates for `.gitignore` files at [.gitignore templates](https://github.com/github/gitignore).
+   > 小贴士：你或许还想添加一个 `.gitignore` 文件，防止不希望被跟踪的文件出现在 GitHub 上——比如你在同一文件夹里保存的个人笔记，它并不适合出现在公共仓库中。你可以在此处找到 `.gitignore` 模板：[.gitignore templates](https://github.com/github/gitignore)。
 
-#### Commit messages
+#### 提交信息（Commit messages）
 
-A great Git commit subject line completes the following sentence:
-If applied, this commit will <your subject line here>
+一个优秀的提交标题行应能补全这句话：
+“如果被合并，这次提交将会 <在此填入你的标题>”。
 
-For the subject use the imperative, present tense: "change" not "changed" nor "changes". 
-As in the subject, in the body (optional) also use the imperative, present tense. The body should include the motivation for the change and contrast this with previous behavior. You're explaining the `why`, not the `how`.
+标题请使用祈使、现在时态：用 "change" 而不是 "changed" 或 "changes"。
+正文（可选）同样建议使用祈使、现在时态。正文应包含此次变更的动机，并与先前行为进行对比。记住，你在解释的是“为什么”，而不是“如何做”。
 
-✅ Take a few minutes to surf around GitHub. Can you find a really great commit message? Can you find a really minimal one? What information do you think is the most important and useful to convey in a commit message?
+✅ 花几分钟在 GitHub 上随便逛逛。你能找到一个特别优秀的提交信息吗？能找到一个极简的吗？在你看来，提交信息里最重要、最有用的信息是什么？
 
-### Task: Collaborate
+### 任务：协作
 
-The main reason for putting things on GitHub was to make it possible to collaborate with other developers.
+把项目放到 GitHub 上的主要原因是便于与其他开发者协作。
 
-## Working on projects with others
+## 与他人一起开发项目
 
-> Check out video
+> 查看视频
 >
 > [![Git and GitHub basics video](https://img.youtube.com/vi/bFCM-PC3cu8/0.jpg)](https://www.youtube.com/watch?v=bFCM-PC3cu8)
 
-In your repository, navigate to `Insights > Community` to see how your project compares to recommended community standards.
+在你的仓库中，打开 `Insights > Community`，看看你的项目与推荐的社区标准相比如何。
 
-   Here are some things that can improve your GitHub repo:
-   - **Description**. Did you add a description for your project?
-   - **README**. Did you add a README? GitHub provides guidance for writing a [README](https://docs.github.com/articles/about-readmes/?WT.mc_id=academic-77807-sagibbon).
-   - **Contributing guideline**. Does your project have [contributing guidelines](https://docs.github.com/articles/setting-guidelines-for-repository-contributors/?WT.mc_id=academic-77807-sagibbon), 
-   - **Code of Conduct**. a [Code of Conduct](https://docs.github.com/articles/adding-a-code-of-conduct-to-your-project/), 
-   - **License**. Perhaps most importantly, a [license](https://docs.github.com/articles/adding-a-license-to-a-repository/)?
+以下内容可以帮助改进你的 GitHub 仓库：
 
+- **Description（描述）**。是否为你的项目添加了简要描述？
+- **README**。是否编写了 README？GitHub 提供了[撰写 README 的指南](https://docs.github.com/articles/about-readmes/?WT.mc_id=academic-77807-sagibbon)。
+- **Contributing guideline（贡献指南）**。项目是否提供了[贡献指南](https://docs.github.com/articles/setting-guidelines-for-repository-contributors/?WT.mc_id=academic-77807-sagibbon)？
+- **Code of Conduct（行为准则）**。是否有[行为准则](https://docs.github.com/articles/adding-a-code-of-conduct-to-your-project/)？
+- **License（许可证）**。也许最重要的是，是否有[开源许可证](https://docs.github.com/articles/adding-a-license-to-a-repository/)？
 
-All these resources will benefit onboarding new team members. And those are typically the kind of things new contributors look at before even looking at your code, to find out if your project is the right place for them to be spending their time.
+上述资源有助于新成员快速上手。通常，新贡献者在阅读你的代码之前会先看这些内容，以判断你的项目是否值得他们投入时间。
 
-✅ README files, although they take time to prepare, are often neglected by busy maintainers. Can you find an example of a particularly descriptive one? Note: there are some [tools to help create good READMEs](https://www.makeareadme.com/) that you might like to try.
+✅ README 虽然需要花时间准备，但常被忙碌的维护者忽视。你能找到一个特别详尽的 README 示例吗？提示：可以尝试一些[帮助创建优质 README 的工具](https://www.makeareadme.com/)。
 
-### Task: Merge some code
+### 任务：合并代码
 
-Contributing docs help people contribute to the project. It explains what types of contributions you're looking for and how the process works. Contributors will need to go through a series of steps to be able to contribute to your repo on GitHub:
+贡献文档可以帮助他人为项目做出贡献。文档会说明你期望的贡献类型，以及贡献流程。贡献者通常需要完成以下步骤，才能向你的 GitHub 仓库贡献代码：
 
+1. **Fork 仓库**。你大概率希望他人先 fork 你的项目。Fork 会在他们的 GitHub 个人空间创建你的仓库副本。
+1. **Clone**。随后，将仓库克隆到本地计算机。
+1. **创建分支**。要求他们为自己的工作创建一个分支（branch）。
+1. **聚焦单一变更**。请贡献者一次只专注于一类变更——这样你接受并合并他们工作的概率更高。设想他们同时修了一个 bug、加了一个新功能、并更新了若干测试——如果你只想采纳其中的 1-2 项，该怎么办？
 
-1. **Forking your repo** You will probably want people to _fork_ your project. Forking means creating a replica of your repository on their GitHub profile.
-1. **Clone**. From there they will clone the project to their local machine. 
-1. **Create a branch**. You will want to ask them to create a _branch_ for their work. 
-1. **Focus their change on one area**. Ask contributors to concentrate their contributions on one thing at a time - that way the chances that you can _merge_ in their work is higher. Imagine they write a bug fix, add a new feature, and update several tests - what if you want to, or can only implement 2 out of 3, or 1 out of 3 changes?
+✅ 想一想在哪些场景下，“分支”对于编写和发布高质量代码尤为关键？
 
-✅ Imagine a situation where branches are particularly critical to writing and shipping good code. What use cases can you think of?
+> 注意：以身作则，也请为你自己的工作创建分支。你进行提交时，会提交到当前“检出（checked out）”的分支。使用 `git status` 查看当前分支。
 
-> Note, be the change you want to see in the world, and create branches for your own work as well. Any commits you make will be made on the branch you’re currently “checked out” to. Use `git status` to see which branch that is.
+下面走一遍贡献者的工作流。假设贡献者已经 fork 并 clone 了仓库，在本地已准备好一个可用的 Git 仓库：
 
-Let's go through a contributor workflow. Assume the contributor has already _forked_ and _cloned_ the repo so they have a Git repo ready to be worked on, on their local machine:
-
-1. **Create a branch**. Use the command `git branch` to create a branch that will contain the changes they mean to contribute:
+1. **创建分支**。使用 `git branch` 创建一个用于承载改动的分支：
 
    ```bash
    git branch [branch-name]
    ```
 
-1. **Switch to working branch**. Switch to the specified branch and update the working directory with `git switch`:
+1. **切换到工作分支**。使用 `git switch` 切换到该分支并更新工作目录：
 
    ```bash
    git switch [branch-name]
    ```
 
-1. **Do work**. At this point you want to add your changes. Don't forget to tell Git about it with the following commands:
+1. **开始修改**。此时可以添加你的改动。别忘了用以下命令告诉 Git：
 
    ```bash
    git add .
    git commit -m "my changes"
    ```
 
-   Ensure you give your commit a good name, for your sake as well as the maintainer of the repo you are helping on.
+   给提交起个好名字，这对你和你所帮助的项目维护者都很重要。
 
-1. **Combine your work with the `main` branch**. At some point you are done working and you want to combine your work with that of the `main` branch. The `main` branch might have changed meanwhile so make sure you first update it to the latest with the following commands:
+1. **与 `main` 分支合并**。当你完成工作后，希望把你的改动与 `main` 分支合并。其间 `main` 可能已有更新，因此先用以下命令获取最新变更：
 
    ```bash
    git switch main
    git pull
    ```
 
-   At this point you want to make sure that any _conflicts_, situations where Git can't easily _combine_ the changes happens in your working branch. Therefore run the following commands:
+   现在要确保任何冲突（Git 无法轻易合并的情况）都发生在你的工作分支上。因此运行：
 
    ```bash
    git switch [branch_name]
    git merge main
    ```
 
-   This will bring in all changes from `main` into your branch and hopefully you can just continue. If not, VS Code will tell you where Git is _confused_ and you just alter the affected files to say which content is the most accurate.
+   这会把 `main` 上的所有变更合入你的分支，希望一切顺利即可继续。如果不顺利，VS Code 会指示 Git “困惑”的位置，你只需在受影响的文件中选择最准确的内容。
 
-1. **Send your work to GitHub**. Sending your work to GitHub means two things. Pushing your branch to your repo and then open up a PR, Pull Request.
+1. **把你的工作推送到 GitHub**。推送到 GitHub 包含两步：把分支推送到你的远程仓库，然后创建一个 PR（Pull Request，拉取请求）。
 
    ```bash
    git push --set-upstream origin [branch-name]
    ```
 
-   The above command creates the branch on your forked repo.
+   上面的命令会在你的 fork 仓库中创建该分支。
 
-1. **Open a PR**. Next, you want to open up a PR. You do that by navigating to the forked repo on GitHub. You will see an indication on GitHub where it asks whether you want to create a new PR, you click that and you are taken to an interface where you can change commit message title, give it a more suitable description. Now the maintainer of the repo you forked will see this PR and _fingers crossed_ they will appreciate and _merge_ your PR. You are now a contributor, yay :)
+1. **创建 PR**。接下来，在 GitHub 上打开你的 fork 仓库。GitHub 会提示你是否要创建新 PR，点击后进入创建界面，你可以修改标题并补充更合适的描述。随后，原始仓库的维护者会看到这个 PR——祝你好运，他们会欣然接受并合并它。恭喜，你现在是贡献者了！
 
-1. **Clean up**. It's considered good practice to _clean up_ after you successfully merge a PR. You want to clean up both your local branch and the branch you pushed to GitHub. First let's delete it locally with the following command: 
+1. **清理**。成功合并 PR 后进行“清理”被视为良好实践。你需要清理本地分支和在 GitHub 上推送的远程分支。先用以下命令在本地删除：
 
    ```bash
    git branch -d [branch-name]
    ```
 
-   Ensure you go the GitHub page for the forked repo next and remove the remote branch you just pushed to it.
+   然后到 fork 仓库的 GitHub 页面上删除刚刚推送的远程分支。
 
-`Pull request` seems like a silly term because really you want to push your changes to the project. But the maintainer (project owner) or core team needs to consider your changes before merging it with the project's "main" branch, so you're really requesting a change decision from a maintainer.  
+`Pull request`（拉取请求）这个术语听起来有些怪，因为你实际上是要把更改“推送”到项目中。但在合并进项目的 "main" 分支前，维护者（项目所有者）或核心团队需要先审查你的更改，因此你实际上是在请求维护者做出合并与否的决策。
 
-A pull request is the place to compare and discuss the differences introduced on a branch with reviews, comments, integrated tests, and more. A good pull request follows roughly the same rules as a commit message. You can add a reference to an issue in the issue tracker, when your work for instance fixes an issue. This is done using a `#` followed by the number of your issue. For example `#97`.
+PR 是用来对比分支差异并进行讨论的地方，包含评审、评论、集成测试等。一个好的 PR 与好的提交信息有相同的原则。若你的工作修复了某个问题，你可以在 PR 中引用对应的 Issue：使用 `#` 加问题编号，例如 `#97`。
 
-🤞Fingers crossed that all checks pass and the project owner(s) merge your changes into the project🤞
+🤞 祝所有检查都通过，并由项目所有者合并你的更改 🤞
 
-Update your current local working branch with all new commits from the corresponding remote branch on GitHub:
+将当前本地工作分支与 GitHub 上对应远程分支的所有新提交同步：
 
 `git pull`
 
-## How to contribute to open source
+## 如何为开源做贡献
 
-First, let's find a repository (or **repo**) on GitHub of interest to you and to which you'd like to contribute a change. You will want to copy its contents to your machine.
+首先，在 GitHub 上找到你感兴趣并愿意贡献的仓库（**repo**）。你需要把它的内容复制到本地。
 
-✅ A good way to find 'beginner-friendly' repos is to [search by the tag 'good-first-issue'](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/).
+✅ 寻找“适合新手”的仓库，一个好办法是[搜索带有标签 'good-first-issue' 的问题](https://github.blog/2020-01-22-browse-good-first-issues-to-start-contributing-to-open-source/)。
 
 ![Copy a repo locally](images/clone_repo.png)
 
-There are several ways of copying code. One way is to "clone" the contents of the repository, using HTTPS, SSH, or using the GitHub CLI (Command Line Interface). 
+复制代码有多种方式。常见方式是使用 HTTPS、SSH 或 GitHub CLI（命令行工具）来“克隆（clone）”仓库内容。
 
-Open your terminal and clone the repository like so:
+打开终端，按如下方式克隆仓库：
 `git clone https://github.com/ProjectURL`
 
-To work on the project, switch to the right folder:
+切换到项目目录以便开始工作：
 `cd ProjectURL`
 
-You can also open the entire project using [Codespaces](https://github.com/features/codespaces), GitHub's embedded code editor / cloud development environment, or [GitHub Desktop](https://desktop.github.com/).
+你也可以使用 [Codespaces](https://github.com/features/codespaces)（GitHub 的云端开发环境/嵌入式编辑器）或 [GitHub Desktop](https://desktop.github.com/) 打开整个项目。
 
-Lastly, you can download the code in a zipped folder. 
+最后，你也可以下载打包（zip）的代码。
 
-### A few more interesting things about GitHub
+### 关于 GitHub 的更多有趣功能
 
-You can star, watch and/or "fork" any public repository on GitHub. You can find your starred repositories in the top-right drop-down menu. It's like bookmarking, but for code. 
+你可以为任意公共仓库加星（star）、订阅（watch）以及/或者“fork”。你加星的仓库可以在右上角的下拉菜单中找到。这就像给代码加书签。
 
-Projects have an issue tracker, mostly on GitHub in the "Issues" tab unless indicated otherwise, where people discuss issues related to the project. And the Pull Requests tab is where people discuss and review changes that are in progress.
+项目通常有一个问题跟踪器（issue tracker），大多数位于 GitHub 的 “Issues” 标签页（除非另有说明），用于讨论与项目相关的问题；而 “Pull Requests” 标签页用于讨论与审查正在进行的更改。
 
-Projects might also have discussion in forums, mailing lists, or chat channels like Slack, Discord or IRC.
+项目也可能在论坛、邮件列表或 Slack、Discord、IRC 等聊天工具中进行讨论。
 
-✅ Take a look around your new GitHub repo and try a few things, like editing settings, adding information to your repo, and creating a project (like a Kanban board). There's a lot you can do!
+✅ 逛一逛你新建的 GitHub 仓库，尝试做些事，比如修改设置、给仓库添加信息、创建一个项目（例如看板）。你能做的事情很多！
 
 ---
 
-## 🚀 Challenge 
+## 🚀 挑战
 
-Pair with a friend to work on each other's code. Create a project collaboratively, fork code, create branches, and merge changes.
+与朋友结对互相查看彼此的代码。一起创建项目、fork 代码、创建分支并合并更改。
 
-## Post-Lecture Quiz
-[Post-lecture quiz](https://ff-quizzes.netlify.app/web/en/)
+## 课后测验
 
-## Review & Self Study
+[课后测验](https://ff-quizzes.netlify.app/web/en/)
 
-Read more about [contributing to open source software](https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution). 
+## 回顾与自学
 
-[Git cheatsheet](https://training.github.com/downloads/github-git-cheat-sheet/).
+阅读更多关于[如何为开源软件做贡献](https://opensource.guide/how-to-contribute/#how-to-submit-a-contribution)的内容。
 
-Practice, practice, practice. GitHub has great learning paths available via [skills.github.com](https://skills.github.com):
+[Git 速查表](https://training.github.com/downloads/github-git-cheat-sheet/)。
+
+多练、多用。GitHub 在 [skills.github.com](https://skills.github.com) 上提供了很棒的学习路径：
 
 - [First Week on GitHub](https://skills.github.com/#first-week-on-github)
 
-You'll also find more advanced courses. 
+你也能找到更高级的课程。
 
-## Assignment 
+## 作业
 
-Complete [the First Week on GitHub course](https://skills.github.com/#first-week-on-github)
+完成课程：[First Week on GitHub](https://skills.github.com/#first-week-on-github)

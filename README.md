@@ -14,90 +14,97 @@
 
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
-Follow these steps to get started using these resources:
-1. **Fork the Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/Web-Dev-For-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/Web-Dev-For-Beginners/fork)
-2. **Clone the Repository**:   `git clone https://github.com/microsoft/Web-Dev-For-Beginners.git`
-3. [**Join The Azure AI Foundry Discord and meet experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)
+按照以下步骤开始使用这些资源：
+1. **Fork 仓库**：点击 [![GitHub forks](https://img.shields.io/github/forks/microsoft/Web-Dev-For-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/Web-Dev-For-Beginners/fork)
+2. **克隆仓库**：`git clone https://github.com/microsoft/Web-Dev-For-Beginners.git`
+3. [**加入 Azure AI Foundry Discord，与专家和开发者交流**](https://discord.com/invite/ByRwuEEgH4)
 
-# Web Development for Beginners - A Curriculum
+# 初学者的网页开发课程
 
-Learn the fundamentals of web development with our 12-week comprehensive course by Microsoft Cloud Advocates. Each of the 24 lessons dives into JavaScript, CSS, and HTML through hands-on projects like terrariums, browser extensions, and space games. Engage with quizzes, discussions, and practical assignments. Enhance your skills and optimize your knowledge retention with our effective project-based pedagogy. Start your coding journey today!
+通过微软云倡导者提供的12周综合课程，学习网页开发的基础知识。24节课涵盖了 JavaScript、CSS 和 HTML，通过实践项目如生态瓶、浏览器扩展和太空游戏进行学习。课程包括测验、讨论和实践任务，帮助你提升技能并优化知识保留。今天就开始你的编程之旅吧！
 
-### 🌐 Multi-Language Support
+### 🌐 多语言支持
 
-#### Supported via GitHub Action (Automated & Always Up-to-Date)
+#### 通过 GitHub Action 支持（自动更新且始终保持最新）
 
 [French](./translations/fr/README.md) | [Spanish](./translations/es/README.md) | [German](./translations/de/README.md) | [Russian](./translations/ru/README.md) | [Arabic](./translations/ar/README.md) | [Persian (Farsi)](./translations/fa/README.md) | [Urdu](./translations/ur/README.md) | [Chinese (Simplified)](./translations/zh/README.md) | [Chinese (Traditional, Macau)](./translations/mo/README.md) | [Chinese (Traditional, Hong Kong)](./translations/hk/README.md) | [Chinese (Traditional, Taiwan)](./translations/tw/README.md) | [Japanese](./translations/ja/README.md) | [Korean](./translations/ko/README.md) | [Hindi](./translations/hi/README.md) | [Bengali](./translations/bn/README.md) | [Marathi](./translations/mr/README.md) | [Nepali](./translations/ne/README.md) | [Punjabi (Gurmukhi)](./translations/pa/README.md) | [Portuguese (Portugal)](./translations/pt/README.md) | [Portuguese (Brazil)](./translations/br/README.md) | [Italian](./translations/it/README.md) | [Polish](./translations/pl/README.md) | [Turkish](./translations/tr/README.md) | [Greek](./translations/el/README.md) | [Thai](./translations/th/README.md) | [Swedish](./translations/sv/README.md) | [Danish](./translations/da/README.md) | [Norwegian](./translations/no/README.md) | [Finnish](./translations/fi/README.md) | [Dutch](./translations/nl/README.md) | [Hebrew](./translations/he/README.md) | [Vietnamese](./translations/vi/README.md) | [Indonesian](./translations/id/README.md) | [Malay](./translations/ms/README.md) | [Tagalog (Filipino)](./translations/tl/README.md) | [Swahili](./translations/sw/README.md) | [Hungarian](./translations/hu/README.md) | [Czech](./translations/cs/README.md) | [Slovak](./translations/sk/README.md) | [Romanian](./translations/ro/README.md) | [Bulgarian](./translations/bg/README.md) | [Serbian (Cyrillic)](./translations/sr/README.md) | [Croatian](./translations/hr/README.md) | [Slovenian](./translations/sl/README.md) | [Ukrainian](./translations/uk/README.md) | [Burmese (Myanmar)](./translations/my/README.md)
 
-**If you wish to have additional translations languages supported are listed [here](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**如果您希望支持更多语言，支持的语言列表在 [这里](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 
-#### 🧑‍🎓 _Are you a student?_
+#### 🧑‍🎓 _你是学生吗？_
 
-Visit [**Student Hub page**](https://docs.microsoft.com/learn/student-hub/?WT.mc_id=academic-77807-sagibbon) where you will find beginner resources, Student packs and even ways to get a free certificate voucher. This is the page you want to bookmark and check from time to time as we switch out content monthly.
+访问 [**学生中心页面**](https://docs.microsoft.com/learn/student-hub/?WT.mc_id=academic-77807-sagibbon)，你可以找到初学者资源、学生礼包，甚至免费证书兑换券。这是一个值得收藏的页面，每月都会更新内容。
 
-### 📣 Announcement - _New Project to build using Generative AI_ 
+### 📣 公告 - _使用生成式 AI 构建新项目_
 
-New AI Assistant project just added, check it out [project](./09-chat-project/README.md)
+新增 AI 助手项目，快来查看 [项目](./09-chat-project/README.md)
 
-### 📣 Announcement - _New Curriculum_ on Generative AI for JavaScript was just released
+### 📣 公告 - _新课程_ 关于 JavaScript 的生成式 AI 刚刚发布
 
-Don't miss our new Generative AI curriculum!
+不要错过我们的新生成式 AI 课程！
 
-Visit [https://aka.ms/genai-js-course](https://aka.ms/genai-js-course) to get started!
+访问 [https://aka.ms/genai-js-course](https://aka.ms/genai-js-course) 开始学习！
 
-![Background](./images/background.png)
+### 🇨🇳 中文汉化完成
 
-- Lessons covering everything from basics to RAG.
-- Interact with historical characters using GenAI and our companion app.
-- Fun and engaging narrative, you'll be time traveling!
+本教程的主要文档和课程内容已完成中文汉化，包括：
+- ✅ 所有主要文档（README、贡献指南、教师指南等）
+- ✅ 各模块介绍和课程概述
+- ✅ 代码编辑器模块完整汉化
+- ✅ AI聊天项目完整汉化
+- ✅ GitHub 配置模板
 
-![character](./images/character.png)
+汉化过程中严格保留了所有技术术语、代码示例和链接，确保学习体验的完整性。
 
+![背景](./images/background.png)
 
-Each lesson includes an assignment to complete, a knowledge check and a challenge to guide you on learning topics like:
-- Prompting and prompt engineering
-- Text and image app generation
-- Search apps
+- 课程涵盖从基础到 RAG 的所有内容。
+- 使用生成式 AI 和我们的配套应用与历史人物互动。
+- 有趣且引人入胜的叙事，你将进行时空旅行！
 
-Visit [https://aka.ms/genai-js-course]([https://aka.ms/genai-js-course) to get started!
+![角色](./images/character.png)
 
+每节课都包括一个任务、知识检查和挑战，帮助你学习以下主题：
+- 提示设计与提示工程
+- 文本和图像应用生成
+- 搜索应用
 
+访问 [https://aka.ms/genai-js-course](https://aka.ms/genai-js-course) 开始学习！
 
-## 🌱 Getting Started
+## 🌱 开始学习
 
-> **Teachers**, we have [included some suggestions](for-teachers.md) on how to use this curriculum. We'd love your feedback [in our discussion forum](https://github.com/microsoft/Web-Dev-For-Beginners/discussions/categories/teacher-corner)!
+> **教师们**，我们[提供了一些建议](for-teachers.md)供您使用此课程。我们期待您在[讨论论坛](https://github.com/microsoft/Web-Dev-For-Beginners/discussions/categories/teacher-corner)中提供反馈！
 
-**[Learners](https://aka.ms/student-page/?WT.mc_id=academic-77807-sagibbon)**, for each lesson, start with a pre-lecture quiz and follow through with reading the lecture material, completing the various activities and check your understanding with the post-lecture quiz.
+**[学习者](https://aka.ms/student-page/?WT.mc_id=academic-77807-sagibbon)**，每节课从课前测验开始，阅读课程材料，完成各种活动，并通过课后测验检查您的理解。
 
-To enhance your learning experience, connect with your peers to work on the projects together! Discussions are encouraged in our [discussion forum](https://github.com/microsoft/Web-Dev-For-Beginners/discussions) where our team of moderators will be available to answer your questions.
+为了提升学习体验，与同伴一起完成项目！我们鼓励在[讨论论坛](https://github.com/microsoft/Web-Dev-For-Beginners/discussions)中进行讨论，我们的版主团队会回答您的问题。
 
-To further your education, we highly recommend exploring [Microsoft Learn](https://learn.microsoft.com/users/wirelesslife/collections/p1ddcy5jwy0jkm?WT.mc_id=academic-77807-sagibbon) for additional study materials.
+为了进一步学习，我们强烈推荐探索 [Microsoft Learn](https://learn.microsoft.com/users/wirelesslife/collections/p1ddcy5jwy0jkm?WT.mc_id=academic-77807-sagibbon) 以获取更多学习材料。
 
-### 📋 Setting up your environment
+### 📋 设置您的环境
 
-This curriculum has a development environment ready to go! As you get started you can choose to run the curriculum in a [Codespace](https://github.com/features/codespaces/) (_a browser-based, no installs needed environment_), or locally on your computer using a text editor such as [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=academic-77807-sagibbon).
+此课程已准备好开发环境！开始学习时，您可以选择在 [Codespace](https://github.com/features/codespaces/)（基于浏览器，无需安装的环境）中运行课程，或在本地计算机上使用文本编辑器如 [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=academic-77807-sagibbon)。
 
-#### Create your repository
-For you to easily save your work, it is recommended that you create your own copy of this repository. You can do this by clicking the **Use this template** button at the top of the page. This will create a new repository in your GitHub account with a copy of the curriculum.
+#### 创建您的仓库
+为了方便保存您的学习成果，建议您创建自己的课程副本。您可以通过点击页面顶部的 **Use this template** 按钮来完成。这将在您的 GitHub 账户中创建一个包含课程副本的新仓库。
 
-Follow these steps:
-1. **Fork the Repository**: Click on the "Fork" button at the top-right corner of this page.
-2. **Clone the Repository**:   `git clone https://github.com/microsoft/Web-Dev-For-Beginners.git`
+按照以下步骤：
+1. **Fork 仓库**：点击页面右上角的 "Fork" 按钮。
+2. **克隆仓库**：`git clone https://github.com/microsoft/Web-Dev-For-Beginners.git`
 
-#### Running the curriculum in a Codespace
+#### 在 Codespace 中运行课程
 
-In your copy of this repository that you created, click the **Code** button and select **Open with Codespaces**. This will create a new Codespace for you to work in.
+在您创建的仓库副本中，点击 **Code** 按钮并选择 **Open with Codespaces**。这将为您创建一个新的 Codespace 以供学习使用。
 
-[!Codespace]()./images/createcodespace.png)
+![Codespace](./images/createcodespace.png)
 
-#### Running the curriculum locally on your computer
+#### 在本地计算机上运行课程
 
-To run this curriculum locally on your computer, you will need a text editor, a browser and a command line tool. Our first lesson, [Introduction to Programming Languages and Tools of the Trade](./1-getting-started-lessons/1-intro-to-programming-languages), will walk you through various options for each of these tools for you to select what works best for you.
+要在本地计算机上运行此课程，您需要文本编辑器、浏览器和命令行工具。我们的第一课，[编程语言和开发工具介绍](./1-getting-started-lessons/1-intro-to-programming-languages)，将为您介绍这些工具的各种选项，供您选择最适合的。
 
-Our recommendation is to use [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=academic-77807-sagibbon) as your editor, which also has a built-in [Terminal](https://code.visualstudio.com/docs/terminal/basics/?WT.mc_id=academic-77807-sagibbon). You can download Visual Studio Code [here](https://code.visualstudio.com/?WT.mc_id=academic-77807-sagibbon).
+我们推荐使用 [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=academic-77807-sagibbon) 作为您的编辑器，它还内置了[终端](https://code.visualstudio.com/docs/terminal/basics/?WT.mc_id=academic-77807-sagibbon)。您可以在[这里](https://code.visualstudio.com/?WT.mc_id=academic-77807-sagibbon)下载 Visual Studio Code。
 
-
-1. Clone your repository to your computer. You can do this by clicking the **Code** button and copying the URL:
+1. 将您的仓库克隆到计算机。您可以通过点击 **Code** 按钮并复制 URL 来完成此操作：
 
     [!CodeSpace](./images/createcodespace.png)
 

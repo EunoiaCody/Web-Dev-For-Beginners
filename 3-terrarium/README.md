@@ -1,34 +1,31 @@
-# My Terrarium: A project to learn about HTML, CSS, and DOM manipulation using JavaScript 🌵🌱
+# 我的生态瓶：用 JavaScript 学习 HTML、CSS 与 DOM 操作 🌵🌱
 
-A small drag and drop code-meditation. With a little HTML, JS and CSS, you will be able to build a web interface, style it, and even add multiple interactions of your choice.
+一个小巧的拖拽练习。借助少量 HTML、JS 与 CSS，你将搭建一个网页界面、为其添加样式，并实现多种交互。
 
 ![my terrarium](images/screenshot_gray.png)
 
-# Lessons
+## 课程
 
-1. [Introduction to HTML](./1-intro-to-html/README.md)
-2. [Introduction to CSS](./2-intro-to-css/README.md)
-3. [Introduction to DOM and JS Closures](./3-intro-to-DOM-and-closures/README.md)
+1. [HTML 入门](./1-intro-to-html/README.md)
+2. [CSS 入门](./2-intro-to-css/README.md)
+3. [DOM 与 JS 闭包入门](./3-intro-to-DOM-and-closures/README.md)
 
-## Credits
+## 致谢
 
-Written with ♥️  by [Jen Looper](https://www.twitter.com/jenlooper)
+由 [Jen Looper](https://www.twitter.com/jenlooper) 倾心撰写。
 
-The terrarium created via CSS was inspired by Jakub Mandra's glass jar [codepen](https://codepen.io/Rotarepmi/pen/rjpNZY).
+通过 CSS 创建的生态瓶灵感来自 Jakub Mandra 的玻璃罐 [CodePen](https://codepen.io/Rotarepmi/pen/rjpNZY)。
 
-The artwork is hand drawn by [Jen Looper](http://jenlooper.com) with the help of Procreate.
+插画由 [Jen Looper](http://jenlooper.com) 使用 Procreate 手绘完成。
 
-## Deploy your Terrarium
+## 部署你的生态瓶
 
-You can deploy, or publish your terrarium on the web using Azure Static Web Apps. 
+你可以使用 Azure Static Web Apps 将生态瓶部署（发布）到 Web。
 
-1. Fork this repo
+1. Fork 本仓库
 
-2. Press this button
+1. 点击这个按钮
 
 [![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false&WT.mc_id=academic-77807-sagibbon#create/Microsoft.StaticApp)
 
-3. Walk through the wizard creating your app. Make sure you set the app root to either be `/solution` or the root of your codebase. There's no API in this app, so don't worry about adding that. A github folder will be created in your forked repository that will help Azure Static Web Apps' build services, build and publish your app to a new URL.
-
-
-
+1. 按引导创建你的应用。请将 app root 设置为 `/solution` 或你的代码根目录。本应用没有 API，因此无需添加。该流程会在你 fork 的仓库中创建一个 GitHub 目录，Azure Static Web Apps 的构建服务会借此构建并将你的应用发布到一个新的 URL。

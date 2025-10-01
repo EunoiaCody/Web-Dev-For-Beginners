@@ -1,50 +1,48 @@
-# Terrarium Project Part 3: DOM Manipulation and a Closure
+# 生态瓶项目 第 3 部分：DOM 操作与闭包
 
 ![DOM and a closure](../../sketchnotes/webdev101-js.png)
-> Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
+> 速记图作者：[Tomomi Imura](https://twitter.com/girlie_mac)
 
-## Pre-Lecture Quiz
+## 课前测验
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/19)
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/19)
 
-### Introduction
+### 简介
 
-Manipulating the DOM, or the "Document Object Model", is a key aspect of web development. According to [MDN](https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction), "The Document Object Model (DOM) is the data representation of the objects that comprise the structure and content of a document on the web." The challenges around DOM manipulation on the web have often been the impetus behind using JavaScript frameworks instead of vanilla JavaScript to manage the DOM, but we will manage on our own!
+操作 DOM（文档对象模型）是 Web 开发的关键环节。根据 [MDN](https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction) 的定义：“文档对象模型（DOM）是对构成 Web 文档结构与内容的对象的 数据表示。” 由于在 Web 上操作 DOM 颇具挑战，人们常用 JavaScript 框架来替代原生 JS 进行 DOM 管理；不过这次我们将用原生方式自己搞定！
+在此基础上，本课还会介绍 [JavaScript 闭包](https://developer.mozilla.org/docs/Web/JavaScript/Closures)：你可以把它理解为一个函数被另一个函数“包裹”，因此内部函数可以访问外部函数的作用域。
 
-In addition, this lesson will introduce the idea of a [JavaScript closure](https://developer.mozilla.org/docs/Web/JavaScript/Closures), which you can think of as a function enclosed by another function so that the inner function has access to the outer function's scope.
+> 闭包是一个庞大而复杂的主题。本课仅涉及最基础的概念：在本项目代码中，你会看到一个闭包——通过构造外部函数与内部函数的方式，让内部函数能够访问外部函数的作用域。更多内容请阅读 MDN 的[详细文档](https://developer.mozilla.org/docs/Web/JavaScript/Closures)。
+我们将用一个闭包来操作 DOM。
 
-> JavaScript closures are a vast and complex topic. This lesson touches on the most basic idea that in this terrarium's code, you will find a closure: an inner function and an outer function constructed in a way to allow the inner function access to the outer function's scope. For much more information on how this works, please visit the [extensive documentation](https://developer.mozilla.org/docs/Web/JavaScript/Closures).
-
-We will use a closure to manipulate the DOM.
-
-Think of the DOM as a tree, representing all the ways that a web page document can be manipulated. Various APIs (Application Program Interfaces) have been written so that programmers, using their programming language of choice, can access the DOM and edit, change, rearrange, and otherwise manage it.
-
+可以把 DOM 想象成一棵“树”，表示网页文档可以被操作的各种方式。为此，已经有多种 API（应用程序接口）可供开发者用所选编程语言来访问 DOM，以编辑、修改、重排与管理它。
 ![DOM tree representation](./images/dom-tree.png)
 
-> A representation of the DOM and the HTML markup that references it. From [Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
+> 这是 DOM 的一种表示以及引用它的 HTML 标记。图源：[Olfa Nasraoui](https://www.researchgate.net/publication/221417012_Profile-Based_Focused_Crawler_for_Social_Media-Sharing_Websites)
 
-In this lesson, we will complete our interactive terrarium project by creating the JavaScript that will allow a user to manipulate the plants on the page.
+在本课中，我们将为互动生态瓶项目编写 JavaScript，使用户可以在页面上拖动植物。
 
-### Prerequisite
+### 前置要求
 
-You should have the HTML and CSS for your terrarium built. By the end of this lesson you will be able to move the plants into and out of the terrarium by dragging them.
+你应当已经完成生态瓶的 HTML 与 CSS。本课结束时，你将能够通过拖拽将植物移入或移出生态瓶。
 
-### Task
+### 任务 1
 
-In your terrarium folder, create a new file called `script.js`. Import that file in the `<head>` section:
+在项目文件夹中新建 `script.js`，并在 `<head>` 中引入：
 
 ```html
-	<script src="./script.js" defer></script>
+  <script src="./script.js" defer></script>
 ```
 
-> Note: use `defer` when importing an external JavaScript file into the html file so as to allow the JavaScript to execute only after the HTML file has been fully loaded. You could also use the `async` attribute, which allows the script to execute while the HTML file is parsing, but in our case, it's important to have the HTML elements fully available for dragging before we allow the drag script to be executed.
+> 注意：将外部脚本以 `defer` 引入，让 JavaScript 在 HTML 完全加载后再执行。你也可以使用 `async`，它会在 HTML 解析时并行执行脚本，但在我们的场景中，更重要的是在拖拽脚本执行前，所有需要拖拽的 HTML 元素已可用。
+
 ---
 
-## The DOM elements
+## DOM 元素
 
-The first thing you need to do is to create references to the elements that you want to manipulate in the DOM. In our case, they are the 14 plants currently waiting in the side bars.
+首先，需要在 DOM 中创建对将被操作元素的引用。我们的例子里，它们是两侧栏中等待的 14 株植物。
 
-### Task
+### 任务 2
 
 ```html
 dragElement(document.getElementById('plant1'));
@@ -63,53 +61,43 @@ dragElement(document.getElementById('plant13'));
 dragElement(document.getElementById('plant14'));
 ```
 
-What's going on here? You are referencing the document and looking through its DOM to find an element with a particular Id. Remember in the first lesson on HTML that you gave individual Ids to each plant image (`id="plant1"`)? Now you will make use of that effort. After identifying each element, you pass that item to a function called `dragElement` that you'll build in a minute. Thus, the element in the HTML is now drag-enabled, or will be shortly.
+这段代码做了什么？你在 document 的 DOM 中查找指定 Id 的元素。还记得第一课里我们为每张植物图片都加了唯一的 Id（如 `id="plant1"`）吗？现在就要用到它们。找到元素后，把它传给稍后会实现的 `dragElement` 函数，于是这个 HTML 元素就具备了可拖拽能力（很快就会）。
 
-✅ Why do we reference elements by Id? Why not by their CSS class? You might refer to the previous lesson on CSS to answer this question.
+✅ 为什么按 Id 引用元素？为什么不按 CSS 类？可以回顾上一课的 CSS 内容来思考。
 
 ---
 
-## The Closure
+## 闭包（Closure）
 
-Now you are ready to create the dragElement closure, which is an outer function that encloses an inner function or functions (in our case, we will have three). 
-
-Closures are useful when one or more functions need to access an outer function's scope. Here's an example:
+现在可以创建 `dragElement` 闭包了：外部函数包裹内部函数（此处我们会有三个内部函数）。
+当一个或多个函数需要访问外部函数的作用域时，闭包非常有用。示例：
 
 ```javascript
 function displayCandy(){
-	let candy = ['jellybeans'];
-	function addCandy(candyType) {
-		candy.push(candyType)
-	}
-	addCandy('gumdrops');
+  let candy = ['jellybeans'];
+  function addCandy(candyType) {
+    candy.push(candyType)
+  }
+  addCandy('gumdrops');
 }
 displayCandy();
 console.log(candy)
 ```
 
-In this example, the displayCandy function surrounds a function that pushes a new candy type into an array that already exists in the function. If you were to run this code, the `candy` array would be undefined, as it is a local variable (local to the closure). 
+在这个例子中，displayCandy 函数包含了一个用于向数组添加新糖果类型的内部函数；该数组已经在外部函数中存在。如果运行这段代码，`candy` 数组会是 undefined，因为它是一个局部变量（局部于闭包）。
 
-✅ How can you make the `candy` array accessible? Try moving it outside the closure. This way, the array becomes global, rather than remaining only available to the closure's local scope.
+✅ 如何让 `candy` 数组可被访问？试着把它移动到闭包外部，这样它会成为全局变量，而不是只存在于闭包的本地作用域中。
 
-### Task
+### 任务 3
 
-Under the element declarations in `script.js`, create a function:
+在 `script.js` 中的元素声明下方，创建一个函数：
 
 ```javascript
 function dragElement(terrariumElement) {
-	//set 4 positions for positioning on the screen
-	let pos1 = 0,
-		pos2 = 0,
-		pos3 = 0,
-		pos4 = 0;
-	terrariumElement.onpointerdown = pointerDrag;
-}
-```
-
-`dragElement` get its `terrariumElement` object from the declarations at the top of the script. Then, you set some local positions at `0` for the object passed into the function. These are the local variables that will be manipulated for each element as you add drag and drop functionality within the closure to each element. The terrarium will be populated by these dragged elements, so the application needs to keep track of where they are placed.
-
-In addition, the terrariumElement that is passed to this function is assigned a `pointerdown` event, which is part of the [web APIs](https://developer.mozilla.org/docs/Web/API) designed to help with DOM management. `onpointerdown` fires when a button is pushed, or in our case, a draggable element is touched. This event handler works on both [web and mobile browsers](https://caniuse.com/?search=onpointerdown), with a few exceptions.
-
+  // 在屏幕上设置 4 个用于定位的位置值
+  let pos1 = 0,
+      pos2 = 0,
+      pos3 = 0,
 ✅ The [event handler `onclick`](https://developer.mozilla.org/docs/Web/API/GlobalEventHandlers/onclick) has much more support cross-browser; why wouldn't you use it here? Think about the exact type of screen interaction you're trying to create here.
 
 ---
@@ -118,14 +106,14 @@ In addition, the terrariumElement that is passed to this function is assigned a 
 
 The `terrariumElement` is ready to be dragged around; when the `onpointerdown` event is fired, the function `pointerDrag` is invoked. Add that function right under this line: `terrariumElement.onpointerdown = pointerDrag;`:
 
-### Task 
+### 任务 4
 
 ```javascript
 function pointerDrag(e) {
-	e.preventDefault();
-	console.log(e);
-	pos3 = e.clientX;
-	pos4 = e.clientY;
+  e.preventDefault();
+  console.log(e);
+  pos3 = e.clientX;
+  pos4 = e.clientY;
 }
 ```
 
@@ -145,43 +133,45 @@ Complete the initial function by adding two more pointer event manipulations und
 document.onpointermove = elementDrag;
 document.onpointerup = stopElementDrag;
 ```
+
 Now you are indicating that you want the plant to be dragged along with the pointer as you move it, and for the dragging gesture to stop when you deselect the plant. `onpointermove` and `onpointerup` are all parts of the same API as `onpointerdown`. The interface will throw errors now as you have not yet defined the `elementDrag` and the `stopElementDrag` functions, so build those out next.
 
 ## The elementDrag and stopElementDrag functions
 
 You will complete your closure by adding two more internal functions that will handle what happens when you drag a plant and stop dragging it. The behavior you want is that you can drag any plant at any time and place it anywhere on the screen. This interface is quite un-opinionated (there is no drop zone for example) to allow you to design your terrarium exactly as you like it by adding, removing, and repositioning plants.
 
-### Task
+### 任务 5
 
 Add the `elementDrag` function right after the closing curly bracket of `pointerDrag`:
 
 ```javascript
 function elementDrag(e) {
-	pos1 = pos3 - e.clientX;
-	pos2 = pos4 - e.clientY;
-	pos3 = e.clientX;
-	pos4 = e.clientY;
-	console.log(pos1, pos2, pos3, pos4);
-	terrariumElement.style.top = terrariumElement.offsetTop - pos2 + 'px';
-	terrariumElement.style.left = terrariumElement.offsetLeft - pos1 + 'px';
+  pos1 = pos3 - e.clientX;
+  pos2 = pos4 - e.clientY;
+  pos3 = e.clientX;
+  pos4 = e.clientY;
+  console.log(pos1, pos2, pos3, pos4);
+  terrariumElement.style.top = terrariumElement.offsetTop - pos2 + 'px';
+  terrariumElement.style.left = terrariumElement.offsetLeft - pos1 + 'px';
 }
 ```
+
 In this function, you do a lot of editing of the initial positions 1-4 that you set as local variables in the outer function. What's going on here?
 
 As you drag, you reassign `pos1` by making it equal to `pos3` (which you set earlier as `e.clientX`)  minus the current `e.clientX` value. You do a similar operation to `pos2`. Then, you reset `pos3` and `pos4` to the new X and Y coordinates of the element. You can watch these changes in the console as you drag. Then, you manipulate the plant's css style to set its new position based on the new positions of `pos1` and `pos2`, calculating the plant's top and left X and Y coordinates based on comparing its offset with these new positions.
 
-> `offsetTop` and `offsetLeft` are CSS properties that set an element's position based on that of its parent; its parent can be any element that is not positioned as `static`. 
+> `offsetTop` and `offsetLeft` are CSS properties that set an element's position based on that of its parent; its parent can be any element that is not positioned as `static`.
 
 All this recalculation of positioning allows you to fine-tune the behavior of the terrarium and its plants.
 
-### Task 
+### 任务 6
 
 The final task to complete the interface is to add the `stopElementDrag` function after the closing curly bracket of `elementDrag`:
 
 ```javascript
 function stopElementDrag() {
-	document.onpointerup = null;
-	document.onpointermove = null;
+  document.onpointerup = null;
+  document.onpointermove = null;
 }
 ```
 
@@ -211,7 +201,10 @@ Find more information on pointer events on the [W3C docs](https://www.w3.org/TR/
 
 Always check browser capabilities using [CanIUse.com](https://caniuse.com/).
 
+## 作业
+
+[再和 DOM 多打几次交道](assignment.md)
+
 ## Assignment
 
 [Work a bit more with the DOM](assignment.md)
-

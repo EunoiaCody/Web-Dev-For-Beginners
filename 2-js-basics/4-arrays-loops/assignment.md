@@ -1,13 +1,13 @@
-# Loop an Array
+# 遍历数组（Loop an Array）
 
-## Instructions
+## 说明
 
-Create a program that lists every 3rd number between 1-20 and prints it to the console.
+编写一个程序，输出 1–20 之间每隔 3 个数的数字，并打印到控制台。
 
-> TIP: use a for-loop and modify the iteration-expression
+> 提示：使用 for 循环，并修改迭代表达式。
 
-## Rubric
+## 评分标准（Rubric）
 
-| Criteria | Exemplary                               | Adequate                 | Needs Improvement              |
-| -------- | --------------------------------------- | ------------------------ | ------------------------------ |
-|          | Program runs correctly and is commented | Program is not commented | Program is incomplete or buggy |
+| 标准 | 优秀 | 合格 | 需改进 |
+| --- | --- | --- | --- |
+|  | 程序运行正确且有注释 | 程序无注释 | 程序不完整或有缺陷 |

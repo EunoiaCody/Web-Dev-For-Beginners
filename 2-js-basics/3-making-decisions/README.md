@@ -1,50 +1,50 @@
-# JavaScript Basics: Making Decisions
+# JavaScript 基础：做出决策（Making Decisions）
 
 ![JavaScript Basics - Making decisions](../../sketchnotes/webdev101-js-decisions.png)
 
-> Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
+> 手绘笔记作者：[Tomomi Imura](https://twitter.com/girlie_mac)
 
-## Pre-Lecture Quiz
+## 课前测验
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/11)
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/11)
 
-Making decisions and controlling the order in which your code runs makes your code reusable and robust. This section covers the syntax for controlling data flow in JavaScript and its significance when used with Boolean data types
+做出决策并控制代码执行的顺序，能让你的代码更可复用、更健壮。本节介绍在 JavaScript 中控制数据流的语法，尤其是结合布尔（Boolean）类型时的重要性。
 
 [![Making Decisions](https://img.youtube.com/vi/SxTp8j-fMMY/0.jpg)](https://youtube.com/watch?v=SxTp8j-fMMY "Making Decisions")
 
-> 🎥 Click the image above for a video about making decisions.
+> 🎥 点击上方图片观看“Making Decisions”视频。
 
-> You can take this lesson on [Microsoft Learn](https://docs.microsoft.com/learn/modules/web-development-101-if-else/?WT.mc_id=academic-77807-sagibbon)!
+> 你也可以在 [Microsoft Learn](https://docs.microsoft.com/learn/modules/web-development-101-if-else/?WT.mc_id=academic-77807-sagibbon) 上学习本课！
 
-## A Brief Recap on Booleans
+## 布尔值速览（Booleans）
 
-Booleans can have only two values: `true` or `false`. Booleans help make decisions on which lines of code should run when certain conditions are met.
+布尔值只有两种：`true` 或 `false`。当满足某些条件时，布尔值帮助决定哪些代码行应该运行。
 
-Set your boolean to be true or false like this:
+将布尔变量设为 true 或 false：
 
 `let myTrueBool = true`
 `let myFalseBool = false`
 
-✅ Booleans are named after the English mathematician, philosopher and logician George Boole (1815–1864).
+✅ 布尔（Boolean）一词来源于英国数学家、哲学家和逻辑学家 George Boole（1815–1864）。
 
-## Comparison Operators and Booleans
+## 比较运算符与布尔（Comparison Operators and Booleans）
 
-Operators are used to evaluate conditions by making comparisons that will create a Boolean value. The following is a list of operators that are frequently used.
+用运算符做比较来评估条件，得到一个布尔值。常见运算符如下：
 
-| Symbol | Description                                                                                                                                                   | Example            |
-| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| `<`    | **Less than**: Compares two values and returns the `true` Boolean data type if the value on the left side is less than the right                              | `5 < 6 // true`    |
-| `<=`   | **Less than or equal to**: Compares two values and returns the `true` Boolean data type if the value on the left side is less than or equal to the right      | `5 <= 6 // true`   |
-| `>`    | **Greater than**: Compares two values and returns the `true` Boolean data type if the value on the left side is larger than the right                         | `5 > 6 // false`   |
-| `>=`   | **Greater than or equal to**: Compares two values and returns the `true` Boolean data type if the value on the left side is larger than or equal to the right | `5 >= 6 // false`  |
-| `===`  | **Strict equality**: Compares two values and returns the `true` Boolean data type if values on the right and left are equal AND are the same data type.       | `5 === 6 // false` |
-| `!==`  | **Inequality**: Compares two values and returns the opposite Boolean value of what a strict equality operator would return                                    | `5 !== 6 // true`  |
+| 符号 | 描述 | 示例 |
+| --- | --- | --- |
+| `<` | **小于**：若左侧值小于右侧值，返回 `true` | `5 < 6 // true` |
+| `<=` | **小于等于**：若左侧值小于或等于右侧值，返回 `true` | `5 <= 6 // true` |
+| `>` | **大于**：若左侧值大于右侧值，返回 `true` | `5 > 6 // false` |
+| `>=` | **大于等于**：若左侧值大于或等于右侧值，返回 `true` | `5 >= 6 // false` |
+| `===` | **全等**：若左右两边值相等且类型相同，返回 `true` | `5 === 6 // false` |
+| `!==` | **不全等**：与全等相反的布尔结果 | `5 !== 6 // true` |
 
-✅ Check your knowledge by writing some comparisons in your browser's console. Does any returned data surprise you?
+✅ 在浏览器控制台里写几个比较表达式检验一下。有没有让你意外的结果？
 
-## If Statement
+## if 语句（If Statement）
 
-The if statement will run code in between its blocks if the condition is true.
+如果条件为 true，if 语句会执行它的代码块：
 
 ```javascript
 if (condition) {
@@ -52,7 +52,7 @@ if (condition) {
 }
 ```
 
-Logical operators are often used to form the condition.
+常用逻辑运算符来构造条件：
 
 ```javascript
 let currentMoney;
@@ -64,9 +64,9 @@ if (currentMoney >= laptopPrice) {
 }
 ```
 
-## If..Else Statement
+## if..else 语句（If..Else Statement）
 
-The `else` statement will run the code in between its blocks when the condition is false. It's optional with an `if` statement.
+当条件为 false 时，可以使用 `else` 执行另一段代码；`else` 与 `if` 搭配使用，但它是可选的。
 
 ```javascript
 let currentMoney;
@@ -81,11 +81,11 @@ if (currentMoney >= laptopPrice) {
 }
 ```
 
-✅ Test your understanding of this code and the following code by running it in a browser console. Change the values of the currentMoney and laptopPrice variables to change the returned `console.log()`.
+✅ 在浏览器控制台里运行上面的代码，改改 `currentMoney` 与 `laptopPrice` 的值，观察 `console.log()` 的变化。
 
-## Switch Statement
+## switch 语句（Switch Statement）
 
-The `switch` statement is used to perform different actions based on different conditions. Use the `switch` statement to select one of many code blocks to be executed.
+`switch` 根据不同条件执行不同操作。使用 `switch` 选择要执行的众多代码块之一。
 
 ```javascript
 switch (expression) {
@@ -118,21 +118,21 @@ switch (a) {
 console.log(`The value is ${a}`);
 ```
 
-✅ Test your understanding of this code and the following code by running it in a browser console. Change the values of the variable a to change the returned `console.log()`.
+✅ 在浏览器控制台里运行并理解上述代码，修改变量 a 的值，观察 `console.log()` 的变化。
 
-## Logical Operators and Booleans
+## 逻辑运算符与布尔（Logical Operators and Booleans）
 
-Decisions might require more than one comparison, and can be strung together with logical operators to produce a Boolean value.
+有时做决定需要不止一次比较，可以把多个比较用逻辑运算符串联起来，得到一个布尔值。
 
-| Symbol | Description                                                                                     | Example                                                                 |
-| ------ | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `&&`   | **Logical AND**: Compares two Boolean expressions. Returns true **only** if both sides are true | `(5 > 6) && (5 < 6 ) //One side is false, other is true. Returns false` |
-| `\|\|` | **Logical OR**: Compares two Boolean expressions. Returns true if at least one side is true     | `(5 > 6) \|\| (5 < 6) //One side is false, other is true. Returns true` |
-| `!`    | **Logical NOT**: Returns the opposite value of a Boolean expression                             | `!(5 > 6) // 5 is not greater than 6, but "!" will return true`         |
+| 符号 | 描述 | 示例 |
+| --- | --- | --- |
+| `&&` | **逻辑与**：比较两个布尔表达式，只有两边都为 true 才返回 true | `(5 > 6) && (5 < 6 ) //One side is false, other is true. Returns false` |
+| `\|\|` | **逻辑或**：比较两个布尔表达式，任一边为 true 即返回 true | `(5 > 6) \|\| (5 < 6) //One side is false, other is true. Returns true` |
+| `!` | **逻辑非**：返回布尔表达式相反的值 | `!(5 > 6) // 5 is not greater than 6, but "!" will return true` |
 
-## Conditions and Decisions with Logical Operators
+## 在条件里使用逻辑运算符（Conditions and Decisions with Logical Operators）
 
-Logical operators can be used to form conditions in if..else statements.
+可以在 if..else 语句中使用逻辑运算符来构造条件：
 
 ```javascript
 let currentMoney;
@@ -148,9 +148,9 @@ if (currentMoney >= laptopPrice || currentMoney >= laptopDiscountPrice) {
 }
 ```
 
-### Negation operator
+### 取反运算符（Negation operator）
 
-You've seen so far how you can use an `if...else` statement to create conditional logic. Anything that goes into an `if` needs to evaluate to true/false. By using the `!` operator you can _negate_ the expression. It would look like so:
+我们已经看到如何用 `if...else` 来实现条件逻辑。`if` 中的表达式都需要能求值为 true/false。使用 `!` 可以“取反”表达式：
 
 ```javascript
 if (!condition) {
@@ -160,15 +160,15 @@ if (!condition) {
 }
 ```
 
-### Ternary expressions
+### 三元表达式（Ternary expressions）
 
-`if...else` isn't the only way to express decision logic. You can also use something called a ternary operator. The syntax for it looks like this:
+表达条件逻辑不止 `if...else` 一种方式。还可以使用“三元运算符”，其语法如下：
 
 ```javascript
 let variable = condition ? <return this if true> : <return this if false>
 ```
 
-Below is a more tangible example:
+一个更直观的例子：
 
 ```javascript
 let firstNumber = 20;
@@ -176,15 +176,15 @@ let secondNumber = 10;
 let biggestNumber = firstNumber > secondNumber ? firstNumber : secondNumber;
 ```
 
-✅ Take a minute to read this code a few times. Do you understand how these operators are working?
+✅ 花点时间多读几遍上面的代码。你理解这些运算符的工作方式了吗？
 
-The above states that
+上面的意思是：
 
-- if `firstNumber` is larger than `secondNumber`
-- then assign `firstNumber` to `biggestNumber`
-- else assign `secondNumber`.
+- 如果 `firstNumber` 大于 `secondNumber`
+- 则把 `firstNumber` 赋给 `biggestNumber`
+- 否则赋值为 `secondNumber`。
 
-The ternary expression is just a compact way of writing the code below:
+三元表达式只是下面这段代码的紧凑写法：
 
 ```javascript
 let biggestNumber;
@@ -197,22 +197,22 @@ if (firstNumber > secondNumber) {
 
 ---
 
-## 🚀 Challenge
+## 🚀 挑战
 
-Create a program that is written first with logical operators, and then rewrite it using a ternary expression. What's your preferred syntax?
+先用逻辑运算符写一个小程序，再把它改写成三元表达式版。你更喜欢哪种语法？
 
 ---
 
-## Post-Lecture Quiz
+## 课后测验
 
-[Post-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/12)
+[课后测验](https://ff-quizzes.netlify.app/web/quiz/12)
 
-## Review & Self Study
+## 回顾与自学
 
-Read more about the many operators available to the user [on MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators).
+在 [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators) 上阅读更多关于可用运算符的资料。
 
-Go through Josh Comeau's wonderful [operator lookup](https://joshwcomeau.com/operator-lookup/)!
+也可以看看 Josh Comeau 精彩的[运算符速查表](https://joshwcomeau.com/operator-lookup/)！
 
-## Assignment
+## 作业
 
 [Operators](assignment.md)

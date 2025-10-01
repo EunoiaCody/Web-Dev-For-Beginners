@@ -1,151 +1,154 @@
-# JavaScript Basics: Data Types
+# JavaScript 基础：数据类型
 
 ![JavaScript Basics - Data types](../../sketchnotes/webdev101-js-datatypes.png)
-> Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
+> 手绘笔记作者：[Tomomi Imura](https://twitter.com/girlie_mac)
 
-## Pre-Lecture Quiz
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/)
+## 课前测验
 
-This lesson covers the basics of JavaScript, the language that provides interactivity on the web.
+[课前测验](https://ff-quizzes.netlify.app/web/)
 
-> You can take this lesson on [Microsoft Learn](https://docs.microsoft.com/learn/modules/web-development-101-variables/?WT.mc_id=academic-77807-sagibbon)!
+本课介绍 JavaScript 的基础知识，这门语言为网页带来交互能力。
+
+> 你也可以在 [Microsoft Learn](https://docs.microsoft.com/learn/modules/web-development-101-variables/?WT.mc_id=academic-77807-sagibbon) 上学习本课！
 
 [![Variables](https://img.youtube.com/vi/JNIXfGiDWM8/0.jpg)](https://youtube.com/watch?v=JNIXfGiDWM8 "Variables in JavaScript")
 
 [![Data Types in JavaScript](https://img.youtube.com/vi/AWfA95eLdq8/0.jpg)](https://youtube.com/watch?v=AWfA95eLdq8 "Data Types in JavaScript")
 
-> 🎥 Click the images above for videos about variables and data types
+> 🎥 点击上方图片，观看关于变量和数据类型的视频
 
-Let's start with variables and the data types that populate them!
-## Variables
+让我们从变量以及填充在其中的数据类型开始！
 
-Variables store values that can be used and changed throughout your code.
+## 变量（Variables）
 
-Creating and **declaring** a variable has the following syntax **[keyword] [name]**. It's made up of the two parts:
+变量用于存储值，这些值可以在代码中被使用并修改。
 
-- **Keyword**. Keywords can be `let` or `var`.  
+创建并“声明（declare）”一个变量的语法为：**[关键字] [名称]**，由两部分组成：
 
-✅ The keyword `let` was introduced in ES6 and gives your variable a so called _block scope_. It's recommended that you use `let` over `var`. We will cover block scopes more in depth in future parts.
-- **The variable name**, this is a name you choose yourself.
+- **关键字（Keyword）**：可以是 `let` 或 `var`。
 
-### Task - working with variables
+  ✅ `let` 在 ES6 中引入，赋予变量所谓的“块级作用域（block scope）”。推荐使用 `let` 而不是 `var`。我们会在后续课程更深入地讲解作用域。
 
-1. **Declare a variable**. Let's declare a variable using the `let` keyword:
+- **变量名**：由你自行命名。
+
+### 练习：使用变量
+
+1. **声明变量**。使用 `let` 关键字声明变量：
 
     ```javascript
     let myVariable;
     ```
 
-   `myVariable` has now been declared using the `let` keyword. It currently doesn't have a value.
+   现在已使用 `let` 声明了 `myVariable`，它当前还没有值。
 
-1. **Assign a value**. Store a value in a variable with the `=` operator, followed by the expected value.
+1. **赋值**。使用 `=` 运算符为变量存储一个值：
 
     ```javascript
     myVariable = 123;
     ```
 
-   > Note: the use of `=` in this lesson means we make use of an "assignment operator", used to set a value to a variable. It doesn't denote equality.
+   > 注：本课中 `=` 表示“赋值运算符”，用于把一个值设置给变量，它不表示数学上的相等。
 
-   `myVariable` has now been *initialized* with the value 123.
+   现在 `myVariable` 已被初始化为 123。
 
-1. **Refactor**. Replace your code with the following statement.
+1. **重构**。将你的代码替换为下面语句：
 
     ```javascript
     let myVariable = 123;
     ```
 
-    The above is called an _explicit initialization_ when a variable is declared and is assigned a value at the same time.
+    当变量在声明的同时被赋值，这称为“显式初始化（explicit initialization）”。
 
-1. **Change the variable value**. Change the variable value in the following way:
+1. **修改变量值**。用以下方式改变变量值：
 
    ```javascript
    myVariable = 321;
    ```
 
-   Once a variable is declared, you can change its value at any point in your code with the `=` operator and the new value.
+   一旦变量被声明，你可以在代码中的任何位置使用 `=` 和新值来更新它。
 
-   ✅ Try it! You can write JavaScript right in your browser. Open a browser window and navigate to Developer Tools. In the console, you will find a prompt; type `let myVariable = 123`, press return, then type `myVariable`. What happens? Note, you'll learn more about these concepts in subsequent lessons.
+   ✅ 动手试试！你可以在浏览器里直接写 JavaScript。打开浏览器开发者工具，在控制台输入 `let myVariable = 123`，回车，再输入 `myVariable`。发生了什么？这些概念会在后续课程继续展开。
 
-## Constants
+## 常量（Constants）
 
-Declaration and initialization of a constant follows the same concepts as a variable, with the exception of the `const` keyword. Constants are typically declared with all uppercase letters.
+常量的声明与初始化与变量类似，区别在于关键字使用 `const`。常量通常以全大写命名。
 
 ```javascript
 const MY_VARIABLE = 123;
 ```
 
-Constants are similar to variables, with two exceptions:
+常量与变量相似，但有两点例外：
 
-- **Must have a value**. Constants must be initialized, or an error will occur when running code.
-- **Reference cannot be changed**. The reference of a constant cannot be changed once initialized, or an error will occur when running code. Let's look at two examples:
-   - **Simple value**. The following is NOT allowed:
-   
+- **必须有值**：常量必须在声明时初始化，否则运行时会报错。
+- **引用不可变**：一旦初始化，常量的引用不能被改变，否则运行时会报错。看两个例子：
+  - **简单值**（不允许）：
+
       ```javascript
       const PI = 3;
-      PI = 4; // not allowed
+      PI = 4; // 不允许
       ```
- 
-   - **Object reference is protected**. The following is NOT allowed.
-   
+
+  - **对象引用受保护**（不允许）：
+
       ```javascript
       const obj = { a: 3 };
-      obj = { b: 5 } // not allowed
+      obj = { b: 5 } // 不允许
       ```
 
-    - **Object value is not protected**. The following IS allowed:
-    
+  - **对象的属性值不受保护**（允许）：
+
       ```javascript
       const obj = { a: 3 };
-      obj.a = 5;  // allowed
+      obj.a = 5;  // 允许
       ```
 
-      Above you are changing the value of the object but not the reference itself, which makes it allowed.
+      上面修改的是对象内部的值，而不是它本身的引用，因此是允许的。
 
-   > Note, a `const` means the reference is protected from reassignment. The value is not _immutable_ though and can change, especially if it's a complex construct like an object.
+   > 注：`const` 表示“引用”不可被重新赋值；值本身并非不可变（immutable），尤其当它是对象等复杂结构时。
 
-## Data Types
+## 数据类型（Data Types）
 
-Variables can store many different types of values, like numbers and text. These various types of values are known as the **data type**. Data types are an important part of software development because it helps developers make decisions on how the code should be written and how the software should run. Furthermore, some data types have unique features that help transform or extract additional information in a value.
+变量可以存储很多不同类型的值，比如数字或文本。这些不同类型被称为**数据类型**。数据类型是软件开发中的重要概念，它帮助开发者决定如何编写代码以及软件如何运行。另外，部分数据类型具有独特功能，能帮助转换或从一个值中提取额外信息。
 
-✅ Data Types are also referred to as JavaScript data primitives, as they are the lowest-level data types that are provided by the language. There are 7 primitive data types: string, number, bigint, boolean, undefined, null and symbol. Take a minute to visualize what each of these primitives might represent. What is a `zebra`? How about `0`? `true`?
+✅ 数据类型也被称为 JavaScript 的原始类型（primitives），是语言提供的最低层数据类型。共有 7 种原始类型：string、number、bigint、boolean、undefined、null、symbol。花一分钟想象它们各自代表什么：`zebra` 是什么？`0` 呢？`true` 呢？
 
-### Numbers
+### 数字（Numbers）
 
-In the previous section, the value of `myVariable` was a number data type.
+上一节中，`myVariable` 的值是数字类型。
 
 `let myVariable = 123;`
 
-Variables can store all types of numbers, including decimals or negative numbers. Numbers also can be used with arithmetic operators, covered in the [next section](#arithmetic-operators).
+变量可以存储所有类型的数字，包括小数或负数。数字还可以与算术运算符一起使用，详见下一节“算术运算符（Arithmetic Operators）”。
 
-### Arithmetic Operators
+### 算术运算符（Arithmetic Operators）
 
-There are several types of operators to use when performing arithmetic functions, and some are listed here:
+执行算术运算时可以使用若干种运算符，部分如下：
 
-| Symbol | Description                                                              | Example                          |
-| ------ | ------------------------------------------------------------------------ | -------------------------------- |
-| `+`    | **Addition**: Calculates the sum of two numbers                          | `1 + 2 //expected answer is 3`   |
-| `-`    | **Subtraction**: Calculates the difference of two numbers                | `1 - 2 //expected answer is -1`  |
-| `*`    | **Multiplication**: Calculates the product of two numbers                | `1 * 2 //expected answer is 2`   |
-| `/`    | **Division**: Calculates the quotient of two numbers                     | `1 / 2 //expected answer is 0.5` |
-| `%`    | **Remainder**: Calculates the remainder from the division of two numbers | `1 % 2 //expected answer is 1`   |
+| 符号 | 描述 | 示例 |
+| --- | --- | --- |
+| `+` | **加法**：计算两数之和 | `1 + 2 //expected answer is 3` |
+| `-` | **减法**：计算两数之差 | `1 - 2 //expected answer is -1` |
+| `*` | **乘法**：计算两数之积 | `1 * 2 //expected answer is 2` |
+| `/` | **除法**：计算两数之商 | `1 / 2 //expected answer is 0.5` |
+| `%` | **取余**：计算两数相除的余数 | `1 % 2 //expected answer is 1` |
 
-✅ Try it! Try an arithmetic operation in your browser's console. Do the results surprise you?
+✅ 试一试！在浏览器控制台里做一次算术运算。结果是否出乎意料？
 
-### Strings
+### 字符串（Strings）
 
-Strings are sets of characters that reside between single or double quotes.
+字符串是一组位于单引号或双引号之间的字符。
 
 - `'This is a string'`
 - `"This is also a string"`
 - `let myString = 'This is a string value stored in a variable';`
 
-Remember to use quotes when writing a string, or else JavaScript will assume it's a variable name.
+写字符串时请加引号，否则 JavaScript 会把它当作变量名。
 
-### Formatting Strings
+### 格式化字符串（Formatting Strings）
 
-Strings are textual, and will require formatting from time to time.
+字符串是文本，有时需要进行格式化。
 
-To **concatenate** two or more strings, or join them together, use the `+` operator.
+要**连接（concatenate）**两个或多个字符串（将它们拼接），使用 `+` 运算符：
 
 ```javascript
 let myString1 = "Hello";
@@ -157,9 +160,9 @@ myString1 + ", " + myString2 + "!"; //Hello, World!
 
 ```
 
-✅ Why does `1 + 1 = 2` in JavaScript, but `'1' + '1' = 11?` Think about it. What about `'1' + 1`?
+✅ 为什么在 JavaScript 中 `1 + 1 = 2`，但 `'1' + '1' = 11`？想一想。那 `'1' + 1` 又如何？
 
-**Template literals** are another way to format strings, except instead of quotes, the backtick  is used. Anything that is not plain text must be placed inside placeholders `${ }`. This includes any variables that may be strings.
+**模板字面量（Template literals）** 是另一种格式化字符串的方法，它使用反引号（`）而不是引号。任何非常规文本都需要放在占位符`${}` 中，包括那些可能是字符串的变量：
 
 ```javascript
 let myString1 = "Hello";
@@ -169,32 +172,33 @@ let myString2 = "World";
 `${myString1}, ${myString2}!` //Hello, World!
 ```
 
-You can achieve your formatting goals with either method, but template literals will respect any spaces and line breaks.
+两种方法都能实现格式化目的，但模板字面量会更“忠实”地保留空格与换行。
 
-✅ When would you use a template literal vs. a plain string?
+✅ 何时使用模板字面量，何时用普通字符串？
 
-### Booleans
+### 布尔（Booleans）
 
-Booleans can be only two values: `true` or `false`. Booleans can help make decisions on which lines of code should run when certain conditions are met. In many cases, [operators](#arithmetic-operators) assist with setting the value of a Boolean and you will often notice and write variables being initialized or their values being updated with an operator.
+布尔值只有两种：`true` 或 `false`。布尔值常用于在满足某些条件时决定执行哪些代码行。很多时候，会借助运算符来设置布尔值；你也常常会看到用运算符来初始化变量或更新其值。
 
 - `let myTrueBool = true`
 - `let myFalseBool = false`
 
-✅ A variable can be considered 'truthy' if it evaluates to a boolean `true`. Interestingly, in JavaScript, [all values are truthy unless defined as falsy](https://developer.mozilla.org/docs/Glossary/Truthy).
+✅ 如果一个变量在布尔上下文中被计算为 `true`，我们称之为 “truthy”。有趣的是，在 JavaScript 中[除非被定义为 falsy，否则一切皆 truthy](https://developer.mozilla.org/docs/Glossary/Truthy)。
 
 ---
 
-## 🚀 Challenge
+## 🚀 挑战
 
-JavaScript is notorious for its surprising ways of handling datatypes on occasion. Do a bit of research on these 'gotchas'. For example: case sensitivity can bite! Try this in your console: `let age = 1; let Age = 2; age == Age` (resolves `false` -- why?). What other gotchas can you find?
+JavaScript 偶尔会以“出人意料”的方式处理数据类型。查一查这些“坑”。例如：大小写敏感可能会咬你一口！在控制台试试：`let age = 1; let Age = 2; age == Age`（结果是 `false` —— 为什么？）。你还能找到哪些坑？
 
-## Post-Lecture Quiz
-[Post-lecture quiz](https://ff-quizzes.netlify.app)
+## 课后测验
 
-## Review & Self Study
+[课后测验](https://ff-quizzes.netlify.app)
 
-Take a look at [this list of JavaScript exercises](https://css-tricks.com/snippets/javascript/) and try one. What did you learn?
+## 回顾与自学
 
-## Assignment
+看看这份[JavaScript 练习列表](https://css-tricks.com/snippets/javascript/)，试着完成一个。你学到了什么？
 
-[Data Types Practice](assignment.md)
+## 作业
+
+[数据类型练习](assignment.md)

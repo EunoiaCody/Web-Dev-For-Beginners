@@ -1,11 +1,11 @@
-# Work a bit more with the DOM
+# 再和 DOM 多打几次交道
 
-## Instructions
+## 说明
 
-Research the DOM a little more by 'adopting' a DOM element. Visit the MDN's [list of DOM interfaces](https://developer.mozilla.org/docs/Web/API/Document_Object_Model) and pick one. Find it being used on a web site in the web, and write an explanation of how it is used.
+通过“收养”一个 DOM 元素来进一步研究 DOM。访问 MDN 的 [DOM 接口列表](https://developer.mozilla.org/docs/Web/API/Document_Object_Model) 并选择其中一个接口。在互联网上找一个实际网站中使用该接口的例子，并写一段说明它是如何被使用的。
 
-## Rubric
+## 评分量表（Rubric）
 
-| Criteria | Exemplary                                     | Adequate                                         | Needs Improvement       |
-| -------- | --------------------------------------------- | ------------------------------------------------ | ----------------------- |
-|          | Paragraph write-up is presented, with example | Paragraph write-up is presented, without example | No writeup is presented |
+| 评价维度 | 优秀（Exemplary）                         | 合格（Adequate）                         | 需改进（Needs Improvement） |
+| -------- | ---------------------------------------- | ---------------------------------------- | ---------------------------- |
+|          | 提交了成段说明文字，并包含示例           | 提交了成段说明文字，但不包含示例         | 未提交说明文字               |

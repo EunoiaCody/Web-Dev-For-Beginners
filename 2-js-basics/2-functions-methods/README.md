@@ -1,36 +1,37 @@
-# JavaScript Basics: Methods and Functions
+# JavaScript 基础：方法与函数
 
 ![JavaScript Basics - Functions](../../sketchnotes/webdev101-js-functions.png)
-> Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
+> 手绘笔记作者：[Tomomi Imura](https://twitter.com/girlie_mac)
 
-## Pre-Lecture Quiz
-[Pre-lecture quiz](https://ff-quizzes.netlify.app)
+## 课前测验
 
-When we think about writing code, we always want to ensure our code is readable. While this sounds counterintuitive, code is read many more times than it's written. One core tool in a developer's toolbox to ensure maintainable code is the **function**.
+[课前测验](https://ff-quizzes.netlify.app)
+
+编写代码时，我们总希望代码易读。听起来有点反直觉，但代码“被读”的次数远多于“被写”。为了让代码易维护，开发者工具箱里的一件核心工具就是“函数（function）”。
 
 [![Methods and Functions](https://img.youtube.com/vi/XgKsD6Zwvlc/0.jpg)](https://youtube.com/watch?v=XgKsD6Zwvlc "Methods and Functions")
 
-> 🎥 Click the image above for a video about methods and functions.
+> 🎥 点击上方图片，观看关于方法与函数的视频。
 
-> You can take this lesson on [Microsoft Learn](https://docs.microsoft.com/learn/modules/web-development-101-functions/?WT.mc_id=academic-77807-sagibbon)!
+> 你也可以在 [Microsoft Learn](https://docs.microsoft.com/learn/modules/web-development-101-functions/?WT.mc_id=academic-77807-sagibbon) 上学习本课！
 
-## Functions
+## 函数（Functions）
 
-At its core, a function is a block of code we can execute on demand. This is perfect for scenarios where we need to perform the same task multiple times; rather than duplicating the logic in multiple locations (which would make it hard to update when the time comes), we can centralize it in one location, and call it whenever we need the operation performed - you can even call functions from other functions!.
+从本质上说，函数是一段可以按需执行的代码块。它非常适合需要多次执行相同任务的场景：与其在多处复制粘贴同一逻辑（将来要改还不容易），不如把它集中到一个地方，需要时就调用——甚至可以在函数中调用其他函数！
 
-Just as important is the ability to name a function. While this might seem trivial, the name provides a quick way of documenting a section of code. You could think of this as a label on a button. If I click on a button which reads "Cancel timer", I know it's going to stop running the clock.
+给函数命名同样重要。名字看似微不足道，但它为一段代码提供了快捷的“文档”。把它想象成按钮上的标签：如果按钮写着“Cancel timer”，我就知道它会停止计时。
 
-## Creating and calling a function
+## 创建并调用函数
 
-The syntax for a function looks like the following:
+函数的语法如下：
 
 ```javascript
 function nameOfFunction() { // function definition
- // function definition/body
+  // function definition/body
 }
 ```
 
-If I wanted to create a function to display a greeting, it might look like this:
+若要创建一个显示问候语的函数，可以这样写：
 
 ```javascript
 function displayGreeting() {
@@ -38,28 +39,28 @@ function displayGreeting() {
 }
 ```
 
-Whenever we want to call (or invoke) our function, we use the name of the function followed by `()`. It's worth noting the fact our function can be defined before or after we decide to call it; the JavaScript compiler will find it for you.
+当我们需要调用（invoke）函数时，使用函数名后跟 `()`。值得注意的是，函数可以在调用之前或之后定义；JavaScript 编译器会帮你找到它。
 
 ```javascript
-// calling our function
+// 调用函数
 displayGreeting();
 ```
 
-> **NOTE:** There is a special type of function known as a **method**, which you've already been using! In fact, we saw this in our demo above when we used `console.log`. What makes a method different from a function is a method is attached to an object (`console` in our example), while a function is free floating. You will hear many developers use these terms interchangeably.
+> 注意：有一种特殊的函数叫做“方法（method）”，你其实已经用过了！上面的示例中我们使用的 `console.log` 就是方法。方法与函数的不同在于，方法是附着在某个对象上的（本例中是 `console`），而普通函数是“自由”的。很多开发者会交替使用这两个术语。
 
-### Function best practices
+### 函数的最佳实践
 
-There are a handful of best practices to keep in mind when creating functions
+创建函数时可以记住如下实践：
 
-- As always, use descriptive names so you know what the function will do
-- Use **camelCasing** to combine words
-- Keep your functions focused on a specific task
+- 一如既往，使用有描述性的名字，便于知道函数的用途
+- 使用驼峰命名（camelCasing）来组合多个单词
+- 让函数聚焦于一个具体任务
 
-## Passing information to a function
+## 向函数传递信息
 
-To make a function more reusable you'll often want to pass information into it. If we consider our `displayGreeting` example above, it will only display **Hello, world!**. Not the most useful function one could create. If we want to make it a little more flexible, like allowing someone to specify the name of the person to greet, we can add a **parameter**. A parameter (also sometimes called an **argument**), is additional information sent to a function.
+为了让函数更可复用，通常会向它传入信息。以上面的 `displayGreeting` 为例，它只能显示 “Hello, world!”——并不是很有用。如果我们想更灵活些，比如允许调用者指定要问候的名字，可以添加一个“参数（parameter）”。参数（有时也称“实参 argument”）是传入函数的附加信息。
 
-Parameters are listed in the definition part within parenthesis and are comma separated like so:
+参数在函数定义的圆括号中按逗号分隔列出：
 
 ```javascript
 function name(param, param2, param3) {
@@ -67,7 +68,7 @@ function name(param, param2, param3) {
 }
 ```
 
-We can update our `displayGreeting` to accept a name and have that displayed.
+我们可以更新 `displayGreeting` 来接受一个名字并显示出来：
 
 ```javascript
 function displayGreeting(name) {
@@ -76,16 +77,16 @@ function displayGreeting(name) {
 }
 ```
 
-When we want to call our function and pass in the parameter, we specify it in the parenthesis.
+当调用函数并传入参数时，把参数写在圆括号内：
 
 ```javascript
 displayGreeting('Christopher');
-// displays "Hello, Christopher!" when run
+// 运行后显示 "Hello, Christopher!"
 ```
 
-## Default values
+## 默认值（Default values）
 
-We can make our function even more flexible by adding more parameters. But what if we don't want to require every value be specified? Keeping with our greeting example, we could leave name as required (we need to know who we're greeting), but we want to allow the greeting itself to be customized as desired. If someone doesn't want to customize it, we provide a default value instead. To provide a default value to a parameter, we set it much in the same way we set a value for a variable - `parameterName = 'defaultValue'`. To see a full example:
+我们可以通过添加更多参数来让函数更灵活。但如果并不想强制所有值都必须提供呢？仍以问候为例，我们可以把 name 设为必需（需要知道问候谁），而让问候词本身可选。如果没有自定义，就提供一个默认值。给参数提供默认值的方式与给变量赋值类似：`parameterName = 'defaultValue'`。完整示例如下：
 
 ```javascript
 function displayGreeting(name, salutation='Hello') {
@@ -93,29 +94,29 @@ function displayGreeting(name, salutation='Hello') {
 }
 ```
 
-When we call the function, we can then decide if we want to set a value for `salutation`.
+调用时，我们可以选择是否为 `salutation` 传值：
 
 ```javascript
 displayGreeting('Christopher');
-// displays "Hello, Christopher"
+// 显示 "Hello, Christopher"
 
 displayGreeting('Christopher', 'Hi');
-// displays "Hi, Christopher"
+// 显示 "Hi, Christopher"
 ```
 
-## Return values
+## 返回值（Return values）
 
-Up until now the function we built will always output to the [console](https://developer.mozilla.org/docs/Web/API/console). Sometimes this can be exactly what we're looking for, especially when we create functions which will be calling other services. But what if I want to create a helper function to perform a calculation and provide the value back so I can use it elsewhere?
+到目前为止，我们构建的函数都会把内容输出到[控制台](https://developer.mozilla.org/docs/Web/API/console)。有时这正合所需，尤其当函数会调用其他服务时。但如果我想写个帮助函数来计算一个值，并把它返回供其他地方使用呢？
 
-We can do this by using a **return value**. A return value is returned by the function, and can be stored in a variable just the same as we could store a literal value such as a string or number.
+可以通过“返回值（return value）”实现。返回值由函数返回，和字符串或数字等字面量一样可以被存入变量。
 
-If a function does return something then the keyword `return` is used. The `return` keyword expects a value or reference of what's being returned like so:
+当函数要返回内容时，使用关键字 `return`。`return` 期望一个返回的值或引用，例如：
 
 ```javascript
 return myVariable;
-```  
+```
 
-We could create a function to create a greeting message and return the value back to the caller
+我们可以写一个函数来构建问候消息并把值返回给调用者：
 
 ```javascript
 function createGreetingMessage(name) {
@@ -124,35 +125,35 @@ function createGreetingMessage(name) {
 }
 ```
 
-When calling this function we'll store the value in a variable. This is much the same way we'd set a variable to a static value (like `const name = 'Christopher'`).
+调用该函数时，我们会把返回值存入变量，这与给变量设置静态值（如 `const name = 'Christopher'`）非常相似：
 
 ```javascript
 const greetingMessage = createGreetingMessage('Christopher');
 ```
 
-## Functions as parameters for functions
+## 把函数作为函数的参数
 
-As you progress in your programming career, you will come across functions which accept functions as parameters. This neat trick is commonly used when we don't know when something is going to occur or complete, but we know we need to perform an operation in response.
+随着编程经验的增长，你会遇到把“函数作为参数”传给另一个函数的情况。当我们不知道某件事何时发生或完成，但知道完成后要做某事时，这个技巧非常常用。
 
-As an example, consider [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout), which begins a timer and will execute code when it completes. We need to tell it what code we want to execute. Sounds like a perfect job for a function!
+例如，[setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) 会启动一个定时器，并在到时执行代码。我们需要告诉它要执行的代码——这正是函数大显身手的时候！
 
-If you run the code below, after 3 seconds you'll see the message **3 seconds has elapsed**.
+运行下面的代码，3 秒后你会看到 “3 seconds has elapsed” 的消息：
 
 ```javascript
 function displayDone() {
   console.log('3 seconds has elapsed');
 }
-// timer value is in milliseconds
+// 定时器的单位是毫秒
 setTimeout(displayDone, 3000);
 ```
 
-### Anonymous functions
+### 匿名函数（Anonymous functions）
 
-Let's take another look at what we've built. We're creating a function with a name which will be used one time. As our application gets more complex, we can see ourselves creating a lot of functions which will only be called once. This isn't ideal. As it turns out, we don't always need to provide a name!
+再看看我们写的东西：我们为了只用一次而创建了一个有名字的函数。随着应用变复杂，可能会写出一堆只被调用一次的函数，这并不理想。好在并非总要给函数取名！
 
-When we are passing a function as a parameter we can bypass creating one in advance and instead build one as part of the parameter. We use the same `function` keyword, but instead we build it as a parameter.
+当把函数作为参数传递时，可以不事先创建函数，而是在参数位置直接写。语法仍然使用 `function` 关键字，只是把它放在参数里。
 
-Let's rewrite the code above to use an anonymous function:
+把上面的代码改写为匿名函数：
 
 ```javascript
 setTimeout(function() {
@@ -160,13 +161,13 @@ setTimeout(function() {
 }, 3000);
 ```
 
-If you run our new code you'll notice we get the same results. We've created a function, but didn't have to give it a name!
+运行新代码你会发现结果一样：我们创建了一个函数，但没有给它名字！
 
-### Fat arrow functions
+### 箭头函数（Fat arrow functions）
 
-One shortcut common in a lot of programming languages (including JavaScript) is the ability to use what's called an **arrow** or **fat arrow** function. It uses a special indicator of `=>`, which looks like an arrow - thus the name! By using `=>`, we are able to skip the `function` keyword.
+很多编程语言（包括 JavaScript）都有一种简写叫“箭头函数”或“胖箭头函数”。它使用 `=>` 这个看起来像箭头的符号，因此得名。使用 `=>` 可以省略 `function` 关键字。
 
-Let's rewrite our code one more time to use a fat arrow function:
+再把代码改写为箭头函数：
 
 ```javascript
 setTimeout(() => {
@@ -174,23 +175,24 @@ setTimeout(() => {
 }, 3000);
 ```
 
-### When to use each strategy
+### 何时使用哪种方式
 
-You've now seen we have three ways to pass a function as a parameter and might be wondering when to use each. If you know you'll be using the function more than once, create it as normal. If you'll be using it for just the one location, it's generally best to use an anonymous function. Whether or not you use a fat arrow function or the more traditional `function` syntax is up to you, but you will notice most modern developers prefer `=>`.
+我们已经看到三种把函数作为参数传递的方式，何时使用哪一种？如果你知道函数会被多处复用，就按常规方式单独创建；如果只在一个地方用，一般匿名函数更合适。至于使用箭头函数还是传统的 `function` 语法，取决于你的喜好，但你会注意到大多数现代开发者更偏爱 `=>`。
 
 ---
 
-## 🚀 Challenge
+## 🚀 挑战
 
-Can you articulate in one sentence the difference between functions and methods? Give it a try!
+你能用“一句话”说明函数与方法的区别吗？试试看！
 
-## Post-Lecture Quiz
-[Post-lecture quiz](https://ff-quizzes.netlify.app)
+## 课后测验
 
-## Review & Self Study
+[课后测验](https://ff-quizzes.netlify.app)
 
-It's worth [reading up a little more on arrow functions](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions), as they are increasingly used in code bases. Practice writing a function, and then rewriting it with this syntax.
+## 回顾与自学
 
-## Assignment
+值得[多了解一下箭头函数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions)，它们在代码中越来越常见。练习先写一个普通函数，再用这种语法改写它。
+
+## 作业
 
 [Fun with Functions](assignment.md)

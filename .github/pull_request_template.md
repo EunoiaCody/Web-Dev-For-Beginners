@@ -1,12 +1,12 @@
-# Description
+# 描述
 
-Please include a summary of the changes and the related issue. Please also include relevant motivation and context.
+请包含更改摘要和相关问题。请同时包含相关动机和背景。
 
-Fixes # (issue)
+修复 # (问题)
 
-## Type of change
+## 更改类型
 
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] This change requires a documentation update
+- [ ] 错误修复（修复问题的非破坏性更改）
+- [ ] 新功能（添加功能的非破坏性更改）
+- [ ] 破坏性更改（会导致现有功能无法按预期工作的修复或功能）
+- [ ] 此更改需要文档更新

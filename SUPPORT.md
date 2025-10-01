@@ -1,11 +1,11 @@
-# Support
+# 支持
 
-## How to file issues and get help  
+## 如何提交问题和获取帮助  
 
-This project uses GitHub Issues to track bugs and feature requests. Please search the existing issues before filing new issues to avoid duplicates. For new issues, file your bug or feature request as a new Issue.
+此项目使用 GitHub Issues 来跟踪错误和功能请求。在提交新问题之前，请搜索现有问题以避免重复。对于新问题，请将您的错误或功能请求作为新 Issue 提交。
 
-For help and questions about using this project, please refer to [our contributing guidelines](CONTRIBUTING.md).
+有关使用此项目的帮助和问题，请参考[我们的贡献指南](CONTRIBUTING.md)。
 
-## Microsoft Support Policy  
+## Microsoft 支持政策  
 
-Support for this project is limited to the resources listed above.
+对此项目的支持仅限于上述列出的资源。

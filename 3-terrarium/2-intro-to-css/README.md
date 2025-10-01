@@ -1,32 +1,31 @@
-# Terrarium Project Part 2: Introduction to CSS
+# 生态瓶项目 第 2 部分：CSS 入门
 
 ![Introduction to CSS](../../sketchnotes/webdev101-css.png)
-> Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
+> 速记图作者：[Tomomi Imura](https://twitter.com/girlie_mac)
 
-## Pre-Lecture Quiz
+## 课前测验
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/17)
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/17)
 
-### Introduction
+### 简介
 
-CSS, or Cascading Style Sheets, solve an important problem of web development: how to make your web site look nice. Styling your apps makes them more usable and nicer-looking; you can also use CSS to create Responsive Web Design (RWD) - allowing your apps to look good no matter what screen size they are displayed on. CSS is not only about making your app look nice; its spec includes animations and transforms that can enable sophisticated interactions for your apps. The CSS Working Group helps maintain current CSS specifications; you can follow their work at [World Wide Web Consortium's site](https://www.w3.org/Style/CSS/members).
+CSS（层叠样式表）解决了 Web 开发中的一个重要问题：如何让网站“看起来更好”。给应用添加样式能提升可用性和观感；你还可以用 CSS 实现响应式网页设计（RWD），让应用在不同屏幕尺寸下都能很好地展示。CSS 不仅仅是“好看”，其规范还包含动画与变换，可为应用提供更复杂的交互。CSS 工作组维护当前的 CSS 规范进展，你可以在[W3C 网站](https://www.w3.org/Style/CSS/members)上关注他们的工作。
 
-> Note, CSS is a language that evolves, like everything on the web, and not all browsers support newer parts of the specification. Always check your implementations by consulting [CanIUse.com](https://caniuse.com).
+> 注意：CSS 和 Web 上的其他技术一样在不断演进，并非所有浏览器都支持最新规范。实现前请查阅 [CanIUse.com](https://caniuse.com) 以确认兼容性。
 
-In this lesson, we're going to add styles to our online terrarium and learn more about several CSS concepts: the cascade, inheritance, and the use of selectors, positioning, and using CSS to build layouts. In the process we will layout the terrarium and create the actual terrarium itself.
+在本课中，我们将为线上生态瓶添加样式，并学习多个 CSS 概念：层叠、继承、选择器、定位，以及用 CSS 构建布局。过程中我们会完成生态瓶的页面布局，并用 CSS 构建出“生态瓶”本体。
 
-### Prerequisite
+### 前置要求
 
-You should have the HTML for your terrarium built and ready to be styled.
+你应当已经完成生态瓶的 HTML，并准备好开始加样式。
 
-> Check out video
-
-> 
+> 视频参考
+>
 > [![Git and GitHub basics video](https://img.youtube.com/vi/6yIdOIV9p1I/0.jpg)](https://www.youtube.com/watch?v=6yIdOIV9p1I)
 
-### Task
+### 任务 1
 
-In your terrarium folder, create a new file called `style.css`. Import that file in the `<head>` section:
+在生态瓶项目文件夹中新建 `style.css`，并在 `<head>` 中引入：
 
 ```html
 <link rel="stylesheet" href="./style.css" />
@@ -34,237 +33,234 @@ In your terrarium folder, create a new file called `style.css`. Import that file
 
 ---
 
-## The Cascade
+## 层叠（Cascade）
 
-Cascading Style Sheets incorporate the idea that the styles 'cascade' such that the application of a style is guided by its priority. Styles set by a web site author take priority over those set by a browser. Styles set 'inline' take priority over those set in an external style sheet.
+“层叠样式表”的“层叠”指的是样式会按优先级“层层传递并覆盖”。网站作者定义的样式优先于浏览器默认样式；写在标签上的内联样式优先于外部样式表中的样式。
 
-### Task
+### 任务
 
-Add the inline style "color: red" to your `<h1>` tag:
+给 `<h1>` 标签添加内联样式 "color: red"：
 
 ```HTML
 <h1 style="color: red">My Terrarium</h1>
 ```
 
-Then, add the following code to your `style.css` file:
+然后，在 `style.css` 中添加：
 
 ```CSS
 h1 {
- color: blue;
+  color: blue;
 }
 ```
 
-✅ Which color displays in your web app? Why? Can you find a way to override styles? When would you want to do this, or why not?
+✅ 你的页面显示成哪种颜色？为什么？有没有办法覆盖样式？在什么情况下你会这么做，或不这么做？
 
 ---
 
-## Inheritance
+## 继承（Inheritance）
 
-Styles are inherited from an ancestor style to a descendent, such that nested elements inherit the styles of their parents.
+样式会从祖先元素“继承”到后代元素，嵌套的子元素会继承父元素的样式。
 
-### Task
+### 任务 2
 
-Set the body's font to a given font, and check to see a nested element's font:
+给 body 设置字体，并观察一个嵌套元素的字体：
 
 ```CSS
 body {
-	font-family: helvetica, arial, sans-serif;
+  font-family: helvetica, arial, sans-serif;
 }
 ```
 
-Open your browser's console to the 'Elements' tab and observe the H1's font. It inherits its font from the body, as stated within the browser:
+打开浏览器开发者工具的 Elements 面板，观察 H1 的字体。正如浏览器所显示的，它从 body 继承了字体：
 
 ![inherited font](images/1.png)
 
-✅ Can you make a nested style inherit a different property?
+✅ 你能让某个嵌套元素“继承”到不同的属性吗？
 
 ---
 
-## CSS Selectors
+## CSS 选择器（Selectors）
 
-### Tags
+### 标签（Tags）
 
-So far, your `style.css` file has only a few tags styled, and the app looks pretty strange:
+此时你的 `style.css` 只给少量标签加了样式，页面看起来有点奇怪：
 
 ```CSS
 body {
-	font-family: helvetica, arial, sans-serif;
+  font-family: helvetica, arial, sans-serif;
 }
 
 h1 {
-	color: #3a241d;
-	text-align: center;
+  color: #3a241d;
+  text-align: center;
 }
 ```
 
-This way of styling a tag gives you control over unique elements, but you need to control the styles of many plants in your terrarium. To do that, you need to leverage CSS selectors.
+按标签名写样式可以控制某些唯一元素，但你还需要控制生态瓶中很多植物的样式，这时就要充分利用选择器。
 
-### Ids
+### ID（Ids）
 
-Add some style to layout the left and right containers. Since there is only one left container and only one right container, they are given ids in the markup. To style them, use `#`:
+为左右容器添加样式。由于左右容器各只有一个，它们在标记中使用 id。要为它们写样式，使用 `#`：
 
 ```CSS
 #left-container {
-	background-color: #eee;
-	width: 15%;
-	left: 0px;
-	top: 0px;
-	position: absolute;
-	height: 100%;
-	padding: 10px;
+  background-color: #eee;
+  width: 15%;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  height: 100%;
+  padding: 10px;
 }
 
 #right-container {
-	background-color: #eee;
-	width: 15%;
-	right: 0px;
-	top: 0px;
-	position: absolute;
-	height: 100%;
-	padding: 10px;
+  background-color: #eee;
+  width: 15%;
+  right: 0px;
+  top: 0px;
+  position: absolute;
+  height: 100%;
+  padding: 10px;
 }
 ```
 
-Here, you have placed these containers with absolute positioning to the far left and right of the screen, and used percentages for their width so that they can scale for small mobile screens.
+这里我们把容器绝对定位到屏幕最左和最右，并用百分比设置宽度，以便在小屏上也能自适应。
 
-✅ This code is quite repeated, thus not "DRY" (Don't Repeat Yourself); can you find a better way to style these ids, perhaps with an id and a class? You would need to change the markup and refactor the CSS:
+✅ 这段代码重复较多，不够“DRY”（Don't Repeat Yourself）。你能找到更好的写法吗？比如结合 id 和 class？这需要你修改标记并重构 CSS：
 
 ```html
 <div id="left-container" class="container"></div>
 ```
 
-### Classes
+### 类（Classes）
 
-In the example above, you styled two unique elements on the screen. If you want styles to apply to many elements on the screen, you can use CSS classes. Do this to layout the plants in the left and right containers.
+上面的例子中，你为两个唯一元素添加了样式。如果希望样式应用于屏幕上的多个元素，可以使用 CSS 类。用它来布局左右容器中的植物。
 
-Notice that each plant in the HTML markup has a combination of ids and classes. The ids here are used by the JavaScript that you will add later to manipulate the terrarium plant placement. The classes, however, give all the plants a given style.
+注意每株植物在 HTML 标记中都同时拥有 id 和 class。id 将在后续 JavaScript 中用于操控植物位置；class 则用于为所有植物赋予统一样式。
 
 ```html
 <div class="plant-holder">
-	<img class="plant" alt="plant" id="plant1" src="./images/plant1.png" />
+  <img class="plant" alt="plant" id="plant1" src="./images/plant1.png" />
 </div>
 ```
 
-Add the following to your `style.css` file:
+在 `style.css` 中加入：
 
 ```CSS
 .plant-holder {
-	position: relative;
-	height: 13%;
-	left: -10px;
+  position: relative;
+  height: 13%;
+  left: -10px;
 }
 
 .plant {
-	position: absolute;
-	max-width: 150%;
-	max-height: 150%;
-	z-index: 2;
+  position: absolute;
+  max-width: 150%;
+  max-height: 150%;
+  z-index: 2;
 }
 ```
 
-Notable in this snippet is the mixture of relative and absolute positioning, which we'll cover in the next section. Take a look at the way heights are handled by percentages:
+这段代码中混合使用了相对定位和绝对定位（下一节会讲）。注意高度使用了百分比：
 
-You set the height of the plant holder to 13%, a good number to ensure that all the plants are displayed in each vertical container without need for scrolling.
+- plant-holder 的高度设置为 13%，这样每个垂直容器里都能展示所有植物，无需滚动；
+- plant-holder 左移以便让植物在其容器内更居中。由于图片带有较大的透明背景，为了更好拖拽，需要向左推一点以便更好地适配屏幕；
+- 植物本身设置了 150% 的最大宽度，这样浏览器缩小时它也会等比缩小。试着调整窗口大小，植物会留在各自容器中并缩放以适配；
+- 使用了 z-index 来控制元素的“高度层级”，让植物显示在容器之上，像是在生态瓶里。
 
-You set the plant holder to move to the left to allow the plants to be more centered within their container. The images have a large amount of transparent background so as to make them more draggable, so need to be pushed to the left to fit better on the screen.
+✅ 为什么需要同时拥有 plant-holder 和 plant 这两个选择器？
 
-Then, the plant itself is given a max-width of 150%. This allows it to scale down as the browser scales down. Try resizing your browser; the plants stay in their containers but scale down to fit.
+## CSS 定位（Positioning）
 
-Also notable is the use of z-index, which controls the relative altitude of an element (so that the plants sit on top of the container and appear to sit inside the terrarium).
+混合不同的定位属性（static、relative、fixed、absolute、sticky）可能有点棘手，但如果用得当，就能很好地控制页面元素。
 
-✅ Why do you need both a plant holder and a plant CSS selector?
+绝对定位的元素相对于其最近的“已定位”祖先元素进行定位；若没有，则相对文档的 body 定位。
 
-## CSS Positioning
+相对定位的元素会基于其初始位置，按 CSS 给定的偏移量进行调整。
 
-Mixing position properties (there are static, relative, fixed, absolute, and sticky positions) can be a little tricky, but when done properly it gives you good control over the elements on your pages.
+在本例中，`plant-holder` 是相对定位，它位于一个绝对定位的容器之内。其结果是侧栏容器固定在左右两侧，plant-holder 嵌套其中并在侧栏内部进行位置调整，为垂直排列的植物留出空间。
 
-Absolute positioned elements are positioned relative to their nearest positioned ancestors, and if there are none, it is positioned according to the document body.
+> 植物 `plant` 本身也使用了绝对定位，这对后续实现拖拽是必要的（下一课会用到）。
 
-Relative positioned elements are positioned based on the CSS's directions to adjust its placement away from its initial position.
+✅ 试着切换侧栏容器与 plant-holder 的定位方式，会发生什么？
 
-In our sample, the `plant-holder` is a relative-positioned element that is positioned within an absolute-positioned container. The resultant behavior is that the side bar containers are pinned left and right, and the plant-holder is nested, adjusting itself within the side bars, giving space for the plants to be placed in a vertical row.
+## CSS 布局（Layouts）
 
-> The `plant` itself also has absolute positioning, necessary to making it draggable, as you will discover in the next lesson.
+现在用你学到的知识，纯 CSS 构建出“生态瓶”本体！
 
-✅ Experiment with switching the types of positioning of the side containers and the plant-holder. What happens?
-
-## CSS Layouts
-
-Now you will use what you learned to build the terrarium itself, all using CSS!
-
-First, style the `.terrarium` div children as a rounded rectangle using CSS:
+首先，把 `.terrarium` 下的子元素用 CSS 样式化为带圆角的矩形：
 
 ```CSS
 .jar-walls {
-	height: 80%;
-	width: 60%;
-	background: #d1e1df;
-	border-radius: 1rem;
-	position: absolute;
-	bottom: 0.5%;
-	left: 20%;
-	opacity: 0.5;
-	z-index: 1;
+  height: 80%;
+  width: 60%;
+  background: #d1e1df;
+  border-radius: 1rem;
+  position: absolute;
+  bottom: 0.5%;
+  left: 20%;
+  opacity: 0.5;
+  z-index: 1;
 }
 
 .jar-top {
-	width: 50%;
-	height: 5%;
-	background: #d1e1df;
-	position: absolute;
-	bottom: 80.5%;
-	left: 25%;
-	opacity: 0.7;
-	z-index: 1;
+  width: 50%;
+  height: 5%;
+  background: #d1e1df;
+  position: absolute;
+  bottom: 80.5%;
+  left: 25%;
+  opacity: 0.7;
+  z-index: 1;
 }
 
 .jar-bottom {
-	width: 50%;
-	height: 1%;
-	background: #d1e1df;
-	position: absolute;
-	bottom: 0%;
-	left: 25%;
-	opacity: 0.7;
+  width: 50%;
+  height: 1%;
+  background: #d1e1df;
+  position: absolute;
+  bottom: 0%;
+  left: 25%;
+  opacity: 0.7;
 }
 
 .dirt {
-	width: 60%;
-	height: 5%;
-	background: #3a241d;
-	position: absolute;
-	border-radius: 0 0 1rem 1rem;
-	bottom: 1%;
-	left: 20%;
-	opacity: 0.7;
-	z-index: -1;
+  width: 60%;
+  height: 5%;
+  background: #3a241d;
+  position: absolute;
+  border-radius: 0 0 1rem 1rem;
+  bottom: 1%;
+  left: 20%;
+  opacity: 0.7;
+  z-index: -1;
 }
 ```
 
-Note the use of percentages here. If you scale your browser down, you can see how the jar scales as well. Also notice the widths and height percentages for the jar elements and how each element is absolutely positioned in the center, pinned to the bottom of the viewport.
+注意这里大量使用了百分比。缩小浏览器，你会看到玻璃瓶也随之缩放。还要留意各个元素的宽高百分比，以及元素如何绝对定位在视口底部的中间位置。
 
-We are also using `rem` for the border-radius, a font-relative length. Read more about this type of relative measurement in the [CSS spec](https://www.w3.org/TR/css-values-3/#font-relative-lengths).
+我们还使用了 `rem` 作为圆角的单位，它是相对字体大小的长度单位。可在 [CSS 规范](https://www.w3.org/TR/css-values-3/#font-relative-lengths) 中了解更多。
 
-✅ Try changing the jar colors and opacity vs. those of the dirt. What happens? Why?
+✅ 尝试改变瓶子与泥土的颜色和透明度。会发生什么？为什么？
 
 ---
 
-## 🚀Challenge
+## 🚀 挑战
 
-Add a 'bubble' shine to the left bottom area of the jar to make it look more glasslike. You will be styling the `.jar-glossy-long` and `.jar-glossy-short` to look like a reflected shine. Here's how it would look:
+给瓶子的左下区域增加“泡泡状”的高光，让它更像玻璃。你需要为 `.jar-glossy-long` 和 `.jar-glossy-short` 添加样式来表现反光。效果如下：
 
 ![finished terrarium](./images/terrarium-final.png)
 
-To complete the post-lecture quiz, go through this Learn module: [Style your HTML app with CSS](https://docs.microsoft.com/learn/modules/build-simple-website/4-css-basics/?WT.mc_id=academic-77807-sagibbon)
+若要完成课后测验，请学习这个 Learn 模块：[用 CSS 为 HTML 应用添加样式](https://docs.microsoft.com/learn/modules/build-simple-website/4-css-basics/?WT.mc_id=academic-77807-sagibbon)
 
-## Post-Lecture Quiz
+## 课后测验
 
-[Post-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/18)
+[课后测验](https://ff-quizzes.netlify.app/web/quiz/18)
 
-## Review & Self Study
+## 复习与自学
 
-CSS seems deceptively straightforward, but there are many challenges when trying to style an app perfectly for all browsers and all screen sizes. CSS-Grid and Flexbox are tools that have been developed to make the job a little more structured and more reliable. Learn about these tools by playing [Flexbox Froggy](https://flexboxfroggy.com/) and [Grid Garden](https://codepip.com/games/grid-garden/).
+CSS 看似简单，但要让应用在所有浏览器、所有屏幕尺寸下都表现完美并不容易。CSS Grid 与 Flexbox 是为此而生的布局工具，让工作更结构化、更可靠。试试这些小游戏来学习它们：[Flexbox Froggy](https://flexboxfroggy.com/) 与 [Grid Garden](https://codepip.com/games/grid-garden/)。
 
-## Assignment
+## 作业
 
-[CSS Refactoring](assignment.md)
+[CSS 重构](assignment.md)

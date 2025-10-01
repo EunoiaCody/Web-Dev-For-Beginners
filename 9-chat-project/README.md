@@ -1,26 +1,26 @@
-# Chat project
+# 聊天项目
 
-This chat project shows how to build a Chat Assistant using GitHub Models.
+这个聊天项目展示了如何使用 GitHub Models 构建聊天助手。
 
-Here's what the finished project looks like:
+完成的项目如下所示：
 
-![Chat app](./assets/screenshot.png)
+![聊天应用](./assets/screenshot.png)
 
-Some context, building Chat assistants using generative AI is a great way to start learning about AI. What you'll learn is to integrate generative AI into a web app throughout this lesson, let's begin.
+一些背景：使用生成式 AI 构建聊天助手是开始学习 AI 的绝佳方式。在本课程中，您将学习如何将生成式 AI 集成到 Web 应用程序中，让我们开始吧。
 
-## Connecting to generative AI
+## 连接到生成式 AI
 
-For the backend, we're using GitHub Models. It's a great service that enables you to use AI for free. Go to its playground and grab code that corresponds to your chosen backend language. Here's what it looks like at [GitHub Models Playground](https://github.com/marketplace/models/azure-openai/gpt-4o-mini/playground)
+对于后端，我们使用 GitHub Models。这是一个让您免费使用 AI 的绝佳服务。前往其游乐场并获取对应您选择的后端语言的代码。这是 [GitHub Models 游乐场](https://github.com/marketplace/models/azure-openai/gpt-4o-mini/playground) 的样子
 
-![GitHub Models AI Playground](./assets/playground.png)
+![GitHub Models AI 游乐场](./assets/playground.png)
 
-As we said, select the "Code" tab and your chosen runtime. 
+如前所述，选择"Code"选项卡和您选择的运行时。
 
-![Playground choice](./assets/playground-choice.png)
+![游乐场选择](./assets/playground-choice.png)
 
-### Using Python
+### 使用 Python
 
-In this case we select Python, which will mean we pick this code:
+在这种情况下我们选择 Python，这意味着我们选择这个代码：
 
 ```python
 """Run this model in Python
@@ -57,7 +57,7 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 
-Let's clean up this code a bit so it's reusable:
+让我们稍微清理一下这段代码，使其可重用：
 
 ```python
 def call_llm(prompt: str, system_message: str):
@@ -81,21 +81,21 @@ def call_llm(prompt: str, system_message: str):
     return response.choices[0].message.content
 ```
 
-With this function `call_llm` we can now take a prompt and a system prompt and the function ends up returning the result.
+有了这个函数 `call_llm`，我们现在可以接收一个提示词和一个系统提示词，函数最终返回结果。
 
-### Customize AI Assistant
+### 自定义 AI 助手
 
-If you want to customize the AI assistant you can specify how you want it to behave by populating the system prompt like so:
+如果您想自定义 AI 助手，可以通过填充系统提示词来指定您希望它的行为方式，如下所示：
 
 ```python
 call_llm("Tell me about you", "You're Albert Einstein, you only know of things in the time you were alive")
 ```
 
-## Expose it via a Web API
+## 通过 Web API 公开
 
-Great, we have an AI part done, let's see how we can integrate that into a Web API. For the Web API, we're choosing to use Flask, but any web framework should be good. Let's see the code for it:
+太好了，我们完成了 AI 部分，让我们看看如何将其集成到 Web API 中。对于 Web API，我们选择使用 Flask，但任何 web 框架都应该可以。让我们看看代码：
 
-### Using Python
+### 使用 Python
 
 ```python
 # api.py
@@ -126,18 +126,18 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 ```
 
-Here, we create a flask API and define a default route "/" and "/chat". The latter is meant to be used by our frontend to pass questions to it. 
+在这里，我们创建一个 flask API 并定义一个默认路由"/"和"/chat"。后者是我们前端用来向其传递问题的。
 
-To integrate *llm.py* here's what we need to do:
+要在此处集成 *llm.py*，我们需要执行以下操作：
 
-- Import the `call_llm` function:
+- 导入 `call_llm` 函数：
 
    ```python
    from llm import call_llm
    from flask import Flask, request
    ```
 
-- Call it from the "/chat" route:
+- 从"/chat"路由调用它：
 
    ```python
    @app.route("/hello", methods=["POST"])
@@ -152,7 +152,7 @@ To integrate *llm.py* here's what we need to do:
       })
    ```
 
-   Here we parse the incoming request to retrieve the `message` property from the JSON body. Thereafter we call the LLM with this call:
+   在这里我们解析传入的请求以从 JSON 正文中检索 `message` 属性。然后我们使用以下调用来调用 LLM：
 
    ```python
    response = call_llm(message, "You are a helpful assistant")
@@ -163,15 +163,15 @@ To integrate *llm.py* here's what we need to do:
    })
    ```
 
-Great, now we have done what we need.
+太好了，现在我们已经完成了需要做的事情。
 
-## Configure Cors
+## 配置 CORS
 
-We should call out that we set up something like CORS, cross-origin resource sharing. This means that because our backend and frontend will ron on different ports, we need to allow the frontend to call into the backend. 
+我们应该指出，我们设置了类似 CORS（跨源资源共享）的东西。这意味着因为我们的后端和前端将在不同的端口上运行，我们需要允许前端调用后端。
 
-### Using Python
+### 使用 Python
 
-There's a piece of code in *api.py* that sets this up:
+在 *api.py* 中有一段代码设置了这个：
 
 ```python
 from flask_cors import CORS
@@ -180,17 +180,17 @@ app = Flask(__name__)
 CORS(app)   # *   example.com
 ```
 
-Right now it's been set up to allow "*" which is all origins and that's a bit unsafe, we should restrict it once we go to production.
+现在它被设置为允许"*"（所有来源），这有点不安全，一旦投入生产，我们应该限制它。
 
-## Run your project
+## 运行您的项目
 
-To run your project, you need to start up your backend first and then your frontend.
+要运行您的项目，您需要先启动后端，然后启动前端。
 
-### Using Python
+### 使用 Python
 
-Ok, so we have *llm.py* and *api.py*, how can we make this work with a backend? Well, there's two things we need to do:
+好的，我们有 *llm.py* 和 *api.py*，我们如何使用后端使其工作？嗯，我们需要做两件事：
 
-- Install dependencies:
+- 安装依赖项：
 
    ```sh
    cd backend
@@ -200,17 +200,17 @@ Ok, so we have *llm.py* and *api.py*, how can we make this work with a backend? 
    pip install openai flask flask-cors openai
    ```
 
-- Start the API
+- 启动 API
 
    ```sh
    python api.py
    ```
 
-   If you're in Codespaces you need to go to Ports in the bottom part of the editor, right-click over it and click Port Visibility" and select "Public".
+   如果您在 Codespaces 中，您需要在编辑器底部转到 Ports，右键单击它并点击"Port Visibility"，然后选择"Public"。
 
-### Work on a frontend
+### 开发前端
 
-Now that we have an API up and running, let's create a frontend for this. A bare minimum frontend that we will improve stepwise. In a *frontend* folder, create the following:
+现在我们有了一个运行的 API，让我们为此创建一个前端。一个最基本的前端，我们将逐步改进。在一个 *frontend* 文件夹中，创建以下内容：
 
 ```text
 backend/
@@ -220,7 +220,7 @@ app.js
 styles.css
 ```
 
-Let's start with **index.html**:
+让我们从 **index.html** 开始：
 
 ```html
 <html>
@@ -238,7 +238,7 @@ Let's start with **index.html**:
 </html>    
 ```
 
-This above is the absolute minimum you need to support a chat window, as it consists of a textarea where messages will be rendered, an input for where to type the message and a button for sending your message to the backend. Let's look at the JavaScript next in *app.js*
+上面是支持聊天窗口所需的绝对最小值，因为它包含一个用于渲染消息的 textarea、一个用于输入消息的 input 和一个用于将消息发送到后端的按钮。让我们接下来看看 *app.js* 中的 JavaScript
 
 **app.js**
 
@@ -295,14 +295,14 @@ This above is the absolute minimum you need to support a chat window, as it cons
 })();
 ```
 
-Let's go through the code per section:
+让我们按部分查看代码：
 
-- 1) Here we get a reference to all our elements we will refer to later in the code
-- 2) In this section, we create a function that uses the built-in `fetch` method that calls our backend
-- 3) `appendMessage` helps add responses as well as what you as a user type.
-- 4) Here we listen to the submit event and we end up reading the input field, place the user's message in the text area, call the API, render that respond in the text area.
+- 1) 在这里我们获取对所有元素的引用，稍后在代码中会用到
+- 2) 在这个部分，我们创建一个使用内置 `fetch` 方法调用我们后端的函数
+- 3) `appendMessage` 帮助添加响应以及您作为用户输入的内容。
+- 4) 在这里我们监听提交事件，最终读取输入字段，将用户的消息放在文本区域中，调用 API，在文本区域中渲染该响应。
 
-Let's look at styling next, here's where you can go really crazy and make it look like you want, but here's some suggestions:
+让我们接下来看看样式，这里您可以真正疯狂地让它看起来像您想要的样子，但这里有一些建议：
 
 **styles.css**
 
@@ -323,18 +323,18 @@ Let's look at styling next, here's where you can go really crazy and make it loo
 } 
 ```
 
-With these three classes, you will style messages different depending on where they come from an assistant or you as a user. If you want to be inspired, check out the `solution/frontend/styles.css` folder.
+使用这三个类，您将根据消息来自助手还是您作为用户而以不同方式设置消息样式。如果您想获得灵感，请查看 `solution/frontend/styles.css` 文件夹。
 
-### Change Base Url
+### 更改基础 URL
 
-There was one thing here we didn't set and that was `BASE_URL`, this is not known until your backend is started. To set it:
+这里有一件我们没有设置的事情，那就是 `BASE_URL`，在您的后端启动之前这是未知的。设置它：
 
-- If you run API locally, it should be set to something like `http://localhost:5000`.
-- If run in a Codespaces, it should look something like "[name]app.github.dev".
+- 如果您在本地运行 API，它应该设置为类似 `http://localhost:5000` 的内容。
+- 如果在 Codespaces 中运行，它应该看起来像"[name]app.github.dev"。
 
-## Assignment
+## 作业
 
-Create your own folder *project* with content like so:
+创建您自己的 *project* 文件夹，内容如下：
 
 ```text
 project/
@@ -346,41 +346,41 @@ project/
     ...
 ```
 
-Copy the content from what was instructed from above but feel free to customize to your liking
+复制上面指导中的内容，但可以根据您的喜好自由定制
 
-## Solution
+## 解决方案
 
-[Solution](./solution/README.md)
+[解决方案](./solution/README.md)
 
-## Bonus
+## 奖励
 
-Try changing the personality of the AI assistant. 
+尝试更改 AI 助手的个性。
 
-### For Python
+### 对于 Python
 
-When you call `call_llm` in *api.py* you can change the second argument to what you want, for example:
+当您在 *api.py* 中调用 `call_llm` 时，您可以将第二个参数更改为您想要的内容，例如：
 
 ```python
 call_llm(message, "You are Captain Picard")
 ```
 
-### Frontend
+### 前端
 
-Change also the CSS and text to your liking, so do changes in *index.html* and *styles.css*.
+同样更改 CSS 和文本以适合您的喜好，所以在 *index.html* 和 *styles.css* 中做更改。
 
-## Summary
+## 总结
 
-Great, you've learned from scratch how to create a personal assistant using AI. We've done so using GitHub Models, a backend in Python and a frontend in HTML, CSS and JavaScript
+太好了，您从头开始学会了如何使用 AI 创建个人助手。我们使用 GitHub Models、Python 后端以及 HTML、CSS 和 JavaScript 前端来完成此操作
 
-## Set up with Codespaces
+## 使用 Codespaces 设置
 
-- Navigate to: [Web Dev For Beginners repo](https://github.com/microsoft/Web-Dev-For-Beginners)
-- Create from a template (make sure you're logged in to GitHub) in top-right corner:
+- 导航到：[Web Dev For Beginners 仓库](https://github.com/microsoft/Web-Dev-For-Beginners)
+- 从模板创建（确保您已登录 GitHub）在右上角：
 
-    ![Create from template](./assets/template.png)
+    ![从模板创建](./assets/template.png)
 
-- Once in your repo, create a Codespace:
+- 进入您的仓库后，创建一个 Codespace：
 
-    ![Create codespace](./assets/codespace.png)
+    ![创建 codespace](./assets/codespace.png)
 
-    This should start an environment you can now work with.
+    这应该会启动一个您现在可以使用的环境。

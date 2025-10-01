@@ -1,161 +1,162 @@
-# Browser Extension Project Part 3: Learn about Background Tasks and Performance
+# 浏览器扩展项目 第 3 部分：了解后台任务与性能
 
-## Pre-Lecture Quiz
+## 课前测验
 
 [Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/27)
 
-### Introduction
+### 介绍
 
-In the last two lessons of this module, you learned how to build a form and display area for data fetched from an API. It's a very standard way of creating a web presence on the web. You even learned how to handle fetching data asynchronously. Your browser extension is very nearly complete. 
+在本模块前两课中，你学习了如何构建一个表单与用于展示从 API 获取数据的显示区域。这是一种非常标准的 Web 构建方式。你还学习了如何以异步方式获取数据。你的浏览器扩展已经接近完成。
 
-It remains to manage some background tasks, including refreshing the color of the extension's icon, so this is a great time to talk about how the browser manages this kind of task. Let's think about these browser tasks in the context of the performance of your web assets as you build them.
+接下来需要处理一些后台任务，包括刷新扩展图标的颜色。现在正是讨论浏览器如何管理此类任务的好时机。让我们在构建 Web 资源时，从性能的角度思考这些浏览器任务。
 
-## Web Performance Basics
+## Web 性能基础
 
-> "Website performance is about two things: how fast the page loads, and how fast the code on it runs." -- [Zack Grossbart](https://www.smashingmagazine.com/2012/06/javascript-profiling-chrome-developer-tools/)
+> “网站性能归结于两点：页面加载有多快，页面上的代码运行有多快。”—— [Zack Grossbart](https://www.smashingmagazine.com/2012/06/javascript-profiling-chrome-developer-tools/)
 
-The topic of how to make your websites blazingly fast on all kinds of devices, for all kinds of users, in all kinds of situations, is unsurprisingly vast. Here are some points to keep in mind as you build either a standard web project or a browser extension.
+如何让你的网站在各种设备、各种用户、各种情境下都飞快，这个话题非常庞大。无论是标准 Web 项目还是浏览器扩展，构建时请记住以下要点。
 
-The first thing you need to do to ensure that your site is running efficiently is to gather data about its performance. The first place to do this is in the developer tools of your web browser. In Edge, you can select the "Settings and more" button (the three dots icon on the top right of the browser), then navigate to More Tools > Developer Tools and open the Performance tab. You can also use the keyboard shortcuts `Ctrl` + `Shift` + `I` on Windows or `Option` + `Command` + `I` on Mac to open developer tools.
+要确保网站高效运行，首先要做的是收集其性能数据。最佳起点就是浏览器的开发者工具。在 Edge 中，你可以点击“设置及更多”（右上角三点图标），前往“更多工具 > 开发人员工具”，然后打开 Performance 面板。也可以使用快捷键：Windows 上 `Ctrl` + `Shift` + `I`，Mac 上 `Option` + `Command` + `I`。
 
-The Performance tab contains a Profiling tool. Open a website (try, for example, [https://www.microsoft.com](https://www.microsoft.com/?WT.mc_id=academic-77807-sagibbon)) and click the 'Record' button, then refresh the site. Stop the recording at any time, and you will be able to see the routines that are generated to 'script', 'render', and 'paint' the site:
+Performance 面板包含性能剖析工具。打开一个网站（例如：[https://www.microsoft.com](https://www.microsoft.com/?WT.mc_id=academic-77807-sagibbon)），点击“Record”开始录制，然后刷新站点。随时停止录制，即可查看用于“脚本、渲染、绘制”网站的各类例程：
 
 ![Edge profiler](./images/profiler.png)
 
-✅ Visit the [Microsoft Documentation](https://docs.microsoft.com/microsoft-edge/devtools-guide/performance/?WT.mc_id=academic-77807-sagibbon) on the Performance panel in Edge
+✅ 参阅 Edge 中 Performance 面板的[微软文档](https://docs.microsoft.com/microsoft-edge/devtools-guide/performance/?WT.mc_id=academic-77807-sagibbon)
 
-> Tip: to get an accurate reading of your website's startup time, clear your browser's cache
+> 提示：若想更准确地读取网站启动时间，请清理浏览器缓存
 
-Select elements of the profile timeline to zoom in on events that happen while your page loads.
+在时间轴中选择片段，可放大查看页面加载期间发生的事件。
 
-Get a snapshot of your page's performance by selecting a part of the profile timeline and looking at the summary pane:
+选择时间轴的一段区域并查看摘要窗格，可获得页面性能的快照：
 
 ![Edge profiler snapshot](./images/snapshot.png)
 
-Check the Event Log pane to see if any event took longer than 15 ms:
+查看 Event Log 面板，核查是否存在耗时超过 15 ms 的事件：
 
 ![Edge event log](./images/log.png)
 
-✅ Get to know your profiler! Open the developer tools on this site and see if there are any bottlenecks. What's the slowest-loading asset? The fastest?
+✅ 熟悉你的性能剖析器！在本网站打开开发者工具，看看是否存在瓶颈。加载最慢的资源是什么？最快的又是什么？
 
-## Profiling checks
+## 剖析检查清单
 
-In general, there are some "problem areas" that every web developer should watch for when building a site to avoid nasty surprises when it's time to deploy to production.
+一般而言，在构建网站时有一些常见“问题区域”需要留心，避免在上线时踩坑。
 
-**Asset sizes**: The web has gotten 'heavier', and thus slower, over the past few years. Some of this weight has to do with the use of images.
+**资源体积**：近年来 Web 越来越“臃肿”，加载也更慢，部分原因是图片体积与使用不当。
 
-✅ Look through the [Internet Archive](https://httparchive.org/reports/page-weight) for a historical view of page weight and more.
+✅ 参考 [Internet Archive](https://httparchive.org/reports/page-weight) 了解页面体积等历史趋势。
 
-A good practice is to ensure that your images are optimized and delivered at the right size and resolution for your users.
+良好实践是确保图片经过优化，并按合适的尺寸与分辨率交付给用户。
 
-**DOM traversals**: The browser has to build its Document Object Model based on the code you write, so it's in the interest of good page performance to keep your tags minimal, only using and styling what the page needs. To this point, excess CSS associated with a page could be optimized; styles that need to be used only on one page don't need to be included in the main style sheet, for example.
+**DOM 遍历**：浏览器需要基于你的代码构建 DOM。为性能考虑，应尽量保持标签精简，只使用并样式化页面真正需要的元素。同理，多余的 CSS 可做优化；仅在某一页使用的样式不必放入全局样式表。
 
-**JavaScript**: Every JavaScript developer should watch for 'render-blocking' scripts that must be loaded before the rest of the DOM can be traversed and painted to the browser. Consider using `defer` with your inline scripts (as is done in the Terrarium module).
+**JavaScript**：每位 JS 开发者都应注意“阻塞渲染”的脚本，它们会阻止 DOM 的继续遍历与绘制。可考虑为内联脚本加上 `defer`（如在 Terrarium 模块所示）。
 
-✅ Try some sites on a [Site Speed Test website](https://www.webpagetest.org/) to learn more about the common checks that are done to determine site performance.
+✅ 在 [Site Speed Test](https://www.webpagetest.org/) 等网站上测试站点，了解衡量站点性能的常见检查项。
 
-Now that you have an idea of how the browser renders the assets you send to it, let's look at the last few things you need to do to complete your extension:
+既然你已经了解了浏览器如何渲染资源，下面完成扩展的最后几步：
 
-### Create a function to calculate color
+### 创建用于计算颜色的函数
 
-Working in `/src/index.js`, add a function called `calculateColor()` after the series of `const` variables you set to gain access to the DOM:
+在 `/src/index.js` 中，在一系列用于访问 DOM 的 `const` 变量之后，新增 `calculateColor()` 函数：
 
 ```JavaScript
 function calculateColor(value) {
-	let co2Scale = [0, 150, 600, 750, 800];
-	let colors = ['#2AA364', '#F5EB4D', '#9E4229', '#381D02', '#381D02'];
+  let co2Scale = [0, 150, 600, 750, 800];
+  let colors = ['#2AA364', '#F5EB4D', '#9E4229', '#381D02', '#381D02'];
 
-	let closestNum = co2Scale.sort((a, b) => {
-		return Math.abs(a - value) - Math.abs(b - value);
-	})[0];
-	console.log(value + ' is closest to ' + closestNum);
-	let num = (element) => element > closestNum;
-	let scaleIndex = co2Scale.findIndex(num);
+  let closestNum = co2Scale.sort((a, b) => {
+    return Math.abs(a - value) - Math.abs(b - value);
+  })[0];
+  console.log(value + ' is closest to ' + closestNum);
+  let num = (element) => element > closestNum;
+  let scaleIndex = co2Scale.findIndex(num);
 
-	let closestColor = colors[scaleIndex];
-	console.log(scaleIndex, closestColor);
+  let closestColor = colors[scaleIndex];
+  console.log(scaleIndex, closestColor);
 
-	chrome.runtime.sendMessage({ action: 'updateIcon', value: { color: closestColor } });
+  chrome.runtime.sendMessage({ action: 'updateIcon', value: { color: closestColor } });
 }
 ```
 
-What's going on here? You pass in a value (the carbon intensity) from the API call you completed in the last lesson, and then you calculate how close its value is to the index presented in colors array. Then you send that closest color value over to the chrome runtime.
+这段代码做了什么？你会将上一课中 API 返回的“碳强度”作为参数传入，然后计算该值与颜色数组中各阈值的接近程度，最终得到对应的颜色，并把该颜色发送给 chrome runtime。
 
-The chrome.runtime has [an API](https://developer.chrome.com/extensions/runtime) that handles all kinds of background tasks, and your extension is leveraging that:
+chrome.runtime 提供了用于处理各类后台任务的 [API](https://developer.chrome.com/extensions/runtime)，你的扩展正是借助它来实现：
 
-> "Use the chrome.runtime API to retrieve the background page, return details about the manifest, and listen for and respond to events in the app or extension lifecycle. You can also use this API to convert the relative path of URLs to fully-qualified URLs."
+> “使用 chrome.runtime API 可以获取后台页、返回清单详情，并在应用或扩展的生命周期中监听与响应事件。你还可以用它将相对 URL 转为绝对 URL。”
 
-✅ If you're developing this browser extension for Edge, it might surprise you that you're using a chrome API. The newer Edge browser versions run on the Chromium browser engine, so you can leverage these tools.
+✅ 如果你在为 Edge 开发扩展，可能会惊讶为何使用 chrome 的 API。新版 Edge 基于 Chromium 引擎构建，因此也能使用这些工具。
 
-> Note, if you want to profile a browser extension, launch the dev tools from within the extension itself, as it is its own separate browser instance.
+> 注意：若要为浏览器扩展做性能剖析，应在扩展自身中打开开发者工具，因为它是独立的浏览器实例。
 
-### Set a default icon color
+### 设置默认图标颜色
 
-Now, in the `init()` function, set the icon to be generic green to start by again calling chrome's `updateIcon` action:
+现在，在 `init()` 函数中，调用 chrome 的 `updateIcon` 操作，将图标默认设置为绿色：
 
 ```JavaScript
 chrome.runtime.sendMessage({
-	action: 'updateIcon',
-		value: {
-			color: 'green',
-		},
+  action: 'updateIcon',
+    value: {
+      color: 'green',
+    },
 });
 ```
-### Call the function, execute the call
 
-Next, call that function you just created by adding it to the promise returned by the C02Signal API:
+### 调用函数并执行
+
+接着，将刚创建的函数添加到 CO2 Signal API 返回的 promise 链中进行调用：
 
 ```JavaScript
 //let CO2...
 calculateColor(CO2);
 ```
 
-And finally, in `/dist/background.js`, add the listener for these background action calls:
+最后，在 `/dist/background.js` 中添加监听器，以处理这些后台动作：
 
 ```JavaScript
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
-	if (msg.action === 'updateIcon') {
-		chrome.browserAction.setIcon({ imageData: drawIcon(msg.value) });
-	}
+  if (msg.action === 'updateIcon') {
+    chrome.browserAction.setIcon({ imageData: drawIcon(msg.value) });
+  }
 });
 //borrowed from energy lollipop extension, nice feature!
 function drawIcon(value) {
-	let canvas = document.createElement('canvas');
-	let context = canvas.getContext('2d');
+  let canvas = document.createElement('canvas');
+  let context = canvas.getContext('2d');
 
-	context.beginPath();
-	context.fillStyle = value.color;
-	context.arc(100, 100, 50, 0, 2 * Math.PI);
-	context.fill();
+  context.beginPath();
+  context.fillStyle = value.color;
+  context.arc(100, 100, 50, 0, 2 * Math.PI);
+  context.fill();
 
-	return context.getImageData(50, 50, 100, 100);
+  return context.getImageData(50, 50, 100, 100);
 }
 ```
-In this code, you are adding a listener for any messages coming to the backend task manager. If it's called 'updateIcon', then the next code is run to draw an icon of the proper color using the Canvas API.
 
-✅ You'll learn more about the Canvas API in the [Space Game lessons](../../6-space-game/2-drawing-to-canvas/README.md).
+以上代码为后台任务管理器添加了一个消息监听器。当收到名为 `updateIcon` 的消息时，将使用 Canvas API 绘制相应颜色的图标。
 
-Now, rebuild your extension (`npm run build`), refresh and launch your extension, and watch the color change. Is it a good time to run an errand or wash the dishes? Now you know!
+✅ 你将在[太空游戏课程](../../6-space-game/2-drawing-to-canvas/README.md)中进一步学习 Canvas API。
 
-Congratulations, you've built a useful browser extension and learned more about how the browser works and how to profile its performance.
+现在，重新构建扩展（`npm run build`），刷新并启动扩展，观察图标颜色的变化。是不是该去跑腿或洗碗了？现在你知道了！
+
+恭喜你，已构建出一个实用的浏览器扩展，并进一步了解了浏览器的工作方式与性能剖析方法。
 
 ---
 
-## 🚀 Challenge
+## 🚀 挑战
 
-Investigate some open source websites that have been around a long time ago, and, based on their GitHub history, see if you can determine how they were optimized over the years for performance, if at all. What is the most common pain point?
+找几个历史悠久的开源网站，根据它们的 GitHub 历史分析其在这些年里如何做性能优化（如果有的话）。最常见的痛点是什么？
 
-## Post-Lecture Quiz
+## 课后测验
 
 [Post-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/28)
 
-## Review & Self Study
+## 复习与自学
 
-Consider signing up for a [performance newsletter](https://perf.email/)
+考虑订阅一份[性能相关的 Newsletter](https://perf.email/)
 
-Investigate some of the ways that browsers gauge web performance by looking through the performance tabs in their web tools. Do you find any major differences?
+在各浏览器的开发者工具中查看 Performance 面板，了解它们评估 Web 性能的方式。你发现了哪些主要差异？
 
-## Assignment
+## 作业
 
-[Analyze a site for performance](assignment.md)
-
+[分析某网站的性能](assignment.md)

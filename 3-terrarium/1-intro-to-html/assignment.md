@@ -1,11 +1,11 @@
-# Practice your HTML: Build a blog mockup
+# 练习你的 HTML：搭一个博客版式草图
 
-## Instructions
+## 说明
 
-Imagine you are designing, or redesigning, your personal web site. Create a graphical mockup of your site, and then write down the HTML markup you would use to build out the various elements of the site. You can do this on paper, and scan it, or use software of your choice, just make sure to hand-code the HTML markup.
+假设你正在设计（或重新设计）你的个人网站。先创建你网站的视觉草图模型，然后写下你会用来构建网站各个元素的 HTML 标记。你可以在纸上完成并扫描，或使用你喜欢的软件，但务必手写 HTML 标记（不要用可视化生成器）。
 
-## Rubric
+## 评分量表（Rubric）
 
-| Criteria | Exemplary                                                                           | Adequate                                                                         | Needs Improvement                                                                 |
-| -------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-|          | A blog layout is represented visually with at least 10 elements of markup displayed | A blog layout is represented visually with around 5 elements of markup displayed | A blog layout is represented visually with at most 3 elements of markup displayed |
+| 评价维度 | 优秀（Exemplary）                                                                  | 合格（Adequate）                                                              | 需改进（Needs Improvement）                                                      |
+| -------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+|          | 可视化展示了一个博客布局，并包含至少 10 个已展示的标记元素                         | 可视化展示了一个博客布局，并包含大约 5 个已展示的标记元素                     | 可视化展示了一个博客布局，但仅包含至多 3 个已展示的标记元素                     |

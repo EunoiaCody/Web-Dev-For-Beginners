@@ -1,9 +1,9 @@
-# [Assignment Name]
+# [作业名称]
 
-## Instructions
+## 说明
 
-## Rubric
+## 评分标准
 
-| Criteria | Exemplary | Adequate | Needs Improvement |
+| 标准 | 优秀 | 良好 | 需要改进 |
 | -------- | --------- | -------- | ----------------- |
 |          |           |          |                   |
