@@ -1,14 +1,14 @@
-# Build a Space Game Part 5: Scoring and Lives
+# 构建太空游戏 第 5 部分：得分和生命
 
-## Pre-Lecture Quiz
+## 课前测验
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/37)
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/37)
 
-In this lesson, you'll learn how to add scoring to a game and calculate lives.
+在本课中，您将学习如何为游戏添加得分并计算生命值。
 
-## Draw text on the screen
+## 在屏幕上绘制文本
 
-To be able to display a game score on the screen, you'll need to know how to place text on the screen. The answer is using the `fillText()` method on the canvas object. You can also control other aspects like what font to use, the color of the text and even its alignment (left, right, center). Below is some code drawing some text on the screen.
+为了能够在屏幕上显示游戏得分，您需要知道如何在屏幕上放置文本。答案是在 canvas 对象上使用 `fillText()` 方法。您还可以控制其他方面，如使用什么字体、文本的颜色甚至其对齐方式（左、右、中）。下面是一些在屏幕上绘制文本的代码。
 
 ```javascript
 ctx.font = "30px Arial";
@@ -17,7 +17,7 @@ ctx.textAlign = "right";
 ctx.fillText("show this on the screen", 0, 0);
 ```
 
-✅ Read more about [how to add text to a canvas](https://developer.mozilla.org/docs/Web/API/Canvas_API/Tutorial/Drawing_text), and feel free to make yours look fancier!
+✅ 阅读更多关于[如何向 canvas 添加文本](https://developer.mozilla.org/docs/Web/API/Canvas_API/Tutorial/Drawing_text)的信息，随意让您的看起来更精美！
 
 ## Life, as a game concept
 

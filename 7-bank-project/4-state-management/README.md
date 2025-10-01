@@ -1,20 +1,20 @@
-# Build a Banking App Part 4: Concepts of State Management
+# 构建银行应用 第 4 部分：状态管理概念
 
-## Pre-Lecture Quiz
+## 课前测验
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/47)
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/47)
 
-### Introduction
+### 介绍
 
-As a web application grows, it becomes a challenge to keep track of all data flows. Which code gets the data, what page consumes it, where and when does it need to be updated...it's easy to end up with messy code that's difficult to maintain. This is especially true when you need to share data among different pages of your app, for example user data. The concept of *state management* has always existed in all kinds of programs, but as web apps keep growing in complexity it's now a key point to think about during development.
+随着 Web 应用程序的增长，跟踪所有数据流变得具有挑战性。哪个代码获取数据，什么页面消费它，在哪里以及何时需要更新...很容易最终得到难以维护的混乱代码。当您需要在应用程序的不同页面之间共享数据（例如用户数据）时尤其如此。*状态管理*的概念一直存在于所有类型的程序中，但随着 Web 应用程序在复杂性上不断增长，它现在是开发期间要考虑的关键点。
 
-In this final part, we'll look over the app we built to rethink how the state is managed, allowing support for browser refresh at any point, and persisting data across user sessions.
+在这最后一部分中，我们将回顾我们构建的应用程序以重新考虑如何管理状态，允许在任何时候支持浏览器刷新，并在用户会话之间持久化数据。
 
-### Prerequisite
+### 先决条件
 
-You need to have completed the [data fetching](../3-data/README.md) part of the web app for this lesson. You also need to install [Node.js](https://nodejs.org) and [run the server API](../api/README.md) locally so you can manage account data.
+您需要完成 Web 应用程序的[数据获取](../3-data/README.md)部分才能学习本课。您还需要安装 [Node.js](https://nodejs.org) 并[本地运行服务器 API](../api/README.md) 以便管理帐户数据。
 
-You can test that the server is running properly by executing this command in a terminal:
+您可以通过在终端中执行此命令来测试服务器是否正常运行：
 
 ```sh
 curl http://localhost:5000/api

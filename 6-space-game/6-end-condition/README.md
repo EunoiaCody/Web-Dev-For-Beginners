@@ -1,23 +1,23 @@
-# Build a Space Game Part 6: End and Restart
+# 构建太空游戏 第 6 部分：结束和重启
 
-## Pre-Lecture Quiz
+## 课前测验
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/39)
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/39)
 
-There are different ways to express and *end condition* in a game. It's up to you as the creator of the game to say why the game has ended. Here are some reasons, if we assume we are talking about the space game you have been building so far:
+在游戏中表达和*结束条件*有不同的方式。作为游戏的创作者，由您来决定为什么游戏结束。以下是一些原因，如果我们假设正在谈论您一直在构建的太空游戏：
 
-- **`N` Enemy ships have been destroyed**: It's quite common if you divide up a game into different levels that you need to destroy `N` Enemy ships to complete a level
-- **Your ship has been destroyed**: There are definitely games where you lose the game if your ship is destroyed. Another common approach is that you have the concept of lives. Every time a your ship is destroyed it deducts a life. Once all lives have been lost then you lose the game.
-- **You've collected `N` points**: Another common end condition is for you to collect points. How you get points is up to you but it's quite common to assign points to various activities like destroying an enemy ship or maybe collect items that items *drop* when they are destroyed.
-- **Complete a level**: This might involve several conditions such as `X` enemy ships destroyed, `Y` points collected or maybe that a specific item has been collected.
+- **`N` 艘敌舰已被摧毁**：如果您将游戏分为不同的关卡，需要摧毁 `N` 艘敌舰来完成一个关卡，这是很常见的
+- **您的飞船已被摧毁**：绝对有游戏如果您的飞船被摧毁就输了。另一种常见的方法是您有生命的概念。每次您的飞船被摧毁时都会扣除一条生命。一旦所有生命都失去了，您就输了游戏。
+- **您已收集 `N` 点**：另一个常见的结束条件是收集点数。如何获得点数由您决定，但通常将点数分配给各种活动，如摧毁敌舰或收集敌舰被摧毁时*掉落*的物品。
+- **完成一个关卡**：这可能涉及几个条件，如摧毁 `X` 艘敌舰，收集 `Y` 点，或者收集了特定物品。
 
-## Restarting
+## 重启
 
-If people enjoy your game they are likely to want to replay it. Once the game ends for whatever reason you should offer an alternative to restart.
+如果人们喜欢您的游戏，他们很可能想要重玩。一旦游戏因任何原因结束，您应该提供重启的替代方案。
 
-✅ Think a bit about under what conditions you find a game ends, and then how you are prompted to restart
+✅ 思考一下您发现游戏在什么条件下结束，然后如何提示您重启
 
-## What to build
+## 要构建什么
 
 You will be adding these rules to your game:
 
