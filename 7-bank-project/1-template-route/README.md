@@ -1,22 +1,22 @@
-# Build a Banking App Part 1: HTML Templates and Routes in a Web App
+# 构建银行应用 第 1 部分：Web 应用中的 HTML 模板和路由
 
-## Pre-Lecture Quiz
+## 课前测验
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/41)
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/41)
 
-### Introduction
+### 介绍
 
-Since the advent of JavaScript in browsers, websites are becoming more interactive and complex than ever. Web technologies are now commonly used to create fully functional applications that runs directly into a browser that we call [web applications](https://en.wikipedia.org/wiki/Web_application). As Web apps are highly interactive, users do not want to wait for a full page reload every time an action is performed. That's why JavaScript is used to update the HTML directly using the DOM, to provide a smoother user experience.
+自从 JavaScript 在浏览器中出现以来，网站变得比以往更加交互和复杂。Web 技术现在通常用于创建直接在浏览器中运行的功能齐全的应用程序，我们称之为 [Web 应用程序](https://en.wikipedia.org/wiki/Web_application)。由于 Web 应用程序高度交互，用户不希望在每次执行操作时都等待完整的页面重新加载。这就是为什么使用 JavaScript 通过 DOM 直接更新 HTML，以提供更流畅的用户体验。
 
-In this lesson, we're going to lay out the foundations to create bank web app, using HTML templates to create multiple screens that can be displayed and updated without having to reload the entire HTML page.
+在本课程中，我们将奠定创建银行 Web 应用程序的基础，使用 HTML 模板创建多个屏幕，可以显示和更新而无需重新加载整个 HTML 页面。
 
-### Prerequisite
+### 先决条件
 
-You need a local web server to test the web app we'll build in this lesson. If you don't have one, you can install [Node.js](https://nodejs.org) and use the command `npx lite-server` from your project folder. It will create a local web server and open your app in a browser.
+您需要一个本地 Web 服务器来测试我们在本课程中构建的 Web 应用程序。如果您没有，可以安装 [Node.js](https://nodejs.org) 并在项目文件夹中使用命令 `npx lite-server`。它将创建一个本地 Web 服务器并在浏览器中打开您的应用程序。
 
-### Preparation
+### 准备
 
-On your computer, create a folder named `bank` with a file named `index.html` inside it. We'll start from this HTML [boilerplate](https://en.wikipedia.org/wiki/Boilerplate_code):
+在您的计算机上，创建一个名为 `bank` 的文件夹，其中包含一个名为 `index.html` 的文件。我们将从这个 HTML [样板代码](https://en.wikipedia.org/wiki/Boilerplate_code)开始：
 
 ```html
 <!DOCTYPE html>

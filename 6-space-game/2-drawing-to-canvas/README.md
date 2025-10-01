@@ -1,33 +1,33 @@
-# Build a Space Game Part 2: Draw Hero and Monsters to Canvas
+# 构建太空游戏 第 2 部分：将英雄和怪物绘制到画布
 
-## Pre-Lecture Quiz
+## 课前测验
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/31)
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/31)
 
-## The Canvas
+## Canvas
 
-The canvas is an HTML element that by default has no content; it's a blank slate. You need to add to it by drawing on it.
+Canvas 是一个 HTML 元素，默认情况下没有内容；它是一个空白画布。您需要通过在其上绘制来添加内容。
 
-✅ Read [more about the Canvas API](https://developer.mozilla.org/docs/Web/API/Canvas_API) on MDN.
+✅ 在 MDN 上阅读[更多关于 Canvas API 的信息](https://developer.mozilla.org/docs/Web/API/Canvas_API)。
 
-Here's how it's typically declared, as part of the page's body:
+通常它被声明为页面主体的一部分，如下所示：
 
 ```html
 <canvas id="myCanvas" width="200" height="100"></canvas>
 ```
 
-Above we are setting the `id`, `width` and `height`.
+在上面我们设置了 `id`、`width` 和 `height`。
 
-- `id`: set this so you can obtain a reference when you need to interact with it.
-- `width`: this is the width of the element.
-- `height`: this is the height of the element.
+- `id`：设置这个以便在需要与其交互时可以获得引用。
+- `width`：这是元素的宽度。
+- `height`：这是元素的高度。
 
-## Drawing simple geometry
+## 绘制简单几何图形
 
-The Canvas is using a cartesian coordinate system to draw things. Thus it uses an x-axis and y-axis to express where something is located. The location `0,0` is the top left position and the bottom right is what you said to be the WIDTH and HEIGHT of the canvas.
+Canvas 使用笛卡尔坐标系统来绘制事物。因此它使用 x 轴和 y 轴来表达某物的位置。位置 `0,0` 是左上角位置，右下角是您设置的 Canvas 的 WIDTH 和 HEIGHT。
 
-![the canvas's grid](canvas_grid.png)
-> Image from [MDN](https://developer.mozilla.org/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes)
+![Canvas 的网格](canvas_grid.png)
+> 图片来自 [MDN](https://developer.mozilla.org/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes)
 
 To draw on the canvas element you will need to go through the following steps:
 

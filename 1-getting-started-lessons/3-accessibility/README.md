@@ -1,52 +1,52 @@
-# Creating Accessible Webpages
+# 创建无障碍网页
 
 ![All About Accessibility](../../sketchnotes/webdev101-a11y.png)
-> Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
+> 手绘笔记作者 [Tomomi Imura](https://twitter.com/girlie_mac)
 
-## Pre-Lecture Quiz
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/)
+## 课前测验
+[课前测验](https://ff-quizzes.netlify.app/web/)
 
-> The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect.
+> Web 的力量在于其普遍性。无论是否残疾，每个人都能访问是一个重要方面。
 >
-> \- Sir Timothy Berners-Lee, W3C Director and inventor of the World Wide Web
+> \- 蒂姆·伯纳斯-李爵士，W3C 主任和万维网发明者
 
-This quote perfectly highlights the importance of creating accessible websites. An application that can't be accessed by all is by definition exclusionary. As web developers we should always have accessibility in mind. By having this focus from the beginning you will be well on your way to ensure everyone can access the pages you create. In this lesson, you'll learn about the tools that can help you ensure that your web assets are accessible and how to build with accessibility in mind. 
+这句话完美地强调了创建无障碍网站的重要性。一个无法被所有人访问的应用程序从定义上来说就是排他性的。作为 Web 开发者，我们应该始终考虑无障碍性。通过从一开始就关注这一点，您将能够确保每个人都能访问您创建的页面。在这节课中，您将学习可以帮助确保您的 Web 资源具有无障碍性的工具以及如何在考虑无障碍性的前提下进行构建。
 
-> You can take this lesson on [Microsoft Learn](https://docs.microsoft.com/learn/modules/web-development-101/accessibility/?WT.mc_id=academic-77807-sagibbon)!
+> 您可以在 [Microsoft Learn](https://docs.microsoft.com/learn/modules/web-development-101/accessibility/?WT.mc_id=academic-77807-sagibbon) 上学习本课程！
 
-## Tools to use
+## 使用的工具
 
-### Screen readers
+### 屏幕阅读器
 
-One of the best-known accessibility tools are screen readers.
+最著名的无障碍工具之一是屏幕阅读器。
 
-[Screen readers](https://en.wikipedia.org/wiki/Screen_reader) are commonly used clients for those with vision impairments. As we spend time ensuring a browser properly conveys the information we wish to share, we must also ensure a screen reader does the same.
+[屏幕阅读器](https://en.wikipedia.org/wiki/Screen_reader)是视力障碍者常用的客户端。当我们花时间确保浏览器正确传达我们希望分享的信息时，我们也必须确保屏幕阅读器也能做到这一点。
 
-At its most basic, a screen reader will read a page from top to bottom audibly. If your page is all text, the reader will convey the information in a similar fashion to a browser. Of course, web pages are rarely purely text; they will contain links, graphics, color, and other visual components. Care must be taken to ensure that this information is read correctly by a screen reader.
+最基本的情况下，屏幕阅读器会从上到下有声地朗读页面。如果您的页面全是文本，阅读器将以与浏览器类似的方式传达信息。当然，网页很少是纯文本的；它们会包含链接、图形、颜色和其他视觉组件。必须注意确保屏幕阅读器能够正确地朗读这些信息。
 
-Every web developer should familiarize themselves with a screen reader. As highlighted above, it's the client your users will utilize. Much in the same way you're familiar with how a browser operates, you should learn how a screen reader operates. Fortunately, screen readers are built into most operating systems.
+每个 Web 开发者都应该熟悉屏幕阅读器。如上所述，这是您的用户将使用的客户端。就像您熟悉浏览器的工作方式一样，您也应该学习屏幕阅读器的工作方式。幸运的是，大多数操作系统都内置了屏幕阅读器。
 
-Some browsers also have built-in tools and extensions that can read text aloud or even provide some basic navigational features, such as [these accessibility-focused Edge browser tools](https://support.microsoft.com/help/4000734/microsoft-edge-accessibility-features). These are also important accessibility tools, but function very differently from screen readers and they should not be mistaken for screen reader testing tools.
+一些浏览器还具有内置工具和扩展，可以大声朗读文本或甚至提供一些基本的导航功能，例如[这些以无障碍性为重点的 Edge 浏览器工具](https://support.microsoft.com/help/4000734/microsoft-edge-accessibility-features)。这些也是重要的无障碍工具，但功能与屏幕阅读器大不相同，不应将它们误认为屏幕阅读器测试工具。
 
-✅ Try a screen reader and browser text reader. On Windows [Narrator](https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1/?WT.mc_id=academic-77807-sagibbon) is included by default, and [JAWS](https://webaim.org/articles/jaws/) and [NVDA](https://www.nvaccess.org/about-nvda/) can also be installed. On macOS and iOS, [VoiceOver](https://support.apple.com/guide/voiceover/welcome/10) is installed by default.
+✅ 尝试使用屏幕阅读器和浏览器文本阅读器。在 Windows 上默认包含 [Narrator](https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1/?WT.mc_id=academic-77807-sagibbon)，还可以安装 [JAWS](https://webaim.org/articles/jaws/) 和 [NVDA](https://www.nvaccess.org/about-nvda/)。在 macOS 和 iOS 上，默认安装了 [VoiceOver](https://support.apple.com/guide/voiceover/welcome/10)。
 
-### Zoom
+### 缩放
 
-Another tool commonly used by people with vision impairments is zooming. The most basic type of zooming is static zoom, controlled through `Control + plus sign (+)` or by decreasing screen resolution. This type of zoom causes the entire page to resize, so using [responsive design](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Responsive_Design) is important to provide a good user experience at increased zoom levels.
+另一个视力障碍者常用的工具是缩放。最基本的缩放类型是静态缩放，通过 `Control + 加号 (+)` 或降低屏幕分辨率来控制。这种类型的缩放会导致整个页面调整大小，因此使用[响应式设计](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Responsive_Design)对于在增加缩放级别时提供良好的用户体验非常重要。
 
-Another type of zoom relies on specialized software to magnify one area of the screen and pan, much like using a real magnifying glass. On Windows, [Magnifier](https://support.microsoft.com/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198) is built in, and [ZoomText](https://www.freedomscientific.com/training/zoomtext/getting-started/) is a third-party magnification software with more features and a larger user base. Both macOS and iOS have a built-in magnification software called [Zoom](https://www.apple.com/accessibility/mac/vision/).
+另一种缩放依赖于专门的软件来放大屏幕的一个区域并平移，就像使用真正的放大镜一样。在 Windows 上，[放大镜](https://support.microsoft.com/windows/use-magnifier-to-make-things-on-the-screen-easier-to-see-414948ba-8b1c-d3bd-8615-0e5e32204198)是内置的，[ZoomText](https://www.freedomscientific.com/training/zoomtext/getting-started/) 是具有更多功能和更大用户群的第三方放大软件。macOS 和 iOS 都有一个名为 [Zoom](https://www.apple.com/accessibility/mac/vision/) 的内置放大软件。
 
-### Contrast checkers
+### 对比度检查器
 
-Colors on web sites need to be carefully chosen to  answer the needs of color-blind users or people who have  difficulty seeing low-contrast colors.
+网站上的颜色需要仔细选择，以满足色盲用户或难以看到低对比度颜色的人的需要。
 
-✅ Test a web site you enjoy using for color usage with a browser extension such as [WCAG's color checker](https://microsoftedge.microsoft.com/addons/detail/wcag-color-contrast-check/idahaggnlnekelhgplklhfpchbfdmkjp?hl=en-US&WT.mc_id=academic-77807-sagibbon). What do you learn?
+✅ 使用浏览器扩展（例如 [WCAG 的颜色检查器](https://microsoftedge.microsoft.com/addons/detail/wcag-color-contrast-check/idahaggnlnekelhgplklhfpchbfdmkjp?hl=en-US&WT.mc_id=academic-77807-sagibbon)）测试您喜欢使用的网站的颜色使用情况。您学到了什么？
 
 ### Lighthouse
 
-In the developer tool area of your browser, you'll find the Lighthouse tool. This tool is important to get a first view of the accessibility (as well as other analysis) of a web site. While it's important not to rely exclusively on Lighthouse, a 100% score is very helpful as a baseline.
+在浏览器的开发者工具区域，您会找到 Lighthouse 工具。该工具对于首次查看网站的无障碍性（以及其他分析）非常重要。虽然不完全依赖 Lighthouse 很重要，但 100% 的分数作为基准非常有帮助。
 
-✅ Find Lighthouse in your browser's developer tool panel and run an analysis on any site. what do you discover?
+✅ 在浏览器的开发者工具面板中找到 Lighthouse，并对任何网站运行分析。您发现了什么？
 
 ## Designing for accessibility
 

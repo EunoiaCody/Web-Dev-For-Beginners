@@ -1,28 +1,28 @@
-# My Terrarium: A project to learn about HTML, CSS, and DOM manipulation using JavaScript 🌵🌱
+# 我的生态瓶：学习 HTML、CSS 和使用 JavaScript 进行 DOM 操作的项目 🌵🌱
 
-A small drag and drop code-meditation. With a little HTML, JS and CSS, you can build a web interface, style it, and add an interaction.
+一个小型的拖拽代码冥想练习。通过一点 HTML、JS 和 CSS，您可以构建一个 Web 界面，为其设置样式，并添加交互。
 
-![my terrarium](../images/screenshot_gray.png)
+![我的生态瓶](../images/screenshot_gray.png)
 
-## Credits
+## 致谢
 
-Written with ♥️  by [Jen Looper](https://www.twitter.com/jenlooper)
+由 [Jen Looper](https://www.twitter.com/jenlooper) 用心编写 ♥️
 
-The terrarium created via CSS was inspired by Jakub Mandra's glass jar [codepen](https://codepen.io/Rotarepmi/pen/rjpNZY).
+通过 CSS 创建的生态瓶灵感来自 Jakub Mandra 的玻璃罐 [codepen](https://codepen.io/Rotarepmi/pen/rjpNZY)。
 
-The artwork was hand drawn by [Jen Looper](http://jenlooper.com) using Procreate.
+插画由 [Jen Looper](http://jenlooper.com) 使用 Procreate 手绘完成。
 
-## Deploy your Terrarium
+## 部署你的生态瓶
 
-You can deploy, or publish your terrarium to the web using Azure Static Web Apps. 
+您可以使用 Azure Static Web Apps 将生态瓶部署（发布）到 Web。
 
-1. Fork this repo
+1. Fork 本仓库
 
-2. Press this button
+2. 点击这个按钮
 
-[![Deploy to Azure button](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false&WT.mc_id=academic-77807-sagibbon#create/Microsoft.StaticApp)
+[![部署到 Azure 按钮](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false&WT.mc_id=academic-77807-sagibbon#create/Microsoft.StaticApp)
 
-3. Walk through the wizard creating your app. Make sure you set the app root to either be `/solution` or the root of your codebase. There's no API in this app, so don't worry about adding that. A .github folder will be created in your forked repo that will help Azure Static Web Apps' build service build and publish your app to a new URL.
+3. 按引导创建您的应用。请将 app root 设置为 `/solution` 或您的代码根目录。本应用没有 API，因此无需添加。该流程会在您 fork 的仓库中创建一个 .github 文件夹，帮助 Azure Static Web Apps 的构建服务构建并将您的应用发布到新的 URL。
 
 
 

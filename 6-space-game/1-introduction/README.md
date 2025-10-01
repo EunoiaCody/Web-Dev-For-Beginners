@@ -1,23 +1,23 @@
-# Build a Space Game Part 1: Introduction
+# 构建太空游戏 第 1 部分：介绍
 
-![video](../images/pewpew.gif)
+![视频](../images/pewpew.gif)
 
-## Pre-Lecture Quiz
+## 课前测验
 
-[Pre-lecture quiz](https://ff-quizzes.netlify.app/web/quiz/29)
+[课前测验](https://ff-quizzes.netlify.app/web/quiz/29)
 
-### Inheritance and Composition in game development
+### 游戏开发中的继承和组合
 
-In earlier lessons, there was not much need to worry about the design architecture of the apps you built, as the projects were very small in scope. However, when your applications grow in size and scope, architectural decisions become a larger concern. There are two major approaches to creating larger applications in JavaScript: *composition* or *inheritance*. There are pros and cons to both but let's explain them from within the context of a game.
+在之前的课程中，您构建的应用程序范围很小，因此不需要太担心设计架构。但是，当您的应用程序在规模和范围上增长时，架构决策就成为一个更大的关注点。在 JavaScript 中创建大型应用程序有两种主要方法：*组合*或*继承*。两者都有优缺点，但让我们从游戏的上下文中解释它们。
 
-✅ One of the most famous programming books ever written has to do with [design patterns](https://en.wikipedia.org/wiki/Design_Patterns).
+✅ 有史以来最著名的编程书籍之一与[设计模式](https://en.wikipedia.org/wiki/Design_Patterns)有关。
 
-In a game you have `game objects` which are objects that exist on a screen. This means they have a location on a cartesian coordinate system, characterized by having an `x` and `y` coordinate. As you develop a game you will notice that all your game objects have a standard property, common for every game you create, namely elements that are:
+在游戏中，您有 `游戏对象`，它们是存在于屏幕上的对象。这意味着它们在笛卡尔坐标系中有一个位置，特征是有 `x` 和 `y` 坐标。当您开发游戏时，您会注意到所有游戏对象都有一个标准属性，这对您创建的每个游戏都很常见，即元素：
 
-- **location-based** Most, if not all, game elements are location based. This means that they have a location, an `x` and `y`.
-- **movable** These are objects that can move to a new location. This is typically a hero, a monster or an NPC (a non player character), but not for example, a static object like a tree.
-- **self-destructing** These objects only exist for a set period of time before they set themselves up for deletion. Usually this is represented by a `dead` or `destroyed` boolean that signals to the game engine that this object should no longer be rendered.
-- **cool-down** 'Cool-down' is a typical property among short-lived objects. A typical example is a piece of text or graphical effect like an explosion that should only be seen for a few milliseconds.
+- **基于位置** 大多数（如果不是全部）游戏元素都基于位置。这意味着它们有一个位置，一个 `x` 和 `y`。
+- **可移动** 这些是可以移动到新位置的对象。这通常是英雄、怪物或 NPC（非玩家角色），但不是例如树这样的静态对象。
+- **自我毁灭** 这些对象只存在一段设定的时间，然后它们会将自己设置为删除。通常这由一个 `dead` 或 `destroyed` 布尔值表示，向游戏引擎发出信号，表明此对象不应再被渲染。
+- **冷却** '冷却'是短期对象中的典型属性。典型的例子是一段文本或图形效果，如爆炸，应该只能看到几毫秒。
 
 ✅ Think about a game like Pac-Man. Can you identify the four object types listed above in this game?
 
